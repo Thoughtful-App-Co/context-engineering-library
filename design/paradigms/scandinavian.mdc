@@ -1,0 +1,119 @@
+# [WARM MINIMALISM, FUNCTIONAL COMFORT]
+
+# Scandinavian Design Paradigm
+
+## 1. Prompt Architecture
+
+* **Intent Declaration**: Create UI elements embodying Nordic design philosophy through warm neutrals, functional simplicity, natural materials references, abundant white space, and cozy minimalism (hygge)
+* **Constraint Parameters**: Muted, desaturated palette; organic shapes softening geometric structure; negative space as active design element; warmth over coldness; accessibility through simplicity
+* **Reference Context**: IKEA design language, Muji aesthetic overlap, Finnish functionalism, Danish Modern furniture, Kinfolk magazine, Cereal magazine, Norm Architects interiors
+* **Edge Case Handling**: For dark mode, use warm charcoals not pure black; for vibrant accents, keep desaturated (dusty versions); for mobile, maintain generous padding despite space constraints
+* **Evaluation Metrics**: Warmth perception, breathing room adequacy, functional clarity, calm emotional response
+
+## 2. Design Constants
+
+* **Brand Compliance**: 
+  - Background whites: #FAFAFA, #F5F5F0, #FFF8F0 (warm undertones)
+  - Warm neutrals: #E8E4DE, #D4CFC7, #B5ADA3, #8A8279
+  - Text: #2C2C2C (warm black), #5A5A5A (secondary)
+  - Accent (muted): Dusty rose #C4A4A4, Sage #A4B4A4, Slate blue #A4A4B4, Mustard #C4B484
+  - Typography: Clean humanist sans (Inter, Söhne, GT America, Avenir); light to regular weights
+  - Roundness: Subtle curves (4-8px border-radius); never fully rounded unless circular by nature
+
+* **Technical Requirements**: 
+  - High white-space ratios (minimum 30% of any component is empty space)
+  - Generous padding (1.5-2x typical spacing)
+  - Subtle shadows: 0 2px 8px rgba(0,0,0,0.04)
+  - Line heights: 1.6-1.8 for body text (airy reading experience)
+
+* **Accessibility Standards**: 
+  - WCAG AA with preference for AAA where possible
+  - Light palette requires careful contrast management
+  - Touch targets minimum 48px with ample surrounding space
+  - Focus states via subtle outline or underline, not background change
+
+* **Implementation Boundaries**: 
+  - CSS-first; no heavy frameworks needed
+  - System fonts acceptable (Apple's SF, Google's Roboto = Scandinavian-adjacent)
+  - Minimal JavaScript; interactions should feel calm not frenetic
+  - SVG for simple line illustrations if imagery needed
+
+## 3. Decision Framework
+
+* **Binary Decision Trees**:
+  - If container → Light warm background, subtle shadow, generous padding
+  - If text → Warm dark gray, never pure black; comfortable line height
+  - If interactive → Muted accent color; understated hover state (opacity shift or slight lift)
+  - If image → Desaturated, natural subject matter, generous surrounding whitespace
+  - If icon → Thin stroke, warm gray, simple geometric forms
+
+* **Priority Hierarchies**:
+  1. Breathing room (elements never feel crowded)
+  2. Warmth (cold minimalism is not Scandinavian)
+  3. Functional clarity (simplicity serves purpose)
+  4. Calm (design should lower blood pressure, not raise it)
+
+* **Progressive Enhancement**:
+  - Core: Clean HTML with warm-tinted system fonts and ample spacing
+  - Basic: Custom typography, refined color palette, subtle shadows
+  - Full: Micro-interactions with gentle easing, organic illustrations, material textures
+
+* **Fallback Strategy**:
+  - Remove shadows entirely (flat still works)
+  - Increase spacing if custom fonts fail to load
+  - Muted accents become warm grays for print
+  - Dark mode: Warm charcoal (#1A1918) not cold black
+
+## 4. Comprehensive Rubric
+
+### Functionality (1-5)
+* 1: Minimalism removes necessary navigation cues; too sparse to use
+* 3: Functional but some affordances unclear due to subtlety
+* 5: Simplicity aids function; users intuit interactions; nothing unnecessary, nothing missing
+
+### Accessibility (1-5)
+* 1: Warm palette creates contrast issues; light grays on white
+* 3: Meets WCAG AA but some secondary elements borderline
+* 5: Full compliance; warmth maintained without sacrificing readability; generous touch targets
+
+### Implementation Efficiency (1-5)
+* 1: Over-engineered for simple aesthetic; unnecessary dependencies
+* 3: Clean implementation with minor redundancies
+* 5: Minimal CSS; design tokens for spacing scale and colors; could be implemented in plain HTML/CSS
+
+### Scalability (1-5)
+* 1: Fixed spacing breaks on mobile; whitespace collapses
+* 3: Scales but requires manual spacing adjustments
+* 5: Fluid spacing scale; whitespace proportions maintained; warmth consistent across breakpoints
+
+### Visual Coherence (1-5)
+* 1: Some elements feel cold or harsh; spacing inconsistent; pure black crept in
+* 3: Mostly cohesive but occasional departures from warmth
+* 5: Unified hygge feeling; every element belongs; you can almost smell the pine and wool
+
+## 5. Validation Protocol
+
+* **Testable Assertions**:
+  - No pure black (#000000) present in design
+  - No pure cool white (#FFFFFF) as background
+  - Minimum padding is 16px; typical is 24-32px
+  - Shadow opacity never exceeds 0.08
+  - Line height ≥ 1.5 for all body text
+
+* **User Testing Requirements**:
+  - Verify emotional response includes "calm," "cozy," "clean" descriptors
+  - Test that minimalism doesn't impede task completion
+  - Evaluate warmth perception: should feel "inviting" not "sterile"
+
+* **Iteration Triggers**:
+  - Users describe as "cold," "clinical," or "stark"
+  - Elements feel cramped or crowded
+  - Contrast checker flags text as below AA
+  - Stakeholder additions disrupt visual calm (too many accents, harsh colors)
+
+* **Documentation Standards**:
+  - Spacing scale (8, 16, 24, 32, 48, 64, 96)
+  - Color palette with warm/cool undertone notes
+  - Typography specimen with weight usage guidelines
+  - Shadow definitions for elevation levels
+  - Photography guidelines (muted, natural, generous framing)
