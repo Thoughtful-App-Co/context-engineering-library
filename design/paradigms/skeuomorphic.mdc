@@ -1,0 +1,123 @@
+# [REALISTIC TEXTURES, PHYSICAL MIMICRY]
+
+# Skeuomorphic Design Paradigm
+
+## 1. Prompt Architecture
+
+* **Intent Declaration**: Create UI elements that mimic real-world physical objects through realistic textures, materials, lighting, and dimensional depth to leverage users' existing mental models
+* **Constraint Parameters**: Textures must reference recognizable materials (leather, metal, wood, paper, fabric); lighting must be consistent across interface; depth through realistic shadows not arbitrary elevation; avoid uncanny valley of almost-real
+* **Reference Context**: iOS 1-6 design language, early Apple iBooks (wood shelves), original Podcast app (reel-to-reel), Propellerhead Reason, Native Instruments plugins, classic audio software UIs
+* **Edge Case Handling**: For dark mode, adjust material lighting not just colors; for mobile, simplify textures to reduce asset weight; for accessibility, ensure textures don't compromise contrast
+* **Evaluation Metrics**: Material recognition, tactile perception, lighting consistency, affordance clarity, nostalgia/familiarity balance
+
+## 2. Design Constants
+
+* **Brand Compliance**: 
+  - Material palette: Brushed metal (#C0C0C0 → #E8E8E8), Leather (brown #8B4513 → #A0522D), Wood (#DEB887 → #8B7355), Paper (#FFFEF0 → #F5F5DC), Glass (rgba overlays)
+  - Highlight color: White at 20-40% opacity for top/left edges
+  - Shadow color: Black at 15-30% opacity for bottom/right edges
+  - Typography: System fonts or material-appropriate (typewriter for paper, engraved for metal)
+  - Stitching: 2px dashed lines with thread colors matching material
+
+* **Technical Requirements**: 
+  - High-resolution texture assets (2x minimum for retina)
+  - CSS gradients for metallic sheen
+  - Inner shadows for inset/pressed states
+  - Multiple layered shadows for realistic depth
+  - border-image for complex frames (leather edges, metal bezels)
+
+* **Accessibility Standards**: 
+  - WCAG AA minimum; text must contrast against textures
+  - Provide solid color zones for text content
+  - Interactive affordances must be obvious (buttons look pushable)
+  - Don't rely on texture alone for state communication
+
+* **Implementation Boundaries**: 
+  - CSS for gradients, shadows, basic textures
+  - SVG/PNG for complex material textures (use sparingly for performance)
+  - Sprite sheets for repeating textures
+  - Consider CSS paint worklets for procedural textures (progressive enhancement)
+
+## 3. Decision Framework
+
+* **Binary Decision Trees**:
+  - If button → Raised with highlight on top edge, shadow on bottom; inset on press
+  - If container → Material-appropriate bezel/frame (metal rim, leather border, paper edge)
+  - If toggle/switch → Physical switch metaphor with realistic travel animation
+  - If slider → Track with groove texture; thumb with grippable surface
+  - If text input → Inset field with paper or frosted glass texture
+
+* **Priority Hierarchies**:
+  1. Affordance clarity (users must instantly know how to interact)
+  2. Material consistency (one material per component type)
+  3. Lighting coherence (single light source across entire interface)
+  4. Performance (textures must not slow rendering)
+
+* **Progressive Enhancement**:
+  - Core: Solid colors with strong shadows for depth
+  - Basic: CSS gradients for metallic/material effects
+  - Full: Texture images, complex shadows, material-specific details (stitching, grain, reflections)
+
+* **Fallback Strategy**:
+  - Texture images fall back to CSS gradients approximating material
+  - Complex shadows reduce to single drop shadow
+  - High-detail assets swap to simplified versions on low-bandwidth
+  - For print: Convert to high-contrast outlines with solid fills
+
+## 4. Comprehensive Rubric
+
+### Functionality (1-5)
+* 1: Realistic details obscure controls; users unsure what's interactive
+* 3: Functional but some metaphors confusing (what does this knob do?)
+* 5: Physical metaphors accelerate understanding; affordances crystal clear; interactions feel natural
+
+### Accessibility (1-5)
+* 1: Text on busy textures; low contrast; states unclear
+* 3: Core content accessible but some textured areas problematic
+* 5: Full WCAG compliance; text on solid zones; states communicated via shape/position not just texture; high contrast maintained
+
+### Implementation Efficiency (1-5)
+* 1: Massive texture files; render-blocking assets; janky interactions
+* 3: Reasonable performance but optimization opportunities exist
+* 5: Optimized sprites; CSS-first where possible; lazy-loaded enhancements; smooth 60fps interactions
+
+### Scalability (1-5)
+* 1: Textures pixelate or tile badly; shadows don't scale proportionally
+* 3: Works at common sizes but edge cases break the illusion
+* 5: Multi-resolution assets; shadows scale with element size; materials hold up at any zoom level
+
+### Visual Coherence (1-5)
+* 1: Mixed materials without logic; inconsistent light direction; some elements flat, others deep
+* 3: Mostly consistent but occasional lighting or material mismatches
+* 5: Unified material story; single light source respected everywhere; every element feels part of the same physical object
+
+## 5. Validation Protocol
+
+* **Testable Assertions**:
+  - All shadows cast in consistent direction (typically bottom-right from top-left light)
+  - Highlight and shadow colors complement material base color
+  - Texture resolution sufficient at 2x display (no visible pixelation)
+  - Interactive elements have minimum 3 states: default, hover, pressed (all visually distinct)
+  - No text placed directly on high-frequency texture patterns
+
+* **User Testing Requirements**:
+  - Verify users identify interactive elements without instruction
+  - Test material recognition ("what is this made of?")
+  - Evaluate tactile desire: users should want to touch/interact
+  - Measure task completion vs flat UI baseline (should be equal or faster due to affordances)
+
+* **Iteration Triggers**:
+  - Users fail to identify clickable elements
+  - Material metaphor confuses rather than clarifies (e.g., leather notebook for settings)
+  - Lighting inconsistencies spotted across interface
+  - Performance metrics show texture-related slowdown
+  - Users describe as "dated" rather than "premium" or "tactile"
+
+* **Documentation Standards**:
+  - Material library with texture assets and CSS approximations
+  - Light source diagram (position, intensity, color temperature)
+  - Shadow calculation guide (blur, spread, offset by elevation level)
+  - Component anatomy sheets showing material application
+  - State transition specifications (default → hover → pressed → disabled)
+  - Performance budget per texture type
+  - Metaphor mapping (which physical object = which UI function)
