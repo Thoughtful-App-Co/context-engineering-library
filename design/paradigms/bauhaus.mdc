@@ -1,0 +1,118 @@
+# [FORM FOLLOWS FUNCTION, PRIMARY GEOMETRY]
+
+# Bauhaus Design Paradigm
+
+## 1. Prompt Architecture
+
+* **Intent Declaration**: Create UI elements embodying functional modernism through primary colors, fundamental geometric shapes, asymmetric balance, and the unity of art and industrial design
+* **Constraint Parameters**: Limit to primary colors (red, yellow, blue) plus black and white; shapes restricted to circle, triangle, square; no decorative elements without function; asymmetry must feel balanced
+* **Reference Context**: Wassily Kandinsky's color theory, Herbert Bayer typography, Marcel Breuer furniture, Bauhaus Dessau building, László Moholy-Nagy photography, Josef Albers color studies
+* **Edge Case Handling**: For extended palettes, derive from primaries (orange = red + yellow); for complex UI, use primaries for key actions only; for accessibility, ensure primaries meet contrast on white
+* **Evaluation Metrics**: Geometric purity, functional justification, color harmony within constraints, compositional balance
+
+## 2. Design Constants
+
+* **Brand Compliance**: 
+  - Primary red: #E53935 (Kandinsky warm)
+  - Primary yellow: #FDD835 (Kandinsky light)
+  - Primary blue: #1E88E5 (Kandinsky cold)
+  - Neutrals: Black (#000000), White (#FFFFFF), Grays derived from black transparency
+  - Typography: Geometric sans only (Futura, ITC Bauhaus, DIN, Universal by Bayer reconstruction)
+  - Shapes: Circle (movement, infinity), Triangle (aggression, direction), Square (stability, calm)
+
+* **Technical Requirements**: 
+  - SVG for all geometric elements
+  - CSS shapes for basic circle/square elements
+  - Grid system based on geometric modules (square grid units)
+  - No border-radius except 50% (full circle) or 0 (square)
+
+* **Accessibility Standards**: 
+  - WCAG AA compliance; primary blue on white = 3.1:1 (use for large text/graphics only)
+  - Primary red on white = 4.0:1 (acceptable)
+  - Black on yellow highest contrast for critical elements
+  - Shapes must communicate alongside color (color-blind safe)
+
+* **Implementation Boundaries**: 
+  - Pure CSS for shapes where possible
+  - SVG for complex compositions
+  - No shadows (contradicts flat philosophy)
+  - No gradients (maintain color purity)
+  - No photography except as background material, desaturated
+
+## 3. Decision Framework
+
+* **Binary Decision Trees**:
+  - If primary action → Red (attention, urgency)
+  - If secondary action → Blue (trust, calm)
+  - If warning/highlight → Yellow (with black text)
+  - If static content → Black and white
+  - If navigation element → Geometric shape indicator (circle bullet, triangle arrow, square stop)
+
+* **Priority Hierarchies**:
+  1. Functional clarity (every element must have a purpose)
+  2. Geometric purity (shapes are fundamental, not decorative)
+  3. Color intentionality (primaries reserved for meaning)
+  4. Compositional balance (asymmetry that feels resolved)
+
+* **Progressive Enhancement**:
+  - Core: Black and white with clear typography
+  - Basic: Add primary color for key interactive elements
+  - Full: Geometric compositions, shape-based iconography, modular grid
+
+* **Fallback Strategy**:
+  - Shapes fall back to CSS borders and backgrounds
+  - Colors maintain meaning in grayscale (ensure value differentiation)
+  - Print: Shapes outlined if color printing unavailable
+
+## 4. Comprehensive Rubric
+
+### Functionality (1-5)
+* 1: Geometric shapes used decoratively without functional purpose
+* 3: Most elements functional but some shapes feel arbitrary
+* 5: Every shape communicates; every color signals; form perfectly serves function
+
+### Accessibility (1-5)
+* 1: Yellow text on white; meaning conveyed by color alone
+* 3: Meets standards but some primary color combinations borderline
+* 5: Full compliance; shapes reinforce color meaning; works completely in grayscale
+
+### Implementation Efficiency (1-5)
+* 1: Complex SVG paths for simple shapes; unnecessary markup
+* 3: Clean but some redundancy in shape definitions
+* 5: CSS shapes where sufficient; single SVG symbol definitions; minimal code for maximum impact
+
+### Scalability (1-5)
+* 1: Geometric compositions break at different sizes; grid doesn't adapt
+* 3: Scales but requires manual adjustment of compositions
+* 5: Modular grid accommodates any content; shapes scale proportionally; compositions reflow naturally
+
+### Visual Coherence (1-5)
+* 1: Shapes mixed without system; colors used arbitrarily; feels like clip art
+* 3: Recognizably Bauhaus but some elements feel disconnected
+* 5: Unified geometric language; color use follows strict logic; could be a Kandinsky composition
+
+## 5. Validation Protocol
+
+* **Testable Assertions**:
+  - Only circles, triangles, and squares present (no arbitrary curves or polygons)
+  - Colors match exact primary definitions (no tints unless intentional transparency)
+  - No decorative element lacks functional justification
+  - Grid modules maintain consistent proportions across breakpoints
+
+* **User Testing Requirements**:
+  - Verify users can identify interactive elements by color/shape alone
+  - Test that geometric composition aids rather than confuses navigation
+  - Evaluate perception: should feel "modern," "functional," "artistic"
+
+* **Iteration Triggers**:
+  - Any shape added without clear functional purpose
+  - Color used for decoration rather than communication
+  - Users confused by geometric navigation elements
+  - Composition feels chaotic rather than dynamically balanced
+
+* **Documentation Standards**:
+  - Shape-meaning mapping (which shape indicates what)
+  - Color-function mapping (which color signals what action type)
+  - Grid module specifications
+  - Composition principles (asymmetric balance techniques)
+  - Historical reference guide for team education
