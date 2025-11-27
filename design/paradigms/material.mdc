@@ -1,0 +1,123 @@
+# [PHYSICAL SURFACES, MEANINGFUL MOTION]
+
+# Material Design Paradigm
+
+## 1. Prompt Architecture
+
+* **Intent Declaration**: Create UI elements based on physical material metaphor—surfaces exist in 3D space with consistent lighting, elevation creates hierarchy, and motion provides meaning and continuity
+* **Constraint Parameters**: Elevation via shadow (not gradients); surfaces are opaque (not glass); motion has purpose and physics; color system follows 500-series primary with semantic assignments; 8dp grid
+* **Reference Context**: Google Material Design 3, Android system UI, Gmail, Google Docs, YouTube, Material Components library
+* **Edge Case Handling**: For iOS contexts, soften slightly but maintain elevation logic; for dark mode, use overlay elevation (surface tinting) not just inverted shadows; for dense UIs, reduce elevation levels
+* **Evaluation Metrics**: Elevation consistency, motion purpose, color system adherence, touch target compliance
+
+## 2. Design Constants
+
+* **Brand Compliance**: 
+  - Elevation levels: 0dp (flat), 1dp, 2dp, 4dp, 8dp, 12dp, 16dp, 24dp
+  - Shadow formula: Umbra + Penumbra + Ambient (three-layer system)
+  - Primary color: 500 value as base; 100-900 scale for variants
+  - Surface colors: White (#FFFFFF) light mode; #121212 dark mode with overlay tinting
+  - Typography: Roboto or system font; specific scale (headline, title, body, caption, overline)
+  - Corner radius: 4dp default; pills for FABs and chips
+
+* **Technical Requirements**: 
+  - 8dp grid for all spacing and sizing
+  - Touch targets: 48dp minimum (44dp with sufficient spacing)
+  - Shadow implementation: `box-shadow` with three layers matching elevation
+  - Transitions: 200-300ms standard; use emphasized easing for enter/exit
+  - Ripple effect for touch feedback
+
+* **Accessibility Standards**: 
+  - WCAG AA minimum; Material's color system designed for contrast
+  - Touch targets meet 48dp requirement
+  - Focus indicators via elevation change + outline
+  - Motion respects `prefers-reduced-motion`
+  - State layers (hover, focus, pressed) via overlay opacity
+
+* **Implementation Boundaries**: 
+  - Material Components libraries preferred (MUI, Vuetify, Angular Material)
+  - CSS custom properties for elevation shadows
+  - JavaScript for ripple effects and complex transitions
+  - SVG for Material Icons (24dp grid)
+
+## 3. Decision Framework
+
+* **Binary Decision Trees**:
+  - If element is raised → Assign elevation level based on hierarchy
+  - If element is interactive → Add ripple feedback + elevation change on press
+  - If navigation → Use component patterns (drawer, tabs, bottom nav per context)
+  - If action → Primary = FAB or contained button; Secondary = outlined/text button
+  - If modal/overlay → Highest elevation (16-24dp); scrim behind
+
+* **Priority Hierarchies**:
+  1. Elevation logic (higher = more prominent; shadows must be consistent)
+  2. Touch feedback (every interactive element responds)
+  3. Motion purpose (animation explains spatial relationships)
+  4. Color semantics (primary, secondary, error, surface used correctly)
+
+* **Progressive Enhancement**:
+  - Core: Elevation via shadow, proper touch targets
+  - Basic: Color system, typography scale, basic transitions
+  - Full: Ripple effects, motion choreography, adaptive density
+
+* **Fallback Strategy**:
+  - Ripple falls back to opacity change on press
+  - Complex motion falls back to simple fade
+  - Dark mode elevation falls back to visible borders
+  - Three-layer shadow falls back to single shadow
+
+## 4. Comprehensive Rubric
+
+### Functionality (1-5)
+* 1: Elevation hierarchy confusing; interactive elements unclear
+* 3: Functional but some elevation inconsistencies; motion occasionally jarring
+* 5: Elevation perfectly communicates hierarchy; motion guides attention; interactions feel physical
+
+### Accessibility (1-5)
+* 1: Touch targets too small; insufficient contrast; no reduced-motion support
+* 3: Meets minimums but some edge cases need attention
+* 5: Full compliance; generous touch targets; excellent contrast; motion respects preferences
+
+### Implementation Efficiency (1-5)
+* 1: Custom shadow implementations per element; bloated transitions
+* 3: Uses Material library but with unnecessary overrides
+* 5: Leverages component library efficiently; design tokens for all values; optimized bundle
+
+### Scalability (1-5)
+* 1: Elevation levels inconsistent across app; color system broken
+* 3: Scales but requires manual maintenance of token alignment
+* 5: Design tokens seamlessly scale; theming system allows brand customization; consistent at all densities
+
+### Visual Coherence (1-5)
+* 1: Mixed elevation logic; shadows point different directions; color usage arbitrary
+* 3: Mostly coherent but occasional Material guideline violations
+* 5: Pure Material execution; unified elevation; consistent motion language; color system perfectly applied
+
+## 5. Validation Protocol
+
+* **Testable Assertions**:
+  - All spacing values divisible by 8dp (4dp for dense contexts)
+  - Touch targets ≥ 48dp (or ≥ 44dp with 8dp+ surrounding space)
+  - Elevation shadows match Material specification for assigned dp level
+  - Primary actions use primary color; destructive use error color
+  - Transitions between 150-400ms with appropriate easing
+
+* **User Testing Requirements**:
+  - Verify touch accuracy on mobile devices
+  - Test elevation hierarchy comprehension (which elements feel "above" others)
+  - Evaluate motion perception: should feel "natural," "smooth," "guiding"
+
+* **Iteration Triggers**:
+  - Touch targets fail 48dp audit
+  - Elevation does not match component importance
+  - Motion feels disconnected or arbitrary
+  - Color usage doesn't follow semantic rules
+  - Android/Google users report unfamiliarity (should feel native)
+
+* **Documentation Standards**:
+  - Elevation scale with shadow values per level
+  - Color system with primary, secondary, tertiary, surface, error definitions
+  - Typography scale with use cases
+  - Motion specifications (duration, easing per transition type)
+  - Component inventory matching Material guidelines
+  - Density scale specifications (default, comfortable, compact)
