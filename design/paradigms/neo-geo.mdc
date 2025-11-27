@@ -1,0 +1,121 @@
+# [BOLD GEOMETRY, PLAYFUL ABSTRACTION]
+
+# Neo-Geo Design Paradigm
+
+## 1. Prompt Architecture
+
+* **Intent Declaration**: Create UI elements channeling 1980s Neo-Geometric Conceptualism through bold primary shapes, saturated colors, playful compositions, and irreverent geometric arrangements
+* **Constraint Parameters**: High saturation required; shapes as primary content not decoration; embrace visual tension and unexpected juxtapositions; balance playfulness with usability; more Memphis than Bauhaus
+* **Reference Context**: Peter Halley neon paintings, Ashley Bickerton constructions, Memphis Milano, Sottsass interiors, early MTV graphics, Keith Haring geometry, Camille Walala murals
+* **Edge Case Handling**: For professional contexts, reduce saturation 20% and increase whitespace; for dark mode, shapes become light on dark (retain saturation); for mobile, simplify to hero shapes, not pattern fields
+* **Evaluation Metrics**: Visual energy, playful perception, geometric boldness, compositional tension resolution
+
+## 2. Design Constants
+
+* **Brand Compliance**: 
+  - Primary saturated: Red #FF3B3B, Yellow #FFE135, Blue #3B5BFF, Green #35D073
+  - Secondary saturated: Pink #FF6EC7, Orange #FF9F1C, Cyan #00E5FF, Purple #B84DFF
+  - Neutrals: Black #0D0D0D, White #FFFFFF, occasional Gray #E0E0E0
+  - Typography: Bold geometric sans (Futura Bold, Gilroy, Bebas Neue, Clash Display); display at extreme weights
+  - Shapes: Circles, semicircles, triangles, squares, arcs, zigzags, squiggles, dots in grids
+
+* **Technical Requirements**: 
+  - SVG for complex geometric compositions
+  - CSS shapes for basic elements
+  - Hard edges (no shadows, no gradients—exception: intentional color-block gradients)
+  - Generous shape scale (shapes should dominate, not decorate)
+  - Overlap and intersection common
+
+* **Accessibility Standards**: 
+  - WCAG AA minimum; saturated colors require white or black text only
+  - Shapes must not obscure content
+  - Reduce visual complexity for motion-sensitive users
+  - Text areas need solid backgrounds despite surrounding chaos
+
+* **Implementation Boundaries**: 
+  - SVG and CSS shapes; no raster except photography (rare)
+  - Animation: playful but not frenetic; shapes can move, rotate, scale
+  - No subtle effects; everything confident and bold
+  - JavaScript for interactive compositions; keep simple for static
+
+## 3. Decision Framework
+
+* **Binary Decision Trees**:
+  - If hero section → Large geometric composition with 3+ overlapping shapes
+  - If content area → Solid background (can be saturated), shapes as accents
+  - If interactive element → Shape-based button (pill, circle, parallelogram)
+  - If divider needed → Zigzag, dots, or bold stripe pattern
+  - If whitespace available → Fill with secondary shapes at reduced opacity or outline
+
+* **Priority Hierarchies**:
+  1. Visual energy (design should feel alive and dynamic)
+  2. Geometric confidence (shapes are bold, never timid)
+  3. Playful irreverence (break rules intentionally)
+  4. Functional clarity (chaos is composed, not confusing)
+
+* **Progressive Enhancement**:
+  - Core: Bold colors with geometric typography
+  - Basic: Add simple shape accents and dividers
+  - Full: Complex overlapping compositions, animated shapes, interactive geometry
+
+* **Fallback Strategy**:
+  - Reduce to single hero shape if performance constrained
+  - Static SVG fallback for animated compositions
+  - Colors remain saturated even in fallback (core to identity)
+  - Print: Shapes become solid fills; overlap represented via halftone
+
+## 4. Comprehensive Rubric
+
+### Functionality (1-5)
+* 1: Shapes obscure navigation; visual chaos prevents task completion
+* 3: Functional but shapes occasionally compete with content for attention
+* 5: Geometry guides the eye; playfulness enhances engagement; clear despite complexity
+
+### Accessibility (1-5)
+* 1: Saturated color combinations fail contrast; shapes overlay text
+* 3: Core content accessible but some decorative elements problematic
+* 5: Full compliance; text always on solid backgrounds; animation respects reduced-motion; color not sole differentiator
+
+### Implementation Efficiency (1-5)
+* 1: Overly complex SVG paths; animation performance issues; bloated assets
+* 3: Reasonable but some shapes could be simplified or combined
+* 5: Optimized SVG symbols; efficient CSS shapes; smooth 60fps animation; minimal file size
+
+### Scalability (1-5)
+* 1: Compositions break at different viewports; shapes collide badly
+* 3: Scales with manual adjustment; some breakpoints need custom compositions
+* 5: Compositions designed fluid; shapes reposition elegantly; energy maintained at all sizes
+
+### Visual Coherence (1-5)
+* 1: Random shapes and colors; feels like clip art explosion
+* 3: Recognizable style but some elements feel out of place
+* 5: Unified controlled chaos; color relationships harmonious; composition feels intentional despite irreverence
+
+## 5. Validation Protocol
+
+* **Testable Assertions**:
+  - Minimum 3 distinct shape types in any composition
+  - Color saturation ≥ 80% for primary shapes
+  - No shape smaller than 24px in any dimension
+  - Text never directly overlays a shape boundary or intersection
+  - At least one shape overlaps or intersects another per major section
+
+* **User Testing Requirements**:
+  - Verify emotional response includes "fun," "bold," "energetic"
+  - Test that playfulness doesn't confuse navigation
+  - Evaluate age perception: should feel contemporary, not dated-80s-kitsch
+
+* **Iteration Triggers**:
+  - Users describe as "chaotic" or "overwhelming" (too far)
+  - Users describe as "corporate" or "safe" (not far enough)
+  - Shapes feel decorative rather than integral
+  - Color combinations cause eye strain or vibration
+  - Animation causes motion sickness reports
+
+* **Documentation Standards**:
+  - Shape library with SVG primitives
+  - Color combination rules (which pairs work, which vibrate)
+  - Composition templates (hero, content, divider patterns)
+  - Animation principles (timing, easing, interaction triggers)
+  - Photography integration guidelines (rare; how to balance with geometry)
+  - Don'ts gallery (common mistakes: too subtle, wrong era references, clip-art feel)
