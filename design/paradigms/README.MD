@@ -28,6 +28,12 @@ Soft UI with extruded elements that appear to push out from the background.
 - **Technical implementation**: Double `box-shadow` with light and dark sides
 - **Best for**: Dashboards, control panels, subtle interfaces
 
+### Skeuomorphism
+Realistic textures and materials mimicking physical objects to leverage existing mental models.
+- **Key characteristics**: Real-world textures (leather, metal, wood), consistent lighting, physical metaphors
+- **Technical implementation**: High-res texture assets, layered shadows, CSS gradients for materials
+- **Best for**: Audio software, creative tools, interfaces requiring strong affordances
+
 ## Modern Paradigms
 
 ### Neumorphism 2.0
@@ -72,6 +78,58 @@ Rich, complex visuals with abundant details, patterns, and decorative elements.
 - **Technical implementation**: Complex CSS, layered elements, decorative assets
 - **Best for**: Fashion, luxury brands, artistic platforms
 
+### Isometric
+3D perspective projection using consistent 30° angles without vanishing points.
+- **Key characteristics**: True isometric projection, uniform scale, depth without perspective distortion
+- **Technical implementation**: SVG for precision, CSS transforms (`rotateX(60deg) rotateZ(45deg)`), face color gradation
+- **Best for**: Data visualization, illustration-heavy sites, tech product marketing
+
+## Era & Movement Paradigms
+
+### Vaporwave
+80s/90s digital nostalgia with neon colors, gradient-heavy aesthetics, and surreal atmosphere.
+- **Key characteristics**: Magenta/cyan gradients, glitch artifacts, retro tech imagery, perspective grids
+- **Technical implementation**: Multi-stop CSS gradients, CRT scanline overlays, glow effects via box-shadow
+- **Best for**: Entertainment, music platforms, nostalgic brand experiences
+
+### Swiss/International
+Objective clarity through mathematical grid systems, sans-serif typography, and purposeful whitespace.
+- **Key characteristics**: Strict grid adherence, typography as primary element, asymmetric balance
+- **Technical implementation**: CSS Grid, modular type scale, baseline alignment, 8px spacing units
+- **Best for**: Corporate sites, editorial platforms, information-dense applications
+
+### Art Deco
+1920s-30s luxury through geometric symmetry, metallic accents, and ornamental precision.
+- **Key characteristics**: Bilateral symmetry, gold/jewel tones, bold vertical lines, geometric patterns
+- **Technical implementation**: SVG patterns, CSS metallic gradients, border-image for ornamental frames
+- **Best for**: Luxury brands, hospitality, high-end product sites
+
+### Bauhaus
+Functional modernism with primary colors and fundamental geometric shapes.
+- **Key characteristics**: Red/yellow/blue only, circle/triangle/square shapes, form follows function
+- **Technical implementation**: SVG primitives, CSS shapes, no shadows or gradients
+- **Best for**: Educational platforms, art institutions, design-forward brands
+
+### Neo-Geo
+Bold 1980s geometric abstraction with saturated colors and playful compositions.
+- **Key characteristics**: High saturation, overlapping shapes, visual tension, Memphis-adjacent energy
+- **Technical implementation**: SVG compositions, hard-edge CSS shapes, confident scale
+- **Best for**: Creative agencies, youth brands, entertainment platforms
+
+## Regional & Cultural Paradigms
+
+### Scandinavian
+Warm minimalism with functional simplicity, natural material references, and cozy aesthetics.
+- **Key characteristics**: Muted warm neutrals, generous whitespace, subtle shadows, hygge feeling
+- **Technical implementation**: High padding ratios, warm color undertones, light shadows (opacity < 0.08)
+- **Best for**: Lifestyle brands, wellness apps, e-commerce with premium positioning
+
+### Japandi
+Fusion of Japanese wabi-sabi and Scandinavian hygge embracing intentional imperfection.
+- **Key characteristics**: Earthy palette, organic imperfections, serene simplicity, craft aesthetic
+- **Technical implementation**: Subtle textures, warm shadows, asymmetric layouts, hand-drawn SVG elements
+- **Best for**: Artisan brands, mindfulness apps, premium craft products
+
 ## Interaction-Focused Paradigms
 
 ### Kinetic Typography
@@ -113,10 +171,42 @@ When implementing any of these paradigms, consider:
 ## Mixing Paradigms
 
 These paradigms can be mixed to create unique interface styles. Consider combining:
+
 - Glassmorphism + Biomorphic for natural, translucent interfaces
 - Brutalism + Kinetic Typography for expressive, bold experiences
 - Material + Atomic Design for systematic, physical interfaces
+- Scandinavian + Japandi for warm, imperfect minimalism
+- Swiss + Isometric for precise, dimensional data visualization
+- Art Deco + Vaporwave for luxurious retro-futurism
+- Bauhaus + Neo-Geo for bold geometric energy
+- Skeuomorphism + Claymorphism for tactile, playful depth
+
+## Paradigm Selection Matrix
+
+| Paradigm | Visual Complexity | Performance Cost | Accessibility | Learning Curve |
+|----------|------------------|------------------|---------------|----------------|
+| Swiss | Low | Low | High | Low |
+| Scandinavian | Low | Low | High | Low |
+| Brutalism | Low | Low | Medium | Low |
+| Japandi | Low | Low | High | Medium |
+| Neomorphism | Medium | Low | Medium | Medium |
+| Bauhaus | Medium | Low | High | Medium |
+| Glassmorphism | Medium | High | Medium | Medium |
+| Isometric | Medium | Medium | Medium | High |
+| Art Deco | High | Medium | Medium | Medium |
+| Vaporwave | High | Medium | Medium | Medium |
+| Neo-Geo | High | Low | Medium | Medium |
+| Skeuomorphism | High | High | High | High |
+| Maximalism | Very High | High | Low | High |
 
 ## Resources
 
-Each paradigm has its own implementation techniques, pattern libraries, and best practices. Refer to the technical documentation for specific implementation details.
+Each paradigm has its own `.mdc` file with detailed specifications:
+
+- Prompt architecture and intent declaration
+- Design constants (colors, typography, spacing)
+- Decision frameworks and binary trees
+- Comprehensive rubrics (1-5 scoring)
+- Validation protocols and testable assertions
+
+Refer to individual paradigm files for specific implementation details.
