@@ -1,0 +1,116 @@
+# [NEON NOSTALGIA, DIGITAL DREAMSCAPES]
+
+# Vaporwave Design Paradigm
+
+## 1. Prompt Architecture
+
+* **Intent Declaration**: Create UI elements evoking 80s/90s digital nostalgia through neon colors, gradient-heavy aesthetics, retro tech imagery, and surreal atmospheric depth
+* **Constraint Parameters**: Heavy use of magenta/cyan/purple gradients; glitch artifacts intentional but controlled; balance retro kitsch with modern usability; avoid unironic corporate aesthetic
+* **Reference Context**: Macintosh Plus album art, Windows 95 aesthetic, Greek statue imagery, VHS tracking errors, early 3D rendering, mallsoft environments
+* **Edge Case Handling**: For professional contexts, dial back saturation 30%; for dark mode, deepen backgrounds while maintaining neon pop; for accessibility, ensure text avoids gradient backgrounds
+* **Evaluation Metrics**: Nostalgic resonance, visual impact, usability preservation, atmosphere consistency
+
+## 2. Design Constants
+
+* **Brand Compliance**: 
+  - Primary palette: #FF6AD5 (hot pink), #C774E8 (purple), #AD8CFF (lavender), #8795E8 (periwinkle), #94D0FF (sky blue), #00FFFF (cyan)
+  - Background darks: #0D0221, #190B28, #240B36
+  - Gradient angles: 45°, 135°, or vertical preferred
+  - Typography: Retro sans-serifs (VCR OSD Mono, Streamster, Arial Bold for ironic effect), Japanese characters for decorative use
+  - Grid overlays: Perspective grids receding to horizon, 1px lines in cyan/magenta
+
+* **Technical Requirements**: 
+  - CSS gradients with multiple color stops (minimum 3)
+  - Optional: CRT scanline overlay (CSS repeating-linear-gradient, 2px spacing)
+  - Glow effects via box-shadow/text-shadow with 0 offset, high blur, neon color
+  - Chrome/metallic text via linear-gradient on background-clip: text
+
+* **Accessibility Standards**: 
+  - WCAG AA minimum; text must sit on solid color zones, not gradients
+  - Reduce animation intensity option for vestibular sensitivities
+  - High-contrast mode fallback strips effects, retains color identity
+  - Glitch effects must not trigger photosensitive responses (no rapid flashing)
+
+* **Implementation Boundaries**: 
+  - CSS-first for gradients, glows, scanlines
+  - SVG for geometric sun/grid illustrations
+  - WebGL only for complex 3D environments (floating objects, terrain)
+  - Avoid excessive asset weight; prefer procedural generation
+
+## 3. Decision Framework
+
+* **Binary Decision Trees**:
+  - If hero section → Full gradient background + grid horizon + neon glow title
+  - If interactive element → Neon border glow on hover, color shift on active
+  - If text content heavy → Solid dark background panel, neon accents limited to headings
+  - If imagery present → Apply duotone filter (magenta/cyan) or VHS distortion overlay
+  - If mobile → Reduce grid complexity, simplify gradients to 2-color
+
+* **Priority Hierarchies**:
+  1. Atmospheric cohesion (every element feels part of the same dreamscape)
+  2. Readability (aesthetics never compromise content consumption)
+  3. Performance (effects degrade gracefully)
+  4. Nostalgic authenticity
+
+* **Progressive Enhancement**:
+  - Core: Solid neon colors on dark background
+  - Basic: Gradient backgrounds + glow effects
+  - Full: Animated grids, glitch transitions, parallax depth, scanline overlays
+
+* **Fallback Strategy**:
+  - Reduce to flat neon-on-dark for low-performance devices
+  - Static gradient image fallback for email/print
+  - Remove scanlines and glitch for reduced-motion preference
+
+## 4. Comprehensive Rubric
+
+### Functionality (1-5)
+* 1: Aesthetic overwhelms interface; users cannot find controls or read content
+* 3: Usable but visual effects occasionally distract from task completion
+* 5: Vaporwave aesthetic enhances engagement without sacrificing usability; effects guide attention appropriately
+
+### Accessibility (1-5)
+* 1: Text on gradients, rapid glitch animations, insufficient contrast throughout
+* 3: Core content accessible but decorative elements lack alternatives
+* 5: Full compliance; reduced-motion support; text always on solid backgrounds; glows don't replace contrast
+
+### Implementation Efficiency (1-5)
+* 1: Heavy image assets, render-blocking effects, poor mobile performance
+* 3: Reasonable performance but some optimization opportunities missed
+* 5: Procedural CSS effects, optimized assets, smooth 60fps animations, lazy-loaded enhancements
+
+### Scalability (1-5)
+* 1: Effects break at different viewports; gradients distort; grids misalign
+* 3: Mostly responsive but some manual breakpoint adjustments needed
+* 5: Fluid scaling; grids regenerate per viewport; effects intensity scales with screen size
+
+### Visual Coherence (1-5)
+* 1: Random neon colors; inconsistent glow intensities; mixed retro eras
+* 3: Recognizably vaporwave but some elements feel disconnected
+* 5: Unified dreamscape; consistent light source for glows; harmonious gradient flow; era-appropriate references
+
+## 5. Validation Protocol
+
+* **Testable Assertions**:
+  - Gradient transitions have minimum 3 color stops with no banding visible
+  - Glow blur radius proportional to element size (roughly 20-40% of smallest dimension)
+  - Text contrast ratio ≥ 4.5:1 on its immediate background (not underlying gradient)
+  - No animation exceeds 3 flashes per second (WCAG 2.3.1)
+
+* **User Testing Requirements**:
+  - Verify nostalgic resonance with target demographic (recognize references)
+  - Test task completion time vs neutral UI baseline (should not exceed 120%)
+  - Evaluate emotional response: should evoke "dreamy," "nostalgic," "surreal"
+
+* **Iteration Triggers**:
+  - > 20% of users report difficulty reading text
+  - Animation jank detected on mid-tier mobile devices
+  - Nostalgic references misidentified or not recognized by target users
+  - Aesthetic described as "dated" rather than "retro" (wrong side of irony)
+
+* **Documentation Standards**:
+  - Gradient palette with exact color stops and angles
+  - Glow effect mixin with customizable color/intensity parameters
+  - Scanline overlay CSS snippet
+  - Grid perspective SVG template
+  - Approved retro imagery reference library (statues, palms, sunsets, dolphins, early 3D)
