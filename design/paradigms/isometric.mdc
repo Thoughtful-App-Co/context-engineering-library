@@ -1,0 +1,116 @@
+# [3D PERSPECTIVE, NO VANISHING POINTS]
+
+# Isometric Design Paradigm
+
+## 1. Prompt Architecture
+
+* **Intent Declaration**: Create UI elements and illustrations using true isometric projection (30° angles) to convey depth and dimensionality without perspective distortion
+* **Constraint Parameters**: Strict 2:1 pixel ratio for isometric lines; no vanishing points; consistent 120° angles between axes; maintain visual hierarchy despite uniform scale
+* **Reference Context**: Monument Valley (ustwo games), Civilization VI fog-of-war UI, Stripe's isometric illustrations, Airbnb's Lottie animations
+* **Edge Case Handling**: For complex scenes, use layered z-index with consistent stacking; for animations, interpolate along isometric axes only; for responsive, scale uniformly (never stretch)
+* **Evaluation Metrics**: Angular accuracy, depth clarity, visual balance, interaction affordance in 3D space
+
+## 2. Design Constants
+
+* **Brand Compliance**: 
+  - Primary angles: 30° / 150° / 90° (true isometric)
+  - Grid unit: 8px base with 4px half-steps for detail work
+  - Stroke weights: 1px edges, 2px for emphasis/selection states
+  - Color strategy: Top face lightest, left face mid-tone, right face darkest (or inverse for light source right)
+  - Typography: Flat 2D overlays preferred; if embedded, horizontal only (never rotated to match planes)
+
+* **Technical Requirements**: 
+  - SVG preferred for scalability and precise angles
+  - CSS transforms: `rotateX(60deg) rotateZ(45deg)` for DOM-based isometric
+  - Canvas/WebGL for complex interactive scenes
+  - Maintain 1:1 aspect ratio containers to prevent distortion
+
+* **Accessibility Standards**: 
+  - WCAG AA compliance for all text (keep text 2D/flat)
+  - Minimum 3:1 contrast between adjacent isometric faces
+  - Interactive elements require clear hover/focus states with consistent depth cues
+  - Alt text must describe spatial relationships, not just objects
+
+* **Implementation Boundaries**: 
+  - Pure CSS for simple UI elements (cards, buttons)
+  - SVG for illustrations and icons
+  - Three.js/PixiJS only when animation complexity requires it
+  - No perspective transforms (breaks isometric contract)
+
+## 3. Decision Framework
+
+* **Binary Decision Trees**:
+  - If element is interactive → Add elevation change on hover (+4px z-axis shift)
+  - If scene has > 5 objects → Implement consistent shadow/occlusion system
+  - If content is data-driven → Use flat 2D overlay panels anchored to isometric base
+  - If animation required → Constrain motion to isometric axes (no free rotation)
+  - If mobile viewport → Reduce scene complexity, prioritize foreground elements
+
+* **Priority Hierarchies**:
+  1. Angular consistency (30° must be exact across all elements)
+  2. Depth readability (user must understand spatial relationships)
+  3. Interactive clarity (clickable areas obvious despite 3D illusion)
+  4. Visual interest and brand differentiation
+
+* **Progressive Enhancement**:
+  - Core: Flat 2D representation with isometric-inspired shapes
+  - Basic: Static SVG isometric illustration
+  - Full: Interactive isometric scene with hover states and animations
+
+* **Fallback Strategy**:
+  - Serve flat 2D alternative when transforms unsupported
+  - Reduce to static image for print/email contexts
+  - Simplify to outline/wireframe isometric for low-bandwidth scenarios
+
+## 4. Comprehensive Rubric
+
+### Functionality (1-5)
+* 1: Isometric perspective creates confusion about interactive areas or hierarchy
+* 3: Functional but spatial relationships occasionally unclear; interaction areas require labels
+* 5: Isometric view enhances understanding; depth communicates hierarchy; interactions feel natural in 3D space
+
+### Accessibility (1-5)
+* 1: Text embedded in isometric planes; insufficient face contrast; no spatial alt text
+* 3: Text mostly flat; adequate contrast; basic accessibility compliance
+* 5: All text 2D; excellent face differentiation; rich alt text describing spatial layout; keyboard navigation follows logical depth order
+
+### Implementation Efficiency (1-5)
+* 1: Heavy 3D library for simple static illustration; broken angles; performance issues
+* 3: Appropriate tech choice but some redundancy; minor angle inconsistencies
+* 5: Optimal implementation (CSS/SVG for simple, canvas for complex); pixel-perfect angles; smooth 60fps interactions
+
+### Scalability (1-5)
+* 1: Distortion at different sizes; broken proportions on resize
+* 3: Scales correctly but loses detail or becomes cluttered at extremes
+* 5: Uniform scaling preserves all relationships; responsive breakpoints adjust complexity appropriately
+
+### Visual Coherence (1-5)
+* 1: Inconsistent angles, mixed light sources, arbitrary depth ordering
+* 3: Mostly consistent but occasional violations; light source wavers
+* 5: Perfect angular consistency; unified light source across scene; logical depth stacking; harmonious color gradation across faces
+
+## 5. Validation Protocol
+
+* **Testable Assertions**:
+  - All isometric lines measure exactly 30° or 150° from horizontal (±0.5° tolerance)
+  - Face brightness follows consistent light source (variance < 10% across same-facing planes)
+  - Interactive elements show visible state change within 100ms of input
+  - No perspective distortion present (parallel lines remain parallel)
+
+* **User Testing Requirements**:
+  - Verify users can identify clickable regions without instruction
+  - Test depth perception: users should correctly order overlapping elements
+  - Evaluate cognitive load: isometric view should not slow task completion vs 2D baseline
+
+* **Iteration Triggers**:
+  - > 15% of users misclick due to unclear interactive boundaries
+  - Angular measurements deviate > 1° from true isometric
+  - Scene complexity causes render time > 16ms (60fps threshold)
+  - User testing shows confusion about foreground/background relationships
+
+* **Documentation Standards**:
+  - Isometric grid template (SVG/Figma/Sketch asset)
+  - Face color calculation formula based on base color + light direction
+  - Transform matrix reference for CSS/SVG implementations
+  - Z-index stacking convention diagram
+  - Code examples for common patterns (isometric card, button, scene container)
