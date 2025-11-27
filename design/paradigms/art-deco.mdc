@@ -1,0 +1,117 @@
+# [GEOMETRIC LUXURY, GILDED ELEGANCE]
+
+# Art Deco Design Paradigm
+
+## 1. Prompt Architecture
+
+* **Intent Declaration**: Create UI elements channeling 1920s-30s luxury through geometric symmetry, metallic accents, bold vertical lines, and ornamental precision
+* **Constraint Parameters**: Strict bilateral symmetry preferred; geometric patterns over organic; metallic/jewel tones required; ornamentation must feel intentional not cluttered; balance opulence with usability
+* **Reference Context**: Chrysler Building, Tamara de Lempicka paintings, Erte fashion illustrations, The Great Gatsby (2013) titles, Empire State Building lobby, vintage Pullman train interiors
+* **Edge Case Handling**: For minimal contexts, reduce to geometric line work + single gold accent; for dark mode, use deep jewel backgrounds with gold/silver metallics; for mobile, simplify patterns to key structural elements
+* **Evaluation Metrics**: Geometric precision, luxurious perception, symmetry execution, pattern density balance
+
+## 2. Design Constants
+
+* **Brand Compliance**: 
+  - Primary palette: Gold (#D4AF37, #FFD700), Black (#0A0A0A), Cream (#F5F0E6)
+  - Jewel accents: Emerald (#046307), Sapphire (#0F52BA), Ruby (#9B111E), Amethyst (#9966CC)
+  - Metallics: Gold gradient (45°, #BF953F → #FCF6BA → #B38728), Silver (#C0C0C0 → #E8E8E8 → #A8A8A8)
+  - Typography: Geometric sans (Futura, Poiret One, Broadway) for display; high-contrast serif (Bodoni, Didot) for body
+  - Line weights: Thin precise lines (1-2px) for patterns; bold strokes for structural elements
+
+* **Technical Requirements**: 
+  - SVG for geometric patterns (scalability critical)
+  - CSS gradients for metallic effects
+  - Border-image or SVG for ornamental frames
+  - Clip-path for geometric masking
+
+* **Accessibility Standards**: 
+  - WCAG AA minimum; gold on black achieves this naturally
+  - Patterns must not interfere with text readability
+  - Reduce pattern complexity in high-information areas
+  - Metallic effects need solid-color fallbacks for forced-colors mode
+
+* **Implementation Boundaries**: 
+  - SVG patterns over raster images
+  - CSS custom properties for metallic gradients (reusability)
+  - No auto-generated patterns; each must be intentionally designed
+  - Animation limited to subtle shimmer effects; no playful motion
+
+## 3. Decision Framework
+
+* **Binary Decision Trees**:
+  - If header/hero → Full geometric frame treatment with metallic accents
+  - If content area → Reduce ornamentation to corner accents or divider lines
+  - If interactive element → Geometric button shape (hexagon, chevron, stepped rectangle)
+  - If text heavy → Cream/white background, minimal pattern, strong typographic hierarchy
+  - If dark background → Emphasize metallic gold; add subtle geometric line pattern
+
+* **Priority Hierarchies**:
+  1. Geometric integrity (patterns must be mathematically precise)
+  2. Luxurious perception (every element should feel considered and expensive)
+  3. Symmetry and balance (visual weight distributed intentionally)
+  4. Usability (ornamentation supports rather than obscures function)
+
+* **Progressive Enhancement**:
+  - Core: Black and gold color scheme with geometric typography
+  - Basic: Add geometric dividers and simple framing
+  - Full: Complex patterns, metallic gradients, ornamental corners, layered frames
+
+* **Fallback Strategy**:
+  - Metallic gradients fall back to solid gold (#D4AF37)
+  - Complex SVG patterns fall back to solid backgrounds
+  - Geometric frames fall back to simple borders
+  - For print: Convert metallics to high-contrast solid tones
+
+## 4. Comprehensive Rubric
+
+### Functionality (1-5)
+* 1: Ornamentation obscures navigation; patterns compete with content
+* 3: Functional but visual hierarchy occasionally unclear amid decoration
+* 5: Ornamentation guides the eye; geometric structures reinforce information architecture
+
+### Accessibility (1-5)
+* 1: Low contrast metallics; text over complex patterns; no high-contrast fallback
+* 3: Core content accessible; decorative elements lack alternatives
+* 5: Full WCAG compliance; forced-colors mode support; patterns never behind text; clear focus states
+
+### Implementation Efficiency (1-5)
+* 1: Raster patterns causing bloat; repeated complex SVGs; gradient performance issues
+* 3: Reasonable implementation with some optimization opportunities
+* 5: Reusable SVG symbols; CSS custom properties for all metallics; patterns defined once, referenced many
+
+### Scalability (1-5)
+* 1: Patterns break at different sizes; ornamental frames don't adapt
+* 3: Scales adequately but requires breakpoint-specific pattern adjustments
+* 5: Vector patterns scale infinitely; frames adapt via CSS; ornamentation density responds to viewport
+
+### Visual Coherence (1-5)
+* 1: Mixed geometric styles; inconsistent metallic tones; asymmetric where symmetry expected
+* 3: Recognizably Art Deco but some elements feel disconnected from the era
+* 5: Unified vision; consistent geometric vocabulary; metallics harmonize; feels like a coherent 1920s luxury piece
+
+## 5. Validation Protocol
+
+* **Testable Assertions**:
+  - All geometric patterns tile seamlessly (no visible seams at 400% zoom)
+  - Symmetrical elements are pixel-perfect mirrors (0px deviation)
+  - Metallic gradients have minimum 3 color stops for realistic sheen
+  - Gold text on black maintains ≥ 4.5:1 contrast ratio
+
+* **User Testing Requirements**:
+  - Verify "luxury" and "elegance" appear in unprompted aesthetic descriptions
+  - Test that ornamentation does not slow content location tasks
+  - Evaluate era recognition (users should identify as "1920s," "Art Deco," "Gatsby")
+
+* **Iteration Triggers**:
+  - Users describe design as "busy" or "cluttered"
+  - Geometric patterns show visible imprecision
+  - Metallic effects appear flat or muddy
+  - Era associations skew wrong (Victorian, Baroque = too ornate; Minimalist = too stripped)
+
+* **Documentation Standards**:
+  - Geometric pattern library (SVG files with usage guidelines)
+  - Metallic gradient definitions (CSS custom properties)
+  - Ornamental frame system with size/context variants
+  - Typography pairing rules (display + body combinations)
+  - Symmetry axis specifications for layout templates
