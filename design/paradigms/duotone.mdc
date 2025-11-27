@@ -1,0 +1,122 @@
+# [TWO-COLOR DRAMA, HIGH IMPACT]
+
+# Duotone Design Paradigm
+
+## 1. Prompt Architecture
+a
+* **Intent Declaration**: Create UI elements using strict two-color treatment—applying dual-tone filters to imagery and limiting palette to two primary colors plus their blends for maximum visual impact and brand recognition
+* **Constraint Parameters**: Exactly two colors per composition (plus their blend); apply to photography via gradient maps; UI elements derive from same two colors; high contrast required; monotone fallback acceptable
+* **Reference Context**: Spotify marketing (green/purple, pink/orange), Pantone Color of the Year campaigns, Obama Hope poster, editorial magazine covers, Andy Warhol pop art
+* **Edge Case Handling**: For photography, map shadows to dark color, highlights to light color; for dark mode, invert which color is shadow/highlight; for accessibility, ensure sufficient contrast between the two chosen colors
+* **Evaluation Metrics**: Color impact, brand recognition, image treatment consistency, contrast effectiveness
+
+## 2. Design Constants
+
+* **Brand Compliance**: 
+  - Color pairing strategies: Complementary (opposite wheel), Analogous (adjacent), High-contrast (dark + vibrant)
+  - Popular pairings: Navy/Coral, Purple/Yellow, Teal/Magenta, Black/Gold, Deep Blue/Hot Pink
+  - Shadow color: Darker, more saturated
+  - Highlight color: Lighter, can be vibrant or neutral
+  - Midtone: Natural blend of the two (not a third color)
+  - Typography: Can be either color; prefer dark-on-light or light-on-dark zones
+
+* **Technical Requirements**: 
+  - CSS `filter: grayscale()` + gradient overlay for simple duotone
+  - SVG filters with `feColorMatrix` for precise control
+  - Canvas manipulation for real-time duotone
+  - `mix-blend-mode: multiply` and `screen` for layered effects
+  - Gradient maps in image processing (Photoshop/CSS filter chains)
+
+* **Accessibility Standards**: 
+  - WCAG AA minimum; chosen colors must have 4.5:1 contrast for text
+  - Don't rely on color alone—duotone images need context/labels
+  - Test both colors as foreground/background combinations
+  - Avoid color pairs that disappear for color blind users
+
+* **Implementation Boundaries**: 
+  - CSS filters for simple implementations
+  - SVG filters for cross-browser precision
+  - Pre-processed images for critical/hero content (performance)
+  - Real-time filters for dynamic content only if performance allows
+
+## 3. Decision Framework
+
+* **Binary Decision Trees**:
+  - If hero image → Full duotone treatment with brand colors
+  - If thumbnail/gallery → Consistent duotone across all images
+  - If UI element → Use one of the two colors as primary
+  - If text → Place on solid color zone (not blended midtone)
+  - If icon → Single color from the pair; avoid blends
+
+* **Priority Hierarchies**:
+  1. Brand recognition (color pair should be immediately identifiable)
+  2. Image readability (subjects must remain recognizable through filter)
+  3. Contrast effectiveness (colors must work together, not muddle)
+  4. Consistency (every duotone treatment uses exact same colors)
+
+* **Progressive Enhancement**:
+  - Core: Grayscale images with brand color tint
+  - Basic: CSS filter duotone approximation
+  - Full: Precise SVG filter duotone with optimized gradient mapping
+
+* **Fallback Strategy**:
+  - Duotone falls back to monotone (single brand color tint)
+  - Filter-based falls back to pre-processed images
+  - For email: Pre-processed duotone images required
+  - For print: Convert to CMYK-safe equivalents
+
+## 4. Comprehensive Rubric
+
+### Functionality (1-5)
+* 1: Duotone obscures image content; subjects unrecognizable
+* 3: Images readable but some details lost; UI occasionally confusing
+* 5: Duotone enhances images; subjects clear; UI benefits from limited palette
+
+### Accessibility (1-5)
+* 1: Color pair lacks contrast; text unreadable; color blind users see monotone
+* 3: Meets WCAG AA; some edge cases with midtone zones
+* 5: Full compliance; colors work for all vision types; high contrast maintained
+
+### Implementation Efficiency (1-5)
+* 1: Heavy real-time filters on all images; performance issues
+* 3: Reasonable approach but some optimization possible
+* 5: Pre-processed hero images; efficient CSS filters for dynamic content; minimal runtime cost
+
+### Scalability (1-5)
+* 1: Inconsistent duotone application; some images different colors
+* 3: Consistent but manual process for each image
+* 5: Automated pipeline; design tokens for color pair; consistent across all imagery
+
+### Visual Coherence (1-5)
+* 1: Colors clash; some images treated differently; brand unrecognizable
+* 3: Mostly consistent but occasional color drift
+* 5: Perfect color consistency; instantly recognizable; striking visual impact
+
+## 5. Validation Protocol
+
+* **Testable Assertions**:
+  - Exactly two colors in duotone formula (no additional tints introduced)
+  - Contrast ratio between two colors ≥ 3:1 (for image legibility)
+  - Text contrast ≥ 4.5:1 on solid color backgrounds
+  - Same color values used across all duotone treatments
+  - Filter renders consistently across target browsers
+
+* **User Testing Requirements**:
+  - Verify image subjects remain recognizable
+  - Test brand recall: users should associate colors with brand
+  - Evaluate emotional impact: should feel "bold," "striking," "cohesive"
+
+* **Iteration Triggers**:
+  - Image subjects become unrecognizable
+  - Color pair fails contrast requirements
+  - Inconsistency discovered across image treatments
+  - Users cannot identify brand from color pair alone
+  - Color blind simulation shows insufficient differentiation
+
+* **Documentation Standards**:
+  - Exact color values for shadow/highlight
+  - Filter implementation code (CSS, SVG, Canvas)
+  - Image preparation guidelines (source image requirements)
+  - Color pair contrast ratios documented
+  - Usage rules (when to apply duotone vs. full color)
+  - Fallback specifications
