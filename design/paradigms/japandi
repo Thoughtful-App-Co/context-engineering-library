@@ -1,0 +1,121 @@
+# [WABI-SABI MEETS HYGGE, IMPERFECT HARMONY]
+
+# Japandi Design Paradigm
+
+## 1. Prompt Architecture
+
+* **Intent Declaration**: Create UI elements fusing Japanese wabi-sabi philosophy with Scandinavian functional warmth—embracing imperfection, natural materials, intentional asymmetry, and serene simplicity
+* **Constraint Parameters**: Earthy muted palette; subtle organic imperfections over machine precision; negative space as meditation; craft aesthetic; balance between warm (Scandi) and cool (Japanese) minimalism
+* **Reference Context**: Axel Vervoordt interiors, Kengo Kuma architecture, Karimoku furniture, Studio Mumbai, Kinfolk/Cereal editorial overlap, Japanese tea ceremony aesthetics, Danish craft tradition
+* **Edge Case Handling**: For digital precision contexts, add subtle texture overlays; for dark mode, use charcoal-brown not blue-black; for mobile, maintain contemplative spacing despite constraints
+* **Evaluation Metrics**: Serenity perception, material authenticity, balance of cultures, imperfection intentionality
+
+## 2. Design Constants
+
+* **Brand Compliance**: 
+  - Background: #FAF9F6 (warm white), #F5F3EE (paper), #EAE6DF (aged linen)
+  - Earth neutrals: #D4CEC5, #B5AFA4, #8C857A, #5C564E
+  - Accent (natural): Charcoal #3D3D3D, Terracotta #B8826A, Sage #8A9A7E, Indigo #4A5568, Ochre #C4A35A
+  - Typography: Humanist sans (mix of Japanese simplicity and Nordic warmth): Inter, Noto Sans, Sora; optional: subtle serif for contrast (Cormorant, Noto Serif JP)
+  - Roundness: Organic, imperfect curves (3-6px); corners can vary slightly element-to-element
+
+* **Technical Requirements**: 
+  - Generous whitespace (ma - negative space as design element)
+  - Subtle paper/linen textures via CSS noise or SVG filters (optional, never heavy)
+  - Low-contrast shadows: 0 4px 16px rgba(60,50,40,0.06)
+  - Line heights: 1.7-2.0 (meditative reading pace)
+  - Asymmetric grid allowed (break from strict columns)
+
+* **Accessibility Standards**: 
+  - WCAG AA compliance; earthy palette requires careful contrast checking
+  - Warm darks on warm lights maintain readability
+  - Sufficient size for touch targets despite minimal aesthetic
+  - Text-based information over icon-only
+
+* **Implementation Boundaries**: 
+  - CSS with subtle filter/texture enhancements
+  - SVG for hand-drawn style illustrations
+  - Avoid machine-perfect geometry; introduce subtle variation
+  - No glossy effects, harsh shadows, or digital "sheen"
+
+## 3. Decision Framework
+
+* **Binary Decision Trees**:
+  - If container → Warm off-white, soft shadow, asymmetric padding acceptable
+  - If line/divider → Thin, imperfect (hand-drawn SVG or dashed), not solid black
+  - If interactive → Subtle state change; underline or gentle lift; no harsh color flip
+  - If imagery → Desaturated, textured, natural subjects, imperfect framing welcome
+  - If typography → Mixed weights for contrast; serif/sans pairing acceptable
+
+* **Priority Hierarchies**:
+  1. Serenity (design should induce calm, not stimulation)
+  2. Material honesty (digital elements should reference natural textures)
+  3. Intentional imperfection (wabi-sabi; perfection is sterile)
+  4. Cultural balance (neither purely Japanese nor purely Nordic)
+
+* **Progressive Enhancement**:
+  - Core: Warm neutrals, generous spacing, clean typography
+  - Basic: Subtle textures, organic illustrations, asymmetric layouts
+  - Full: Hand-drawn elements, material textures, contemplative animations (slow, gentle)
+
+* **Fallback Strategy**:
+  - Textures fall back to solid warm colors
+  - Hand-drawn elements fall back to simple geometric shapes
+  - Animations reduce to instant transitions for reduced-motion
+  - Print: Emphasize typography and whitespace; textures optional
+
+## 4. Comprehensive Rubric
+
+### Functionality (1-5)
+* 1: Serenity prioritized over usability; users lost in whitespace
+* 3: Functional but some interactions too subtle to discover
+* 5: Calm guides function; users navigate intuitively; simplicity serves purpose
+
+### Accessibility (1-5)
+* 1: Earthy palette creates contrast failures; imperfection harms readability
+* 3: Meets WCAG AA; some edge cases need attention
+* 5: Full compliance; imperfection never compromises legibility; generous sizing
+
+### Implementation Efficiency (1-5)
+* 1: Heavy texture images; complex SVG filters impacting performance
+* 3: Reasonable implementation; textures could be optimized
+* 5: CSS-first textures; optimized SVG; minimal overhead for craft aesthetic
+
+### Scalability (1-5)
+* 1: Asymmetric layouts break responsively; textures don't tile
+* 3: Scales with some manual intervention for complex layouts
+* 5: Fluid asymmetry; textures scale or simplify gracefully; serenity maintained at all sizes
+
+### Visual Coherence (1-5)
+* 1: Feels confused—neither Japanese nor Scandinavian; imperfection feels like error
+* 3: Recognizable fusion but balance tips too far one direction
+* 5: Perfect cultural synthesis; imperfections feel intentional; you want to touch the screen
+
+## 5. Validation Protocol
+
+* **Testable Assertions**:
+  - Color palette contains no pure black or pure white
+  - At least one element per major section has organic/imperfect quality
+  - Shadow colors are warm (brown/amber undertone), not cool (blue/gray)
+  - Minimum whitespace between major elements is 32px
+  - Typography line-height ≥ 1.6
+
+* **User Testing Requirements**:
+  - Verify emotional response includes "peaceful," "calming," "natural"
+  - Test recognition of both Japanese and Scandinavian influences
+  - Evaluate material perception: should feel "crafted," "tactile," not "digital"
+
+* **Iteration Triggers**:
+  - Design feels "too perfect" or "machine-made"
+  - Cultural balance tips (>60% one direction)
+  - Users describe as "cold" or "sterile"
+  - Imperfections read as bugs not features
+  - Stakeholders request "more polish" (educate on wabi-sabi)
+
+* **Documentation Standards**:
+  - Color palette with undertone descriptions
+  - Texture library (CSS and SVG options)
+  - Imperfection guidelines (what varies, what stays consistent)
+  - Spacing philosophy (ma concept explanation)
+  - Cultural reference guide (tea ceremony, hygge, craft traditions)
+  - Illustration style guide (hand-drawn, organic, natural subjects)
