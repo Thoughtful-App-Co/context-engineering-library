@@ -2,6 +2,32 @@
 
 This document provides an overview of various UI design paradigms for modern interfaces. Each paradigm offers unique aesthetic qualities, interaction models, and technical implementations.
 
+## Foundational Paradigms
+
+### Flat Design
+Zero-depth interfaces relying purely on color, typography, and spacing—no shadows, gradients, or 3D effects.
+- **Key characteristics**: Solid colors, sharp edges, no shadows, whitespace as separator
+- **Technical implementation**: Pure CSS colors, no `box-shadow`, spacing-driven hierarchy
+- **Best for**: Fast-loading sites, email templates, maximum compatibility
+
+### Material Design
+Google's design language with physical material properties, elevation, and motion.
+- **Key characteristics**: Elevation shadows, bold colors, responsive animation, 8dp grid
+- **Technical implementation**: Three-layer shadow system, ripple effects, specific motion curves
+- **Best for**: Cross-platform consistency, Google ecosystem integration, Android apps
+
+### Minimalist
+Extreme reduction to absolute essentials—maximum whitespace, limited palette, typography-driven.
+- **Key characteristics**: 2-3 colors max, no decoration, every element justified, generous space
+- **Technical implementation**: Minimal CSS, system fonts acceptable, mathematical spacing
+- **Best for**: Content-focused sites, reading experiences, premium brands
+
+### Skeuomorphism
+Realistic textures and materials mimicking physical objects to leverage existing mental models.
+- **Key characteristics**: Real-world textures (leather, metal, wood), consistent lighting, physical metaphors
+- **Technical implementation**: High-res texture assets, layered shadows, CSS gradients for materials
+- **Best for**: Audio software, creative tools, interfaces requiring strong affordances
+
 ## Classic Paradigms
 
 ### Glassmorphism
@@ -16,23 +42,11 @@ Paper-like elements with shadows and fold effects simulating physical materials.
 - **Technical implementation**: Multiple `box-shadow` properties, subtle textures
 - **Best for**: Document-centric interfaces, card-based layouts
 
-### Material Design
-Google's design language with physical material properties, elevation, and motion.
-- **Key characteristics**: Elevation shadows, bold colors, responsive animation
-- **Technical implementation**: Specific shadow algorithms, color systems, motion guidelines
-- **Best for**: Cross-platform consistency, Google ecosystem integration
-
 ### Neomorphism
 Soft UI with extruded elements that appear to push out from the background.
 - **Key characteristics**: Monochromatic, soft shadows, minimal contrast
 - **Technical implementation**: Double `box-shadow` with light and dark sides
 - **Best for**: Dashboards, control panels, subtle interfaces
-
-### Skeuomorphism
-Realistic textures and materials mimicking physical objects to leverage existing mental models.
-- **Key characteristics**: Real-world textures (leather, metal, wood), consistent lighting, physical metaphors
-- **Technical implementation**: High-res texture assets, layered shadows, CSS gradients for materials
-- **Best for**: Audio software, creative tools, interfaces requiring strong affordances
 
 ## Modern Paradigms
 
@@ -84,6 +98,20 @@ Rich, complex visuals with abundant details, patterns, and decorative elements.
 - **Technical implementation**: SVG for precision, CSS transforms (`rotateX(60deg) rotateZ(45deg)`), face color gradation
 - **Best for**: Data visualization, illustration-heavy sites, tech product marketing
 
+## Color-Focused Paradigms
+
+### Aurora/Gradient
+Flowing multi-color gradients evoking natural light phenomena—auroras, sunsets, nebulae.
+- **Key characteristics**: 3+ color gradients, mesh gradients, atmospheric depth, soft blobs
+- **Technical implementation**: Multi-stop CSS gradients, SVG filters, `mix-blend-mode`, Canvas for animation
+- **Best for**: Hero sections, brand differentiation, premium SaaS products
+
+### Duotone
+Strict two-color treatment applied to imagery and UI for maximum visual impact.
+- **Key characteristics**: Two-color gradient maps on images, limited palette, high contrast
+- **Technical implementation**: CSS filters + gradient overlay, SVG `feColorMatrix`, pre-processed images
+- **Best for**: Editorial, music platforms, strong brand identity, marketing campaigns
+
 ## Era & Movement Paradigms
 
 ### Vaporwave
@@ -109,6 +137,12 @@ Functional modernism with primary colors and fundamental geometric shapes.
 - **Key characteristics**: Red/yellow/blue only, circle/triangle/square shapes, form follows function
 - **Technical implementation**: SVG primitives, CSS shapes, no shadows or gradients
 - **Best for**: Educational platforms, art institutions, design-forward brands
+
+### Memphis
+1980s postmodern chaos with bold patterns, clashing colors, and geometric rebellion.
+- **Key characteristics**: Terrazzo/confetti patterns, squiggles, clashing colors, irreverent geometry
+- **Technical implementation**: SVG pattern tiles, CSS background patterns, bold shape overlays
+- **Best for**: Youth brands, creative agencies, playful products, event marketing
 
 ### Neo-Geo
 Bold 1980s geometric abstraction with saturated colors and playful compositions.
@@ -180,22 +214,32 @@ These paradigms can be mixed to create unique interface styles. Consider combini
 - Art Deco + Vaporwave for luxurious retro-futurism
 - Bauhaus + Neo-Geo for bold geometric energy
 - Skeuomorphism + Claymorphism for tactile, playful depth
+- Flat + Minimalist for ultimate simplicity
+- Aurora + Glassmorphism for atmospheric depth with transparency
+- Duotone + Brutalism for high-impact editorial
+- Memphis + Neo-Geo for maximum 80s energy
 
 ## Paradigm Selection Matrix
 
 | Paradigm | Visual Complexity | Performance Cost | Accessibility | Learning Curve |
 |----------|------------------|------------------|---------------|----------------|
+| Flat | Very Low | Very Low | High | Very Low |
+| Minimalist | Very Low | Very Low | Very High | Low |
 | Swiss | Low | Low | High | Low |
 | Scandinavian | Low | Low | High | Low |
 | Brutalism | Low | Low | Medium | Low |
 | Japandi | Low | Low | High | Medium |
+| Duotone | Low | Low | Medium | Low |
+| Material | Medium | Low | High | Medium |
 | Neomorphism | Medium | Low | Medium | Medium |
 | Bauhaus | Medium | Low | High | Medium |
 | Glassmorphism | Medium | High | Medium | Medium |
 | Isometric | Medium | Medium | Medium | High |
+| Aurora | Medium | Medium | Medium | Medium |
 | Art Deco | High | Medium | Medium | Medium |
 | Vaporwave | High | Medium | Medium | Medium |
 | Neo-Geo | High | Low | Medium | Medium |
+| Memphis | High | Low | Medium | Medium |
 | Skeuomorphism | High | High | High | High |
 | Maximalism | Very High | High | Low | High |
 
