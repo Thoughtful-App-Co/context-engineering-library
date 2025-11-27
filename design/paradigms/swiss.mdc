@@ -1,0 +1,116 @@
+# [GRID PRECISION, TYPOGRAPHIC CLARITY]
+
+# Swiss/International Design Paradigm
+
+## 1. Prompt Architecture
+
+* **Intent Declaration**: Create UI elements embodying objective clarity through mathematical grid systems, sans-serif typography, asymmetric layouts, and purposeful white space
+* **Constraint Parameters**: Strict grid adherence; typography as primary design element; minimal decoration; content hierarchy through scale and weight only; no ornamental graphics
+* **Reference Context**: Josef Müller-Brockmann poster work, Neue Grafik journal, Helvetica documentary, Massimo Vignelli's NYC subway system, Dieter Rams' Braun design
+* **Edge Case Handling**: For content-heavy layouts, increase grid columns; for mobile, reduce to 4-column grid with maintained proportions; for marketing, allow single accent color
+* **Evaluation Metrics**: Grid alignment precision, typographic hierarchy clarity, information density optimization, visual noise reduction
+
+## 2. Design Constants
+
+* **Brand Compliance**: 
+  - Primary palette: Black (#000000), White (#FFFFFF), single accent color if needed (pure red #FF0000, blue #0000FF traditional)
+  - Gray scale: #333333, #666666, #999999, #CCCCCC, #F5F5F5
+  - Typography: Helvetica, Akzidenz-Grotesk, Univers, Inter (web-safe alternative)
+  - Grid: 12-column with consistent gutter (typically 20px); baseline grid for vertical rhythm
+  - Spacing scale: 8px base unit (8, 16, 24, 32, 48, 64, 96)
+
+* **Technical Requirements**: 
+  - CSS Grid for layout structure
+  - Modular type scale (1.25 or 1.333 ratio)
+  - Baseline grid alignment (line-height as common multiple)
+  - Max content width: 1440px with fluid internal grid
+
+* **Accessibility Standards**: 
+  - WCAG AAA target (7:1 contrast ratio)
+  - Minimum body text 16px
+  - Clear heading hierarchy (one H1, sequential levels)
+  - Focus states via underline or outline, not color alone
+
+* **Implementation Boundaries**: 
+  - CSS Grid/Flexbox only; no float-based layouts
+  - System font stack acceptable for performance
+  - No icon fonts; SVG icons if required (geometric, single-weight)
+  - Zero decorative images; photography only if content-relevant
+
+## 3. Decision Framework
+
+* **Binary Decision Trees**:
+  - If text content → Left-align; ragged right edge; no justification
+  - If heading → Bold weight; size increase minimum 1.5x from body
+  - If image required → Full-bleed or exact grid-column fit; no arbitrary sizing
+  - If call-to-action → Typographic emphasis only (weight/size) or minimal rectangular button
+  - If data display → Table with strong grid lines; no zebra striping
+
+* **Priority Hierarchies**:
+  1. Information clarity (message comprehension is paramount)
+  2. Grid integrity (every element aligns to grid intersections)
+  3. Typographic quality (proper kerning, leading, measure)
+  4. Visual simplicity (remove until it breaks)
+
+* **Progressive Enhancement**:
+  - Core: Semantic HTML with browser defaults
+  - Basic: Typography scale + basic grid alignment
+  - Full: Precise baseline grid, optical adjustments, refined spacing
+
+* **Fallback Strategy**:
+  - System sans-serif maintains style integrity
+  - Grid degrades to single-column on narrow viewports
+  - Print stylesheet: increase contrast, remove any background colors
+
+## 4. Comprehensive Rubric
+
+### Functionality (1-5)
+* 1: Grid so rigid content is truncated or awkwardly wrapped
+* 3: Functional but some content fights against grid constraints
+* 5: Grid liberates content; hierarchy instantly clear; navigation intuitive through typography alone
+
+### Accessibility (1-5)
+* 1: Contrast issues; tiny text in pursuit of aesthetics; poor heading structure
+* 3: Meets WCAG AA; some improvements possible in focus states
+* 5: WCAG AAA; exemplary heading hierarchy; optimal reading measure (45-75 characters); clear landmarks
+
+### Implementation Efficiency (1-5)
+* 1: Overly complex grid definitions; inconsistent spacing values
+* 3: Clean implementation with minor redundancies
+* 5: Minimal CSS; design tokens for all values; single source of truth for grid and type
+
+### Scalability (1-5)
+* 1: Fixed pixel grid breaks at edge cases; new content types don't fit
+* 3: Handles most content but requires custom overrides for edge cases
+* 5: Infinitely extensible grid; any content type fits naturally; spacing/type scale accommodates all needs
+
+### Visual Coherence (1-5)
+* 1: Mixed alignments; inconsistent spacing; decorative elements crept in
+* 3: Mostly consistent but occasional grid violations or weight inconsistencies
+* 5: Mathematical precision throughout; every element justified by grid; typography sings
+
+## 5. Validation Protocol
+
+* **Testable Assertions**:
+  - All elements align to column grid (0px offset tolerance)
+  - Type sizes match defined scale exactly (no arbitrary values)
+  - Spacing values all divisible by base unit (8px)
+  - Line lengths between 45-75 characters for body text
+
+* **User Testing Requirements**:
+  - Measure time to locate specific information (should outperform decorated alternatives)
+  - Test content hierarchy comprehension without reading full text
+  - Evaluate professional perception (should register as "authoritative," "trustworthy," "clear")
+
+* **Iteration Triggers**:
+  - Any element found not aligning to grid
+  - User testing shows confusion about content hierarchy
+  - Stakeholder additions of decorative elements (push back with rationale)
+  - Line length exceeds 75 characters at any breakpoint
+
+* **Documentation Standards**:
+  - Grid specification with column counts, gutters, margins per breakpoint
+  - Type scale with exact sizes, weights, line-heights, use cases
+  - Spacing scale reference
+  - Alignment rules and exceptions (if any)
+  - Photography guidelines (crop ratios, grid fit, content requirements)
