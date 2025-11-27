@@ -1,0 +1,121 @@
+# [POSTMODERN CHAOS, GEOMETRIC REBELLION]
+
+# Memphis Design Paradigm
+
+## 1. Prompt Architecture
+
+* **Intent Declaration**: Create UI elements channeling 1980s Memphis Group aesthetic—bold geometric patterns, clashing colors, squiggles, terrazzo textures, and irreverent rejection of minimalist "good taste"
+* **Constraint Parameters**: Patterns mandatory (terrazzo, squiggles, grids, confetti); colors must clash intentionally; geometric shapes with personality; balance chaos with usability; embrace the "ugly-beautiful"
+* **Reference Context**: Ettore Sottsass furniture, Memphis Milano collective, David Bowie's "Serious Moonlight" tour, Saved by the Bell aesthetics, 80s MTV graphics, contemporary Memphis revival (Figma Config, etc.)
+* **Edge Case Handling**: For professional contexts, use Memphis as accent not dominant; for dark mode, maintain clash but deepen base tones; for accessibility, ensure patterns don't obscure text
+* **Evaluation Metrics**: Pattern boldness, color clash harmony, playful energy, usability preservation
+
+## 2. Design Constants
+
+* **Brand Compliance**: 
+  - Primary clash palette: Hot pink (#FF6B9D), Electric blue (#00D4FF), Acid yellow (#FFEA00), Mint green (#7FFFD4), Coral (#FF6F61), Lavender (#E6B8FF)
+  - Neutrals: Black (#000000), White (#FFFFFF), Speckled gray (terrazzo base)
+  - Patterns: Terrazzo/confetti, squiggles/worms, checkerboard, polka dots, zigzags, geometric grids
+  - Shapes: Circles, triangles, arcs, squiggles, irregular polygons, 3D-ish geometric objects
+  - Typography: Bold geometric sans (Futura, ITC Avant Garde), or playful display (Cooper Black, VAG Rounded)
+
+* **Technical Requirements**: 
+  - SVG patterns for terrazzo/confetti (repeating tiles)
+  - CSS patterns for grids/checkerboards
+  - Bold shape overlays via positioned SVG or CSS pseudo-elements
+  - Gradients acceptable for 80s feel (bold, not subtle)
+  - Animation: Bouncy, energetic easing functions
+
+* **Accessibility Standards**: 
+  - WCAG AA minimum; clash colors must still achieve contrast
+  - Text on solid color zones, never on busy patterns
+  - Pattern backgrounds must have sufficient contrast with foreground
+  - Reduce visual complexity for vestibular-sensitive users
+
+* **Implementation Boundaries**: 
+  - SVG for custom shapes and complex patterns
+  - CSS background patterns for simple geometrics
+  - Manageable chaos—patterns should tile efficiently
+  - Avoid overwhelming animation; energy through static boldness
+
+## 3. Decision Framework
+
+* **Binary Decision Trees**:
+  - If hero section → Full Memphis treatment: pattern background + geometric overlays + clash colors
+  - If content area → Solid color or subtle pattern; geometric accents only
+  - If interactive element → Bold shape (pill, irregular polygon); clash color; energetic hover
+  - If typography → Oversized, bold, can overlap geometric elements
+  - If icon → Thick strokes, geometric, can incorporate squiggle/pattern fill
+
+* **Priority Hierarchies**:
+  1. Controlled chaos (patterns are intentional, not random noise)
+  2. Color clash harmony (clashes feel considered, not accidental)
+  3. Playful energy (design should make users smile)
+  4. Usability (chaos serves function, doesn't obscure it)
+
+* **Progressive Enhancement**:
+  - Core: Clash color palette with bold typography
+  - Basic: Add geometric shapes and simple patterns
+  - Full: Complex terrazzo, animated elements, layered geometric chaos
+
+* **Fallback Strategy**:
+  - Complex patterns fall back to solid clash colors
+  - Terrazzo falls back to polka dot or solid with confetti SVG
+  - Animation falls back to static (still energetic via color/shape)
+  - Print: Patterns become simpler; maintain color clash
+
+## 4. Comprehensive Rubric
+
+### Functionality (1-5)
+* 1: Pattern chaos obscures navigation; users can't find content
+* 3: Functional but visual noise occasionally distracts from tasks
+* 5: Chaos guides the eye; playfulness enhances engagement; interactions clear despite visual complexity
+
+### Accessibility (1-5)
+* 1: Text on busy patterns; clash colors fail contrast; overwhelming animation
+* 3: Core content accessible; some pattern zones problematic
+* 5: Full compliance; text always on solid zones; patterns decorative only; motion respects preferences
+
+### Implementation Efficiency (1-5)
+* 1: Massive pattern images; SVG bloat; animation performance issues
+* 3: Reasonable implementation; some optimization possible
+* 5: Efficient SVG patterns; CSS-first where possible; smooth animation; minimal file size
+
+### Scalability (1-5)
+* 1: Patterns break at different sizes; shapes collide badly
+* 3: Scales but requires manual adjustment of pattern density
+* 5: Patterns tile seamlessly at any scale; shapes reposition elegantly; chaos consistent across viewports
+
+### Visual Coherence (1-5)
+* 1: Random chaos without system; colors clash badly not boldly; feels amateur
+* 3: Recognizably Memphis but some elements feel disconnected
+* 5: Controlled explosion; every clash intentional; pattern vocabulary consistent; evokes 80s joy perfectly
+
+## 5. Validation Protocol
+
+* **Testable Assertions**:
+  - Minimum 3 distinct patterns present in design system
+  - Minimum 4 clash colors active in palette
+  - No text placed directly on high-frequency pattern zones
+  - Geometric shapes present in every major section
+  - Color contrast ≥ 4.5:1 for all text elements
+
+* **User Testing Requirements**:
+  - Verify emotional response includes "fun," "playful," "bold," "80s"
+  - Test that chaos doesn't impede task completion
+  - Evaluate energy perception: should feel "vibrant" not "overwhelming"
+
+* **Iteration Triggers**:
+  - Users describe as "messy" or "confusing" (chaos not controlled)
+  - Users describe as "boring" or "safe" (not Memphis enough)
+  - Patterns cause readability issues
+  - Color clashes feel accidental not intentional
+  - Era association wrong (90s, 2000s = too far; 70s = too early)
+
+* **Documentation Standards**:
+  - Pattern library (SVG tiles with usage guidelines)
+  - Color clash combinations (approved pairings)
+  - Shape vocabulary (which geometrics to use)
+  - Composition templates (how to balance chaos)
+  - Typography specimens with overlay guidelines
+  - Don'ts gallery (how to identify when it's too much or too little)
