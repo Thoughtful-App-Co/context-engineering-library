@@ -1,0 +1,123 @@
+# [LESS IS MORE, ESSENTIAL ONLY]
+
+# Minimalist Design Paradigm
+
+## 1. Prompt Architecture
+
+* **Intent Declaration**: Create UI elements reduced to absolute essentials—maximum negative space, limited color palette, typography-driven hierarchy, and elimination of everything that doesn't serve a clear purpose
+* **Constraint Parameters**: Maximum 2-3 colors; no decorative elements; whitespace as primary design tool; every element must justify its existence; "when in doubt, leave it out"
+* **Reference Context**: Dieter Rams' 10 principles, Apple.com, Muji, Aesop, Kinfolk, The New York Times digital edition, Medium reading experience
+* **Edge Case Handling**: For content-rich contexts, minimalism applies to chrome not content; for dark mode, maintain restraint with warm darks; for accessibility, simplicity should aid not hinder
+* **Evaluation Metrics**: Essential element count, whitespace ratio, visual noise level, cognitive load reduction
+
+## 2. Design Constants
+
+* **Brand Compliance**: 
+  - Primary palette: Near-black (#111111 or #1A1A1A), Near-white (#FAFAFA or #F8F8F8), one accent (optional, muted)
+  - Accent if used: Single hue, desaturated (not vibrant)
+  - No gradients, no patterns, no textures
+  - Typography: One typeface family (two max—serif + sans pairing); hierarchy via size/weight only
+  - Spacing: Generous, consistent, mathematical (8px scale recommended)
+
+* **Technical Requirements**: 
+  - Zero decorative CSS (no shadows unless functional, no borders unless necessary)
+  - Maximum 100KB CSS (minimalism in code too)
+  - System font stack acceptable (ultimate minimalism)
+  - Line heights: 1.5-1.7 for optimal readability
+  - Maximum content width: 65-75 characters for body text
+
+* **Accessibility Standards**: 
+  - WCAG AAA target (minimalism enables this)
+  - High contrast inherent in limited palette
+  - Clear focus states (simple outline sufficient)
+  - Typography optimized for readability
+  - Minimal cognitive load benefits all users
+
+* **Implementation Boundaries**: 
+  - Pure CSS; no frameworks if possible
+  - No icon libraries (use text labels or essential custom icons)
+  - No images unless they ARE the content
+  - No animation unless it provides meaning
+
+## 3. Decision Framework
+
+* **Binary Decision Trees**:
+  - If element is decorative → Remove it
+  - If information can be implied → Don't state it explicitly
+  - If two elements serve similar purpose → Combine or eliminate one
+  - If color is needed → Can it be achieved with black/white/gray first?
+  - If interaction needs feedback → Minimal state change (opacity, underline)
+
+* **Priority Hierarchies**:
+  1. Content clarity (nothing between user and information)
+  2. Essential function (every element earns its place)
+  3. Visual breathing room (whitespace is not empty)
+  4. Typographic excellence (type does the heavy lifting)
+
+* **Progressive Enhancement**:
+  - Core: Semantic HTML with browser defaults (already minimal)
+  - Basic: Typography refinement, spacing optimization
+  - Full: Subtle micro-interactions, perfect vertical rhythm
+
+* **Fallback Strategy**:
+  - Minimalism IS the fallback for other paradigms
+  - For print: Natural translation; minimalism prints beautifully
+  - For email: Ideal; plain text with minimal styling
+  - For constrained environments: Already optimized
+
+## 4. Comprehensive Rubric
+
+### Functionality (1-5)
+* 1: Too minimal; users cannot find or understand functionality
+* 3: Functional but some helpful affordances removed unnecessarily
+* 5: Perfect balance; everything needed, nothing extra; function obvious
+
+### Accessibility (1-5)
+* 1: Minimalism sacrificed contrast or touch target size
+* 3: Meets WCAG AA; approaching AAA
+* 5: WCAG AAA achieved; minimalism enhances accessibility; optimal for screen readers
+
+### Implementation Efficiency (1-5)
+* 1: Unnecessary code despite minimal visuals
+* 3: Clean but some redundancy
+* 5: Code is as minimal as design; fastest load times; tiny footprint
+
+### Scalability (1-5)
+* 1: Spacing breaks at extremes; type doesn't scale well
+* 3: Scales but requires some adjustment
+* 5: Mathematical spacing system scales infinitely; typography responsive; works at any size
+
+### Visual Coherence (1-5)
+* 1: Inconsistent spacing; some decorative elements crept in
+* 3: Mostly minimal but occasional violations
+* 5: Absolute purity; every element essential; whitespace perfectly balanced; zen-like calm
+
+## 5. Validation Protocol
+
+* **Testable Assertions**:
+  - Maximum 3 colors in palette (including black/white)
+  - Zero decorative images (images must be content)
+  - Whitespace ratio ≥ 50% on any screen
+  - Single typeface (or justified serif/sans pair)
+  - Every visible element has documented purpose
+
+* **User Testing Requirements**:
+  - Verify users can complete tasks without confusion
+  - Test perception: should feel "calm," "clean," "focused"
+  - Measure time to locate information (should be fast)
+  - Evaluate emotional response: clarity not sterility
+
+* **Iteration Triggers**:
+  - Users cannot find needed functionality
+  - Stakeholders add elements without purpose justification
+  - Any decorative element introduced (challenge it)
+  - Users describe as "empty" or "unfinished" (communicate value of space)
+  - Users describe as "cold" (may need warmth in color temperature)
+
+* **Documentation Standards**:
+  - Element inventory with purpose justification for each
+  - Typography scale (sizes, weights, use cases)
+  - Spacing scale with mathematical basis
+  - Color palette (maximum 3 values)
+  - Removal log (elements considered and rejected, with reasoning)
+  - "Less is more" guidelines for future additions
