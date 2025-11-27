@@ -1,0 +1,122 @@
+# [FLOWING COLOR, ATMOSPHERIC DEPTH]
+
+# Aurora/Gradient Design Paradigm
+
+## 1. Prompt Architecture
+
+* **Intent Declaration**: Create UI elements dominated by fluid, multi-color gradients that evoke natural light phenomena—auroras, sunsets, nebulae—using color flow as the primary design element
+* **Constraint Parameters**: Gradients must flow naturally (no harsh color stops); minimum 3 colors per gradient; mesh gradients preferred for organic feel; balance vibrancy with usability; text must remain readable
+* **Reference Context**: Stripe's gradient blobs, Linear app, Figma's brand evolution, Apple's macOS Sonoma wallpapers, Instagram's logo, Spotify Wrapped
+* **Edge Case Handling**: For text-heavy areas, gradient as accent only; for dark mode, deepen colors and reduce luminosity; for accessibility, ensure text sits on solid or low-contrast gradient zones
+* **Evaluation Metrics**: Color harmony, flow naturalness, atmospheric impact, content readability balance
+
+## 2. Design Constants
+
+* **Brand Compliance**: 
+  - Gradient types: Linear (directional), Radial (focal), Conic (rotational), Mesh (organic)
+  - Color transitions: Minimum 3 stops; soft transitions (10-20% overlap zones)
+  - Popular palettes: Sunset (#FF6B6B → #FFA07A → #FFD93D), Ocean (#667EEA → #764BA2 → #F093FB), Aurora (#00D9FF → #00FF94 → #FFE600 → #FF6B6B)
+  - Background darks: #0A0A0F, #0D1117, #1A1A2E (dark enough for gradient pop)
+  - Typography: Clean sans-serif; white or dark text depending on gradient zone
+
+* **Technical Requirements**: 
+  - CSS gradients for simple linear/radial
+  - SVG filters or CSS `filter: blur()` for soft blob effects
+  - `mix-blend-mode` for layered gradient interactions
+  - Canvas/WebGL for animated mesh gradients
+  - Minimum 60fps for gradient animations
+
+* **Accessibility Standards**: 
+  - WCAG AA required; text must not cross high-contrast gradient zones
+  - Provide solid color regions for critical text/interactive elements
+  - Gradient-only decorative elements need no text alternatives
+  - Respect `prefers-reduced-motion` for animated gradients
+  - Test with color blindness simulators (gradients can lose distinction)
+
+* **Implementation Boundaries**: 
+  - CSS for static gradients
+  - SVG for complex blob shapes with gradient fills
+  - Canvas/WebGL for real-time mesh gradient animation
+  - Avoid massive gradient images (use procedural generation)
+
+## 3. Decision Framework
+
+* **Binary Decision Trees**:
+  - If hero/header → Full gradient treatment; text on solid overlay or low-contrast zone
+  - If content area → Gradient as subtle background accent; solid surface for text
+  - If interactive element → Gradient fill acceptable; ensure hover state distinguishable
+  - If data visualization → Use gradient for aesthetic but ensure data readable without gradient
+  - If mobile → Simplify gradient complexity; static over animated
+
+* **Priority Hierarchies**:
+  1. Content readability (gradients never sacrifice legibility)
+  2. Color harmony (transitions must feel natural, not jarring)
+  3. Atmospheric impact (gradients should evoke emotion/depth)
+  4. Performance (complex gradients must not drop frames)
+
+* **Progressive Enhancement**:
+  - Core: Solid brand colors derived from gradient palette
+  - Basic: Static CSS gradients
+  - Full: Animated mesh gradients, blob interactions, parallax gradient layers
+
+* **Fallback Strategy**:
+  - Mesh gradients fall back to radial/linear approximations
+  - Animated gradients fall back to static
+  - Complex SVG blobs fall back to simple gradient backgrounds
+  - For email/print: Static gradient image export
+
+## 4. Comprehensive Rubric
+
+### Functionality (1-5)
+* 1: Gradients obscure content; text unreadable; interactions unclear
+* 3: Functional but gradient placement occasionally conflicts with content
+* 5: Gradients enhance without interfering; clear content zones; interactions obvious
+
+### Accessibility (1-5)
+* 1: Text on busy gradient zones; color blind users lose information; no motion control
+* 3: Core content accessible; some gradient areas problematic
+* 5: Full compliance; text on solid zones; gradient tested for color blindness; motion respects preferences
+
+### Implementation Efficiency (1-5)
+* 1: Massive gradient images; animation causing jank; heavy WebGL for simple effects
+* 3: Reasonable but some optimization possible
+* 5: CSS-first gradients; efficient blob rendering; smooth 60fps animation; minimal asset weight
+
+### Scalability (1-5)
+* 1: Gradients break at different viewports; colors shift unpredictably
+* 3: Scales with some manual gradient adjustments per breakpoint
+* 5: Procedural gradients adapt to any viewport; consistent color relationships; responsive blob positioning
+
+### Visual Coherence (1-5)
+* 1: Gradients clash; color stops visible; feels like 90s web
+* 3: Mostly harmonious but some transitions feel unnatural
+* 5: Seamless color flow; natural atmospheric feel; unified palette across all gradients
+
+## 5. Validation Protocol
+
+* **Testable Assertions**:
+  - Gradient transitions have no visible banding (test on 8-bit displays)
+  - Text contrast ratio ≥ 4.5:1 at all points text overlays gradient
+  - Animated gradients maintain ≥ 60fps on mid-tier devices
+  - Color stops spaced minimum 15% apart (no harsh transitions)
+  - Gradient palette passes color blindness simulation
+
+* **User Testing Requirements**:
+  - Verify text readability across gradient regions
+  - Test emotional response: should evoke "atmospheric," "modern," "premium"
+  - Evaluate distraction level: gradients should enhance, not overwhelm
+
+* **Iteration Triggers**:
+  - Users report difficulty reading text
+  - Visible color banding on any display
+  - Animation performance below 60fps
+  - Gradients described as "busy" or "dated"
+  - Color blind users report confusion
+
+* **Documentation Standards**:
+  - Gradient recipes (color stops, angles, positions)
+  - Safe text zones (where text can be placed)
+  - Animation parameters (duration, easing, keyframes)
+  - Blob shape library (SVG paths)
+  - Performance budget per gradient type
+  - Color palette extraction (solid colors derived from gradients for UI elements)
