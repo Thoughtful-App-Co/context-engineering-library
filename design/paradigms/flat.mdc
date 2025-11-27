@@ -1,0 +1,118 @@
+# [ZERO DEPTH, PURE SIMPLICITY]
+
+# Flat Design Paradigm
+
+## 1. Prompt Architecture
+
+* **Intent Declaration**: Create UI elements with zero artificial depth—no shadows, gradients, or textures—relying purely on color, typography, and spacing for hierarchy and clarity
+* **Constraint Parameters**: Absolutely no shadows, bevels, or 3D effects; solid colors only; sharp edges; rely on whitespace and color contrast for visual separation; icons must be simple geometric forms
+* **Reference Context**: Windows 8 Metro, early iOS 7, Google's pre-Material design, Stripe's documentation, gov.uk design system
+* **Edge Case Handling**: For depth indication, use color value shifts not shadows; for dark mode, maintain flat aesthetic with adjusted palette; for interactive states, use color change not elevation
+* **Evaluation Metrics**: Visual simplicity, information clarity, color effectiveness, cognitive load reduction
+
+## 2. Design Constants
+
+* **Brand Compliance**: 
+  - Colors: Bold, saturated palette—no pastels unless intentional brand choice
+  - Backgrounds: Solid white (#FFFFFF), solid colors, or subtle off-whites (#F8F9FA)
+  - No gradients (exception: subtle brand gradients as background fills, not for depth)
+  - Typography: Clean sans-serif (Roboto, Open Sans, Lato, Segoe UI); weight for hierarchy
+  - Icons: Single-weight line or solid geometric fills; no detail flourishes
+
+* **Technical Requirements**: 
+  - Zero `box-shadow` properties
+  - Zero `text-shadow` properties
+  - `border-radius`: 0 (sharp) or consistent small value (4px max) across system
+  - Borders: Solid 1-2px if needed for separation; avoid unless necessary
+  - Background: Solid colors via `background-color`, not `background-image`
+
+* **Accessibility Standards**: 
+  - WCAG AA minimum; flat design relies heavily on color contrast
+  - Interactive elements must have non-color indicators (underline, border, icon)
+  - Focus states via outline or border, not shadow
+  - Sufficient color contrast critical—no depth cues to fall back on
+
+* **Implementation Boundaries**: 
+  - Pure CSS; no image assets for UI elements
+  - SVG for icons (single path weight)
+  - No CSS filters or effects
+  - Transitions limited to color/opacity changes
+
+## 3. Decision Framework
+
+* **Binary Decision Trees**:
+  - If separation needed → Use whitespace first, then color block, then thin border (last resort)
+  - If interactive element → Solid color fill; hover = color shift; active = darker shade
+  - If hierarchy needed → Size and weight changes, not depth
+  - If icon needed → Geometric, single-weight, recognizable at 16px
+  - If container needed → Background color block or whitespace boundary; no card shadows
+
+* **Priority Hierarchies**:
+  1. Content clarity (nothing competes with information)
+  2. Color purpose (every color must communicate something)
+  3. Whitespace utilization (space is the primary separator)
+  4. Typographic hierarchy (size/weight carries the structure)
+
+* **Progressive Enhancement**:
+  - Core: Semantic HTML with browser defaults (already flat)
+  - Basic: Brand colors applied, typography refined
+  - Full: Optimized spacing scale, micro-interactions via color transitions
+
+* **Fallback Strategy**:
+  - Flat design is the fallback for other paradigms
+  - For print: Direct translation; flat design prints cleanly
+  - For email: Ideal—maximum compatibility
+
+## 4. Comprehensive Rubric
+
+### Functionality (1-5)
+* 1: Lack of depth cues causes confusion about interactive elements
+* 3: Functional but some affordances unclear without hover/interaction
+* 5: Color and typography alone communicate all necessary hierarchy and interaction affordances
+
+### Accessibility (1-5)
+* 1: Relies on color alone; insufficient contrast; interactive elements unclear
+* 3: Meets WCAG AA; some improvements possible in non-color indicators
+* 5: Full compliance; multiple indicators for interaction; excellent contrast; works in grayscale
+
+### Implementation Efficiency (1-5)
+* 1: Unnecessary complexity; shadows or effects crept in
+* 3: Clean but some redundant properties
+* 5: Minimal CSS; no visual effects; fastest possible paint times; tiny file size
+
+### Scalability (1-5)
+* 1: Color relationships break at different contexts; spacing inconsistent
+* 3: Scales well but requires some manual adjustment
+* 5: Design tokens handle all scaling; consistent at any size; easy to extend
+
+### Visual Coherence (1-5)
+* 1: Inconsistent colors; mixed border treatments; some shadows present
+* 3: Mostly flat but occasional violations or inconsistencies
+* 5: Pure flat execution; unified color logic; consistent spacing; visually harmonious
+
+## 5. Validation Protocol
+
+* **Testable Assertions**:
+  - Zero `box-shadow` declarations in production CSS (except `none` resets)
+  - Zero `text-shadow` declarations
+  - No `background-image` gradients for depth simulation
+  - All interactive elements have non-color state indicators
+  - Color contrast ratio ≥ 4.5:1 for all text
+
+* **User Testing Requirements**:
+  - Verify interactive elements identifiable without hovering
+  - Test task completion time (should match or beat other paradigms)
+  - Evaluate perception: should feel "clean," "modern," "simple"
+
+* **Iteration Triggers**:
+  - Users cannot identify clickable elements
+  - Stakeholders request "more depth" (educate on paradigm benefits)
+  - Shadows or gradients introduced (strict violation)
+  - Color contrast fails accessibility audit
+
+* **Documentation Standards**:
+  - Color palette with usage rules (primary, secondary, semantic)
+  - Typography scale with weight assignments
+  - Spacing scale (8px base recommended)
+  - Icon style guide (stroke weight, grid, minimum size)
+  - Interactive state specifications (default, hover, active, focus, disabled)
