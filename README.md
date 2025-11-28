@@ -1,71 +1,68 @@
-# PromptRules 🧠
+# Context Engineering Library
 
-A collection of guidelines, rules, and strategies for optimizing AI interactions.
+Context engineering library and build book of resuable best practices and pre-built prompts to help you build ai-powered applications.
 
-### How to Use PromptRules
-[CURSOR]I have found through use cases and hours and hours on cursor, that i've had success using tags in chat (@promptrule.mdc) to enforce usage. "Create [component] utilizing [promptrule] with extra focus on 1)... 2).... 3)....
+### How to Use context engineering library
+I recommend using a bracket {} syntax or <xml> bracket when encapsulating prompts. For example, I like to build prompts by providing a pre-prompt. Ex: Use {design} when creating {concept}. <design> CONTENT HERE </design> <content> CONTENT HERE</content>. 
 
 ## Overview
 
-PromptRules provides structured approaches to improve AI outputs through:
+Context libraries provide structured approaches to improve AI outputs through:
 - Defined guidelines for prompt engineering
 - RAG data and embeddings optimizations
-- Cursor rules and command patterns
+- structured rules and command patterns
 - System-level instructions and formatting conventions
+
+We want to understand:
 
 ## Rule Vectors
 
-### Prompt Engineering Rules 📝
+### Prompt/Context Engineering Rules 
 - Instruction clarity standards
 - Context provision frameworks
 - Output formatting requirements
 - Chain-of-thought triggers
 - Few-shot learning templates
 
-### Cursor Rules ⌨️
+### Cursor Rules 
 - Command completion formats
 - Response behavior modifiers
 - Tone and style directives
 - Error handling preferences
 - Memory utilization guidelines
 
-### RAG Optimization 🔍
+### RAG Optimization
 - Embedding construction patterns
 - Retrieval strategy rules
 - Context window utilization
 - Document chunking standards
 - Relevance weighting protocols
 
-### System Instructions 🤖
+### System Instructions 
 - Agent behavior parameters
 - Tool utilization protocols
 - Safety guardrail frameworks
 - Multi-agent coordination rules
 - Response moderation guidelines
 
-### Language Rigidity 📊
+### Language Rigidity 
 - Strict semantic frameworks
 - Domain-specific terminologies
 - Context-sensitive language patterns
 - Precision vs generalization balances
 - Translation and interpretation rules
 
-### UX/UI Integration 🖥️
+### UX/UI Integration 
 - Command center interaction designs
 - Mobile vs desktop optimization
 - Visual cue integration with language models
 - Error message standardization
 - Progressive disclosure frameworks
 
-### Design Paradigms 🎨
-- Neomorphic aesthetic principles
-- Papermorphic visual language
-- Skeuomorphic representation standards
-- Glassmorphism transparency effects
-- Material design component adaptation
-- Neumorphism shadow/lighting specifications
+### Design Paradigms 
+- provide templates to inject into any front end ui, app build or workflow (as a context pointer)
 
-### Design Frameworks 🧰
+### Design Frameworks 
 - Command interface heuristics
 - Functional push button mechanics
 - Conversational UI patterns
@@ -73,7 +70,7 @@ PromptRules provides structured approaches to improve AI outputs through:
 - Form-based interaction rules
 - Modal vs. modeless interaction schemas
 
-## Usage 🚀
+## Usage 
 
 Apply these rules by:
 1. Including them in system prompts
@@ -82,7 +79,7 @@ Apply these rules by:
 4. Training models with rule-aware fine-tuning
 5. Building middleware that enforces rule compliance
 
-## Contribution 👥
+## Contribution 
 
 Add rules by creating a PR with your additions in the appropriate directory:
 - Follow the established format
@@ -90,11 +87,11 @@ Add rules by creating a PR with your additions in the appropriate directory:
 - Document expected outcomes
 - Cross-reference related rules
 
-## License ⚖️
+## License 
 
 Open Source 2.0
 
-## Roadmap 🗓️
+## Roadmap 
 
 ### 2025 Q1 Focus Areas
 - Design Frameworks implementation
