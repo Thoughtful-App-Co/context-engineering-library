@@ -150,6 +150,50 @@ Bold 1980s geometric abstraction with saturated colors and playful compositions.
 - **Technical implementation**: SVG compositions, hard-edge CSS shapes, confident scale
 - **Best for**: Creative agencies, youth brands, entertainment platforms
 
+### 90s Cartoon Grotesque
+Nickelodeon/Cartoon Network aesthetic with wobbly lines, halftone textures, and gross-up details.
+- **Key characteristics**: Wobbly hand-drawn outlines, clashing saturated colors, halftone/crosshatch fills, squash-stretch animation
+- **Technical implementation**: SVG with `feTurbulence` displacement, bouncy easing functions, visible stroke variation
+- **Best for**: Youth entertainment, playful brands, nostalgic millennial targeting
+
+## Fine Art Paradigms
+
+### Modernist
+Early 20th century ideals—universal forms, rejection of ornament, truth to materials, geometric purity.
+- **Key characteristics**: Form follows function, mathematical proportion, no decoration, material honesty
+- **Technical implementation**: Pure CSS, golden ratio spacing, minimal DOM, code as clean as design
+- **Best for**: Architecture firms, design studios, cultural institutions
+
+### Post-Modern
+Deconstruction of design rules—fragmentation, pastiche, irony, self-reference, mixing contradictions.
+- **Key characteristics**: Deliberate rule violation, style mixing, visible grid-breaking, meta-commentary
+- **Technical implementation**: CSS transforms for fragmentation, `mix-blend-mode`, intentional "broken" layouts
+- **Best for**: Art platforms, experimental brands, design critique, academic sites
+
+### Surrealism
+Dreamlike impossibilities—wrong scale/context, melting forms, uncanny juxtapositions, dream logic.
+- **Key characteristics**: Impossible spatial relationships, familiar objects in wrong contexts, slow morphing
+- **Technical implementation**: CSS `clip-path`, 3D transforms for impossible spaces, slow eased animations (2-5s)
+- **Best for**: Creative agencies, art galleries, experiential marketing, entertainment
+
+### Abstract Expressionism
+Gesture as meaning—spontaneous marks, emotional intensity, all-over composition, process visibility.
+- **Key characteristics**: Procedural gesture generation, drips/splatters, limited intense palette, no focal point
+- **Technical implementation**: Canvas API for dynamic marks, controlled randomness, content floats above gesture layer
+- **Best for**: Art platforms, creative tools, emotional brand experiences
+
+### Pop Art
+Mass culture elevated—Ben-Day dots, Warhol repetition, CMYK boldness, commercial-as-art.
+- **Key characteristics**: Halftone patterns, bold outlines, repetition with color variation, print aesthetic
+- **Technical implementation**: SVG/CSS radial-gradient for dots, posterization filters, CSS Grid for repetition
+- **Best for**: Entertainment, e-commerce, bold brand campaigns, editorial
+
+### Impressionism/Pointillism
+Light as particles—optical color mixing, visible brushwork/dots, atmospheric depth, color vibration.
+- **Key characteristics**: Adjacent complementary colors, no black (mix darks), particle structure visible, time-of-day palettes
+- **Technical implementation**: Canvas particle systems, dithering algorithms, SVG dot patterns
+- **Best for**: Art platforms, luxury brands, atmospheric experiences, nature/travel
+
 ## Regional & Cultural Paradigms
 
 ### Scandinavian
@@ -164,6 +208,12 @@ Fusion of Japanese wabi-sabi and Scandinavian hygge embracing intentional imperf
 - **Technical implementation**: Subtle textures, warm shadows, asymmetric layouts, hand-drawn SVG elements
 - **Best for**: Artisan brands, mindfulness apps, premium craft products
 
+### Organic/Nature
+Earth tones, natural textures, botanical motifs, and environmental harmony.
+- **Key characteristics**: Colors from nature, wood/stone/paper textures, botanical illustrations, no synthetic feel
+- **Technical implementation**: CSS noise filters, nature photography with consistent grading, organic border-radius variation
+- **Best for**: Eco brands, outdoor/travel, wellness, sustainable products
+
 ## Interaction-Focused Paradigms
 
 ### Kinetic Typography
@@ -177,6 +227,18 @@ Fluid, adaptive interfaces with organic animations and morphing elements.
 - **Key characteristics**: Fluid transitions, organic shapes, continuous motion
 - **Technical implementation**: Advanced CSS animations, Canvas/WebGL, morphing SVGs
 - **Best for**: Immersive experiences, creative platforms, modern brand sites
+
+### Spatial/Nested
+Navigation through 3D space—zooming into content, infinite canvas, dimensional layers.
+- **Key characteristics**: Zoom-based hierarchy, pan navigation, depth cues via scale/blur/opacity, minimap orientation
+- **Technical implementation**: CSS transforms (`scale`, `translate`), virtualization, gesture support (pinch-zoom)
+- **Best for**: Presentation tools, mind-mapping, complex data exploration, creative canvases
+
+### Fitts' Law / Motor-Optimized
+Scientifically optimized for human motor control—radial menus, edge targets, thumb zones.
+- **Key characteristics**: Circular/pie menus, screen edge exploitation, asymmetric layouts for handedness, large touch targets
+- **Technical implementation**: Radial menu generation, pointer event handling, thumb zone mapping per device
+- **Best for**: Productivity tools, creative software, mobile-first applications, accessibility
 
 ## Methodological Paradigms
 
@@ -218,6 +280,11 @@ These paradigms can be mixed to create unique interface styles. Consider combini
 - Aurora + Glassmorphism for atmospheric depth with transparency
 - Duotone + Brutalism for high-impact editorial
 - Memphis + Neo-Geo for maximum 80s energy
+- Surrealism + Spatial for dreamlike navigation
+- Pop Art + 90s Cartoon for nostalgic bold playfulness
+- Impressionism + Organic for luminous nature experiences
+- Post-Modern + Brutalism for intellectual rawness
+- Fitts' Law + Material for accessible, physical interfaces
 
 ## Paradigm Selection Matrix
 
@@ -225,22 +292,32 @@ These paradigms can be mixed to create unique interface styles. Consider combini
 |----------|------------------|------------------|---------------|----------------|
 | Flat | Very Low | Very Low | High | Very Low |
 | Minimalist | Very Low | Very Low | Very High | Low |
+| Modernist | Very Low | Very Low | Very High | Medium |
 | Swiss | Low | Low | High | Low |
 | Scandinavian | Low | Low | High | Low |
 | Brutalism | Low | Low | Medium | Low |
 | Japandi | Low | Low | High | Medium |
+| Organic | Low | Low | High | Low |
 | Duotone | Low | Low | Medium | Low |
 | Material | Medium | Low | High | Medium |
 | Neomorphism | Medium | Low | Medium | Medium |
 | Bauhaus | Medium | Low | High | Medium |
+| Fitts' Law | Medium | Low | Very High | High |
 | Glassmorphism | Medium | High | Medium | Medium |
 | Isometric | Medium | Medium | Medium | High |
 | Aurora | Medium | Medium | Medium | Medium |
+| Spatial | Medium | Medium | Medium | High |
+| Impressionism | Medium | Medium | Medium | High |
 | Art Deco | High | Medium | Medium | Medium |
 | Vaporwave | High | Medium | Medium | Medium |
 | Neo-Geo | High | Low | Medium | Medium |
 | Memphis | High | Low | Medium | Medium |
+| 90s Cartoon | High | Medium | Medium | Medium |
+| Pop Art | High | Low | Medium | Medium |
 | Skeuomorphism | High | High | High | High |
+| Surrealism | High | High | Medium | High |
+| Abstract Expressionism | High | Medium | Medium | High |
+| Post-Modern | Very High | Medium | Low | Very High |
 | Maximalism | Very High | High | Low | High |
 
 ## Resources
