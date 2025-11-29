@@ -1,0 +1,124 @@
+# [WOBBLY LINES, GROSS-UP DETAILS]
+
+# 90s Cartoon Grotesque Design Paradigm
+
+## 1. Prompt Architecture
+
+* **Intent Declaration**: Create UI elements channeling 1990s Nickelodeon/Cartoon Network aesthetic—wobbly hand-drawn lines, exaggerated expressions, clashing saturated colors, textured fills, and intentional grotesque detail moments
+* **Constraint Parameters**: No straight lines; outlines must wobble/vary in weight; colors clash intentionally; textures mandatory (halftone, crosshatch, paper grain); embrace ugly-beautiful; gross-up details as feature not bug
+* **Reference Context**: Ren & Stimpy (Spümcø), Rocko's Modern Life, Rugrats (Klasky Csupo), Aaahh!!! Real Monsters, Courage the Cowardly Dog, Ed Edd n Eddy, Hey Arnold, Duckman
+* **Edge Case Handling**: For professional contexts, reduce grotesque intensity, keep wobbly lines; for accessibility, ensure wobble doesn't impair readability; for motion, bounce and squash-stretch animations
+* **Evaluation Metrics**: Hand-drawn authenticity, nostalgic recognition, controlled chaos, personality injection
+
+## 2. Design Constants
+
+* **Brand Compliance**: 
+  - Clash palette: Teal (#00A693), Magenta (#D62598), Acid green (#A6D608), Mustard (#E8B634), Bruise purple (#6B3FA0), Bile yellow (#D4C43A)
+  - Skin/organic: Fleshy pink (#E8A0A0), Sickly green (#98B87A), Sunburn red (#C45C4A)
+  - Neutrals: Off-white (#F5F0E0), Paper tan (#E8DCC8), Dirty cream (#D8D0B8)
+  - Outlines: Thick (3-5px), varying weight, never uniform, always slightly wobbly
+  - Typography: Bouncy hand-drawn fonts (Bangers, Luckiest Guy, Comic Neue); baseline can wobble
+
+* **Technical Requirements**: 
+  - SVG paths with slight randomization (no perfect curves)
+  - SVG filters for wobbly line effect (`feTurbulence` + `feDisplacementMap`)
+  - Halftone patterns via CSS/SVG (dot screens, crosshatch)
+  - Animation: Squash/stretch, bouncy easing (back, elastic)
+  - Frame-by-frame variation for "boiling" line effect (if animated)
+
+* **Accessibility Standards**: 
+  - WCAG AA minimum; clashing colors must still achieve contrast
+  - Wobbly text must remain readable (limit distortion on body copy)
+  - Animation intensity respects `prefers-reduced-motion`
+  - Gross-up details should not trigger trypophobia or similar
+
+* **Implementation Boundaries**: 
+  - SVG for all illustrated elements
+  - CSS filters for texture overlays
+  - Canvas for real-time wobble effects
+  - Limit animation to accents (not entire interface)
+  - Pre-rendered wobble for performance if needed
+
+## 3. Decision Framework
+
+* **Binary Decision Trees**:
+  - If illustration → Full wobble treatment, thick varying outlines, gross-up texture
+  - If UI element → Wobbly borders, hand-drawn corners, textured fill
+  - If button → Bouncy hover animation, squash on click, hand-drawn outline
+  - If text heading → Can use display font with baseline wobble
+  - If body text → Keep readable; wobble only on container, not text itself
+
+* **Priority Hierarchies**:
+  1. Hand-drawn authenticity (nothing looks computer-perfect)
+  2. Personality over polish (embrace imperfection)
+  3. Nostalgic accuracy (reference source material)
+  4. Usability (chaos serves function)
+
+* **Progressive Enhancement**:
+  - Core: Clash color palette with hand-drawn style fonts
+  - Basic: Add wobbly SVG borders and halftone textures
+  - Full: Animated wobble, squash-stretch interactions, gross-up hover details
+
+* **Fallback Strategy**:
+  - Animated wobble falls back to static hand-drawn SVG
+  - Complex textures fall back to solid clash colors
+  - Gross-up details fall back to simpler illustrated elements
+  - Print: Static wobble reproduces well; textures as halftones
+
+## 4. Comprehensive Rubric
+
+### Functionality (1-5)
+* 1: Wobble makes interface unusable; can't click targets; text unreadable
+* 3: Functional but some elements too distorted for clear interaction
+* 5: Personality enhances engagement; wobble adds charm without impeding use
+
+### Accessibility (1-5)
+* 1: Text unreadable; colors fail contrast; animation causes issues
+* 3: Core content accessible; some decorative elements problematic
+* 5: Full compliance; wobble limited to decoration; motion respects preferences; contrast maintained
+
+### Implementation Efficiency (1-5)
+* 1: Complex real-time wobble tanks performance; massive SVGs
+* 3: Reasonable but some optimization needed for mobile
+* 5: Efficient pre-rendered wobble; optimized SVG; smooth animation; minimal overhead
+
+### Scalability (1-5)
+* 1: Hand-drawn elements don't scale; wobble breaks at sizes
+* 3: Scales with some adjustment of stroke weights per breakpoint
+* 5: Stroke weights scale proportionally; wobble intensity adjusts; personality maintained at all sizes
+
+### Visual Coherence (1-5)
+* 1: Random wobble feels like broken rendering; colors clash badly
+* 3: Recognizable style but inconsistent wobble intensity or color logic
+* 5: Unified cartoon universe; consistent line language; intentional clash harmony; era-accurate
+
+## 5. Validation Protocol
+
+* **Testable Assertions**:
+  - No perfectly straight lines in illustrated elements
+  - Outline stroke weight varies by ±1px minimum across any path
+  - Minimum 3 clashing colors in active palette
+  - Texture visible (halftone/crosshatch) on at least 50% of surfaces
+  - Body text maintains ≥ 4.5:1 contrast despite surrounding chaos
+
+* **User Testing Requirements**:
+  - Verify nostalgic recognition: users identify as "90s cartoon" or specific shows
+  - Test that wobble feels intentional not broken
+  - Evaluate emotional response: should feel "fun," "irreverent," "nostalgic"
+  - Ensure no adverse reactions to gross-up details
+
+* **Iteration Triggers**:
+  - Users think interface is rendering incorrectly
+  - Wobble causes motion discomfort
+  - Era recognition fails (looks too modern or wrong decade)
+  - Gross-up details cause genuine disgust rather than playful revulsion
+  - Text becomes unreadable due to distortion
+
+* **Documentation Standards**:
+  - Wobble parameters (frequency, amplitude, variation)
+  - Line weight scale (minimum, maximum, variation rules)
+  - Texture library (halftone densities, crosshatch angles)
+  - Color clash combinations (approved and forbidden)
+  - Animation curves (bounce, elastic, squash-stretch ratios)
+  - Gross-up detail guidelines (when appropriate, intensity levels)
+  - Era reference gallery (approved source shows and styles)
