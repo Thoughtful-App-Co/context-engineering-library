@@ -1,3 +1,5 @@
+# abstract-expressionism
+
 # art-deco
 <img width="1889" height="1160" alt="image" src="https://github.com/user-attachments/assets/62e04db2-b3bb-4568-94a2-3adefe1550d4" />
 
@@ -18,6 +20,7 @@
 # brutalistic
 <img width="1905" height="1145" alt="image" src="https://github.com/user-attachments/assets/83a8f2dd-fb87-489d-9769-4622653ec33c" />
 
+# cartoon-grotesque
 
 # claymorphic
 <img width="1902" height="1149" alt="image" src="https://github.com/user-attachments/assets/6f5a6bc0-57c7-4460-a9d0-e3f433f368db" />
@@ -29,6 +32,7 @@
 # duotone
 <img width="1907" height="1134" alt="image" src="https://github.com/user-attachments/assets/57687068-3575-45cd-93a2-610c338ab9a7" />
 
+# fitts
 
 # flat
 <img width="1901" height="1137" alt="image" src="https://github.com/user-attachments/assets/a674e7cf-1cad-4602-a771-153a93481f59" />
@@ -37,6 +41,7 @@
 # glassomorphic
 <img width="1892" height="1101" alt="image" src="https://github.com/user-attachments/assets/eec61808-c2b8-4805-bc04-8660326aa1d7" />
 
+# impressionism
 
 # isometric
 
@@ -61,25 +66,34 @@
 
 
 # memphis
+<img width="1914" height="1145" alt="image" src="https://github.com/user-attachments/assets/119d19ba-e79d-483d-9071-3bf8dd5b40ce" />
 
 
 # minimalist
+<img width="1901" height="1138" alt="image" src="https://github.com/user-attachments/assets/6b1ce5c9-e722-474c-9b05-99c15261406d" />
 
+# modernism
 
 # monochromism
 <img width="1899" height="1127" alt="image" src="https://github.com/user-attachments/assets/e14de72e-8aa7-4446-86e7-225f13befe26" />
 
 
 # neo-geo
+<img width="1891" height="1160" alt="image" src="https://github.com/user-attachments/assets/aef7f2c6-b729-481c-afad-c56e66e1549f" />
 
 
 # neomorphic
 <img width="1900" height="1141" alt="image" src="https://github.com/user-attachments/assets/0a554924-1184-49f0-92ec-d1fb67f389b9" />
 
+# organic
 
 # papermorphic
 <img width="1903" height="1136" alt="image" src="https://github.com/user-attachments/assets/bd1ed2ad-4f25-4cb4-ba71-5035445d19d4" />
 
+# pop-art
+
+
+# post-modernism
 
 # retro-futrism
 <img width="1875" height="1155" alt="image" src="https://github.com/user-attachments/assets/c102218d-dcdd-4b82-96fc-9c1009c76736" />
@@ -90,6 +104,7 @@
 
 # skeuomorphic
 
+# surrealism
 
 # swiss
 <img width="1893" height="1141" alt="image" src="https://github.com/user-attachments/assets/b6bfd734-ee2d-40d8-9613-b97db3a7f85f" />
