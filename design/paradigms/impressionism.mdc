@@ -1,0 +1,128 @@
+# [LIGHT AS PARTICLES, COLOR AS VIBRATION]
+
+# Impressionist/Pointillist Design Paradigm
+
+## 1. Prompt Architecture
+
+* **Intent Declaration**: Create interfaces channeling Impressionist light and Pointillist color theory—optical color mixing, visible brushwork/dots, capturing light over form, atmosphere over precision, and colors that vibrate when adjacent
+* **Constraint Parameters**: Color mixing happens in the eye (not blended digitally); visible "stroke" or particle structure; soft edges, no hard outlines; complementary colors adjacent for vibration; time-of-day light awareness; atmosphere over accuracy; scientific color theory applied aesthetically
+* **Reference Context**: Georges Seurat (pointillism, divisionism, chromoluminarism), Claude Monet (light studies, haystacks, water lilies), Camille Pissarro (later pointillist work), Paul Signac (color theory), contemporary: digital pointillism, particle systems
+* **Edge Case Handling**: For readability, solid color zones for text; for accessibility, ensure optical mixing doesn't fail for color blindness; for performance, balance particle density with rendering; for dark mode, shift to evening/indoor Impressionist palette
+* **Evaluation Metrics**: Optical mixing success, light quality, particle visibility, color vibration, atmospheric depth
+
+## 2. Design Constants
+
+* **Brand Compliance**: 
+  - Primary particles: Cobalt blue (#0047AB), Cadmium yellow (#FFF600), Vermillion (#E34234), Viridian (#40826D)
+  - Complementary pairs: Orange/Blue, Yellow/Violet, Red/Green (adjacent for vibration)
+  - Light palette: Morning (cool blues, pink), Midday (warm yellows, white), Evening (orange, violet)
+  - Background: Cream canvas (#FDF5E6), or sky gradients built from particles
+  - No black (mix complementaries for darks); no hard outlines
+  - Particle sizes: 2-6px base, scaling with element importance
+
+* **Technical Requirements**: 
+  - Canvas API for particle rendering at scale
+  - SVG circles for simpler pointillist elements
+  - CSS `radial-gradient` patterns for quick approximation
+  - Dithering algorithms for image-to-pointillist conversion
+  - `mix-blend-mode` for color interaction enhancement
+  - Viewport-aware particle density (fewer on mobile)
+
+* **Accessibility Standards**: 
+  - WCAG AA for text on solid zones (not over particle fields)
+  - Test color pairs for color blindness (some complementaries fail)
+  - Particle layer marked decorative; content independent
+  - Reduce particle motion for vestibular sensitivity
+  - Provide "solid color" mode extracting dominant hues
+
+* **Implementation Boundaries**: 
+  - Canvas for complex particle systems and image conversion
+  - SVG for simple decorative pointillist elements
+  - CSS patterns for backgrounds and accents
+  - WebGL for large-scale atmospheric effects
+  - Pre-rendered particle images for performance-critical areas
+
+## 3. Decision Framework
+
+* **Binary Decision Trees**:
+  - If solid color needed → Build from adjacent particle colors that optically mix
+  - If shadow needed → Use complementary color particles, not black
+  - If image present → Convert to pointillist; or frame with particle border
+  - If background → Particle field suggesting atmosphere/light
+  - If text → Solid zone; particles can surround but not underlay
+  - If interactive → Particles can respond (ripple, scatter, attract)
+
+* **Priority Hierarchies**:
+  1. Optical mixing (colors blend in eye, not on screen)
+  2. Light quality (design should feel illuminated)
+  3. Particle visibility (stroke/dot structure apparent)
+  4. Atmospheric depth (air, light, time-of-day feeling)
+
+* **Progressive Enhancement**:
+  - Core: Impressionist color palette in solid blocks
+  - Basic: Simple CSS-based dot patterns, gradient approximations
+  - Full: Dynamic particle systems, interactive light response, image pointillism
+
+* **Fallback Strategy**:
+  - Canvas particles fall back to pre-rendered images
+  - Dynamic systems fall back to static particle fields
+  - Complex mixing falls back to optical mix target colors (pre-mixed)
+  - Print: Actual halftone dots achieve similar effect
+
+## 4. Comprehensive Rubric
+
+### Functionality (1-5)
+* 1: Particle density obscures content; optical mixing muddy
+* 3: Functional but some particle areas unclear
+* 5: Particles enhance atmosphere without impeding; text areas clean; light guides the eye
+
+### Accessibility (1-5)
+* 1: Color pairs fail for color blindness; particles over text; no alternatives
+* 3: Text readable; particle layer separated; basic fallbacks
+* 5: Full compliance; color pairs tested for all vision types; solid mode available; AT clean
+
+### Implementation Efficiency (1-5)
+* 1: Particle systems tank performance; too many DOM/Canvas elements
+* 3: Runs on modern devices; mobile needs optimization
+* 5: Efficient particle rendering; LOD based on device; smooth 60fps
+
+### Scalability (1-5)
+* 1: Particle size fixed; density wrong at different viewports
+* 3: Adapts but loses optical mixing at some scales
+* 5: Particle size and density scale intelligently; optical mixing works at all sizes
+
+### Visual Coherence (1-5)
+* 1: Random dots without color theory; no light logic
+* 3: Recognizable pointillism but color mixing inconsistent
+* 5: Scientific color theory applied; consistent light source; genuine optical vibration achieved
+
+## 5. Validation Protocol
+
+* **Testable Assertions**:
+  - Adjacent complementary colors present in at least one element (orange/blue, etc.)
+  - No pure black (#000000) in particle system (darks mixed from complementaries)
+  - Particle structure visible at 100% zoom (not blurred into solid)
+  - Text achieves WCAG AA on solid zones, not over particle fields
+  - Squinting at screen should blend particles into intended mixed color
+
+* **User Testing Requirements**:
+  - Verify optical mixing: ask users what color they perceive (should match intent)
+  - Test light perception: should feel "luminous," "airy," "atmospheric"
+  - Evaluate particle visibility: should feel painterly, not pixelated
+  - Color blindness testing: ensure pairs don't disappear
+
+* **Iteration Triggers**:
+  - Optical mixing produces mud instead of vibrant mixed color
+  - Particles feel like noise rather than intentional strokes
+  - Light quality absent (feels flat despite particles)
+  - Color blindness simulation shows information loss
+  - Performance issues from particle density
+
+* **Documentation Standards**:
+  - Color theory reference (complementary pairs, optical mixing targets)
+  - Particle generation parameters (size, density, distribution)
+  - Light palette per time-of-day (morning, midday, evening, overcast)
+  - Image conversion algorithm (photo to pointillist)
+  - Accessibility color pair validation results
+  - Artist reference mood board (Seurat, Signac, late Pissarro)
+  - Fallback color values (pre-mixed for when particles can't render)
