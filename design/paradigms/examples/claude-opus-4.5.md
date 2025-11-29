@@ -14,10 +14,13 @@
 <img width="1904" height="1153" alt="image" src="https://github.com/user-attachments/assets/55b56e91-2337-4de1-a471-21ae98367460" />
 
 
-
 # brutalistic
+<img width="1905" height="1145" alt="image" src="https://github.com/user-attachments/assets/83a8f2dd-fb87-489d-9769-4622653ec33c" />
+
 
 # claymorphic
+<img width="1902" height="1149" alt="image" src="https://github.com/user-attachments/assets/6f5a6bc0-57c7-4460-a9d0-e3f433f368db" />
+
 
 # daylight
 
@@ -42,11 +45,15 @@
 
 # material
 
+
 # maximalism
+
 
 # memphis
 
+
 # minimalist
+
 
 # monochromism
 <img width="1899" height="1127" alt="image" src="https://github.com/user-attachments/assets/e14de72e-8aa7-4446-86e7-225f13befe26" />
@@ -68,7 +75,9 @@
 
 # scandinavian
 
+
 # skeuomorphic
+
 
 # swiss
 <img width="1893" height="1141" alt="image" src="https://github.com/user-attachments/assets/b6bfd734-ee2d-40d8-9613-b97db3a7f85f" />
