@@ -1,4 +1,6 @@
 # abstract-expressionism
+<img width="1900" height="1129" alt="image" src="https://github.com/user-attachments/assets/7d288c0b-8e42-4a7d-9f6e-6edff942c6b8" />
+
 
 # art-deco
 <img width="1889" height="1160" alt="image" src="https://github.com/user-attachments/assets/62e04db2-b3bb-4568-94a2-3adefe1550d4" />
@@ -33,6 +35,8 @@
 <img width="1907" height="1134" alt="image" src="https://github.com/user-attachments/assets/57687068-3575-45cd-93a2-610c338ab9a7" />
 
 # fitts
+<img width="1894" height="1141" alt="image" src="https://github.com/user-attachments/assets/9469abb4-8775-493e-90c9-527ccc542bb5" />
+
 
 # flat
 <img width="1901" height="1137" alt="image" src="https://github.com/user-attachments/assets/a674e7cf-1cad-4602-a771-153a93481f59" />
@@ -42,6 +46,7 @@
 <img width="1892" height="1101" alt="image" src="https://github.com/user-attachments/assets/eec61808-c2b8-4805-bc04-8660326aa1d7" />
 
 # impressionism
+
 
 # isometric
 
@@ -103,6 +108,10 @@
 
 
 # skeuomorphic
+
+# spatial
+<img width="1891" height="1136" alt="image" src="https://github.com/user-attachments/assets/12194031-09f0-48d9-981f-fb91e808c26e" />
+
 
 # surrealism
 
