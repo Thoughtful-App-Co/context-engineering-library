@@ -1,0 +1,127 @@
+# [DECONSTRUCT EVERYTHING, TRUST NOTHING]
+
+# Post-Modern Design Paradigm
+
+## 1. Prompt Architecture
+
+* **Intent Declaration**: Create interfaces that reject universal design truths—deconstructing UI conventions, mixing contradictory styles, embracing fragmentation, layering irony, and making the design process itself visible
+* **Constraint Parameters**: No single consistent style; deliberately violate grid systems; mix high and low culture references; text can obscure, overlap, fragment; embrace contradiction and pastiche; self-reference and meta-commentary encouraged; question every "rule"
+* **Reference Context**: David Carson's Ray Gun magazine, April Greiman's hybrid imagery, Emigre magazine, early Wired (1993-1998), Wolfgang Weingart typography, Cranbrook Academy, Tibor Kalman's Colors magazine, Stefan Sagmeister, Neville Brody
+* **Edge Case Handling**: For usability, create deliberate tension between function and form (make users work, but reward them); for accessibility, provide stripped "sincere" mode; for brand safety, contain chaos within safe boundaries
+* **Evaluation Metrics**: Rule violation count, style contradiction index, self-reference density, emotional provocation, functional friction (intentional)
+
+## 2. Design Constants
+
+* **Brand Compliance**: 
+  - There is no fixed palette (use whatever contradicts expectations)
+  - Typography: Mix 3+ incompatible typefaces; overlay, fragment, rotate
+  - Grid: Establish only to break; visible grid as design element
+  - Imagery: Collage, appropriation, mixed resolution, visible artifacts
+  - UI elements: Can be partially hidden, rotated, fragmented, or ironic
+  - Voice: Self-aware, ironic, questions its own existence
+
+* **Technical Requirements**: 
+  - CSS transforms for rotation, skew, fragmentation
+  - `mix-blend-mode` for aggressive layering
+  - Variable fonts pushed to extremes
+  - Intentional "broken" layouts (overflow visible, elements escaping containers)
+  - Z-index chaos (elements interweaving unpredictably)
+  - Print stylesheets that further deconstruct screen version
+
+* **Accessibility Standards**: 
+  - WCAG compliance is itself a construct to interrogate
+  - However: Provide "accessible mode" toggle that delivers content sincerely
+  - Core content must be accessible via screen reader even if visual is fragmented
+  - Deliberate friction shouldn't exclude; it should reward persistence
+  - Never use accessibility as excuse for actual exclusion
+
+* **Implementation Boundaries**: 
+  - CSS for most deconstruction (transforms, blend modes, clipping)
+  - JavaScript for interactive questioning and self-modification
+  - Consider content editable elements (user as co-author)
+  - Version control visible to user (show edit history?)
+  - The implementation itself can be visible (show-source aesthetic)
+
+## 3. Decision Framework
+
+* **Binary Decision Trees**:
+  - If rule exists → Question why; break it or make breaking visible
+  - If element "should" align → Consider deliberate misalignment
+  - If style is consistent → Introduce contradiction
+  - If user expects X → Deliver X ironically, or deliver anti-X with explanation
+  - If design feels finished → Add layer of self-doubt or meta-commentary
+  - If content is serious → Container can be irreverent (or vice versa)
+
+* **Priority Hierarchies**:
+  1. Provocation (design should make you think about design)
+  2. Contradiction (contain multitudes; refuse easy categorization)
+  3. Content access (chaos frames content; doesn't destroy it)
+  4. Functional baseline (beneath the deconstruction, things work)
+
+* **Progressive Enhancement**:
+  - Core: Readable content in semantic HTML (the "sincere" layer)
+  - Basic: Typographic disruption, grid violation, style mixing
+  - Full: Self-referential interface, meta-commentary, user participation in deconstruction
+
+* **Fallback Strategy**:
+  - Browsers that can't handle complexity get "straight" content (which is itself a statement)
+  - Print: Either maximum deconstruction or maximum sincerity (not middle ground)
+  - Reader mode / accessibility mode: Clean content (acknowledge the "real" beneath the performance)
+
+## 4. Comprehensive Rubric
+
+### Functionality (1-5)
+* 1: Deconstruction destroys usability; content inaccessible
+* 3: Friction is intentional but some users can't find content
+* 5: Friction is art; content is accessible beneath/through deconstruction; reward for engagement
+
+### Accessibility (1-5)
+* 1: Uses "post-modern" as excuse for exclusion
+* 3: Provides accessible alternative but treats it as lesser
+* 5: Accessible mode is equal citizen; visual deconstruction doesn't affect AT; meta-commentary on accessibility itself
+
+### Implementation Efficiency (1-5)
+* 1: Chaos requires massive CSS/JS; performance suffers
+* 3: Functional but bloated by contradiction-serving code
+* 5: Efficient chaos; contradiction achieved through clever CSS; small footprint for large effect
+
+### Scalability (1-5)
+* 1: Deconstruction designed for one viewport; breaks elsewhere
+* 3: Adapts but loses some contradictions at certain sizes
+* 5: Each viewport gets its own set of rule violations; responsive deconstruction
+
+### Visual Coherence (1-5)
+* 1: Random chaos without intellectual framework
+* 3: Recognizable post-modern aesthetic but contradictions feel arbitrary
+* 5: Coherent incoherence; every violation is considered; you understand why rules are being broken
+
+## 5. Validation Protocol
+
+* **Testable Assertions**:
+  - Minimum 3 distinct style languages present in single view
+  - At least one grid violation per major section
+  - Typography includes minimum 2 "incompatible" typefaces
+  - Content accessible via screen reader regardless of visual fragmentation
+  - User can find core content within 10 seconds despite visual complexity
+
+* **User Testing Requirements**:
+  - Verify users understand this is intentional (not broken)
+  - Test emotional response: should provoke thought, not just frustration
+  - Evaluate content findability beneath deconstruction
+  - Measure engagement: users should spend time exploring, not bouncing
+
+* **Iteration Triggers**:
+  - Users think site is broken rather than intentionally deconstructed
+  - Chaos provides no reward for engagement
+  - Deconstruction becomes its own predictable style (becomes what it critiques)
+  - Accessibility truly excluded (not just deferred)
+  - Irony is mean-spirited rather than inviting
+
+* **Documentation Standards**:
+  - Theoretical framework (which post-modern ideas are being explored)
+  - Rule violation inventory (which conventions are broken and why)
+  - Sincerity layer specification (what's beneath the performance)
+  - Accessibility escape hatches
+  - Self-reference map (where does design comment on itself)
+  - Appropriation sources and transformations
+  - The documentation itself should question documentation conventions
