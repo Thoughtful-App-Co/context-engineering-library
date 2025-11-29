@@ -1,0 +1,121 @@
+# [EARTH TONES, NATURAL FORMS]
+
+# Organic/Nature Design Paradigm
+
+## 1. Prompt Architecture
+
+* **Intent Declaration**: Create UI elements inspired by natural environments—earth tones, organic textures, botanical motifs, and the asymmetric beauty found in nature
+* **Constraint Parameters**: Colors derived from natural sources; no harsh geometric precision; textures referencing natural materials (wood grain, stone, leaf veins); photography of nature as primary imagery
+* **Reference Context**: Patagonia brand, national park signage, botanical gardens, eco-luxury resorts, Kinfolk magazine nature issues, Cereal travel editorial
+* **Edge Case Handling**: For tech contexts, balance organic with necessary UI precision; for dark mode, use deep forest/night sky palettes; for accessibility, ensure earth tones maintain sufficient contrast
+* **Evaluation Metrics**: Natural authenticity, environmental harmony, texture richness, calming emotional response
+
+## 2. Design Constants
+
+* **Brand Compliance**: 
+  - Earth palette: Forest green (#2D5A3D), Terracotta (#C4745A), Sand (#D4C4A8), Stone gray (#8B8680), Bark brown (#5D4E37)
+  - Sky/water accents: Soft blue (#7BA3B4), Sunset coral (#E8A87C), Dawn pink (#D4A5A5)
+  - Backgrounds: Cream (#FAF6F0), Warm white (#FFFEF9), Soft sage (#E8EDE5)
+  - Typography: Humanist serif (EB Garamond, Freight Text) for body; organic sans (Avenir, Proxima Nova) for UI
+  - Textures: Paper grain, linen weave, subtle wood grain, watercolor washes
+
+* **Technical Requirements**: 
+  - SVG for botanical illustrations and organic shapes
+  - CSS noise/grain filters for natural texture
+  - Subtle parallax for depth (like forest layers)
+  - Natural photography with consistent color grading (warm, desaturated)
+  - Organic border-radius (varies per element, never uniform)
+
+* **Accessibility Standards**: 
+  - WCAG AA minimum; earth tones require careful contrast pairing
+  - Greens and browns can be problematic for color blindness—pair with texture
+  - Nature photography needs meaningful alt text
+  - Avoid relying on color alone for information
+
+* **Implementation Boundaries**: 
+  - CSS for textures and filters where possible
+  - SVG for illustrations and decorative elements
+  - Optimized photography (WebP, responsive images)
+  - Avoid heavy parallax on mobile
+
+## 3. Decision Framework
+
+* **Binary Decision Trees**:
+  - If hero section → Full-bleed nature photography with text overlay on solid zone
+  - If container → Subtle paper/linen texture, organic shadow, asymmetric corners acceptable
+  - If interactive element → Earth tone with natural hover (deepening like wet stone)
+  - If divider → Organic line (hand-drawn SVG) or botanical element
+  - If icon → Line illustrations with organic stroke variation
+
+* **Priority Hierarchies**:
+  1. Natural authenticity (nothing should feel synthetic or forced)
+  2. Environmental harmony (elements relate like ecosystem)
+  3. Texture richness (surfaces have tactile quality)
+  4. Calm functionality (nature should soothe, not overwhelm)
+
+* **Progressive Enhancement**:
+  - Core: Earth tone palette with clean typography
+  - Basic: Add subtle textures, organic illustrations
+  - Full: Parallax layers, animated botanical elements, rich photography
+
+* **Fallback Strategy**:
+  - Textures fall back to solid earth tones
+  - Parallax falls back to static layered images
+  - SVG illustrations fall back to raster with srcset
+  - Print: Textures reproduce well; maintain warm color space
+
+## 4. Comprehensive Rubric
+
+### Functionality (1-5)
+* 1: Organic shapes obscure usability; nature imagery distracts from content
+* 3: Functional but organic elements occasionally conflict with UI needs
+* 5: Nature enhances without impeding; organic forms guide natural reading flow
+
+### Accessibility (1-5)
+* 1: Earth tones create contrast failures; nature imagery lacks alt text
+* 3: Meets WCAG AA; some color combinations need attention
+* 5: Full compliance; texture reinforces (not replaces) color; rich alt text for imagery
+
+### Implementation Efficiency (1-5)
+* 1: Massive unoptimized photography; complex SVG illustrations
+* 3: Reasonable but image optimization could improve
+* 5: Optimized images; efficient SVG; CSS textures over images; fast load times
+
+### Scalability (1-5)
+* 1: Organic shapes break at breakpoints; textures tile badly
+* 3: Scales with some manual adjustment of photography crops
+* 5: Responsive images; organic shapes adapt fluidly; textures scale or simplify gracefully
+
+### Visual Coherence (1-5)
+* 1: Mixed natural references (tropical + alpine); synthetic elements creep in
+* 3: Recognizable nature theme but some elements feel disconnected
+* 5: Unified ecosystem; every element belongs to same natural environment; cohesive color grading
+
+## 5. Validation Protocol
+
+* **Testable Assertions**:
+  - Color palette derivable from single nature photograph
+  - No pure geometric shapes (all have organic variation)
+  - Photography color-graded to consistent warmth (within 500K color temperature)
+  - Textures visible but not distracting (opacity 5-15%)
+  - All nature photography has descriptive alt text
+
+* **User Testing Requirements**:
+  - Verify emotional response includes "calm," "natural," "grounded"
+  - Test that organic elements don't confuse navigation
+  - Evaluate authenticity: should feel "genuine" not "greenwashed"
+
+* **Iteration Triggers**:
+  - Users describe as "corporate nature" or "stock photo feel"
+  - Organic shapes create usability confusion
+  - Color palette feels muddy or lacks energy
+  - Textures cause performance issues or visual noise
+  - Nature theme feels forced or inconsistent
+
+* **Documentation Standards**:
+  - Color palette with natural source references
+  - Texture library (CSS and image assets)
+  - Photography guidelines (subject, color grading, cropping)
+  - Illustration style guide (stroke variation, organic shapes)
+  - Seasonal/regional variations if applicable
+  - Sustainability of asset sourcing (stock vs. original)
