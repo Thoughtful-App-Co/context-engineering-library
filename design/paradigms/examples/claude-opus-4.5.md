@@ -21,20 +21,25 @@
 # claymorphic
 <img width="1902" height="1149" alt="image" src="https://github.com/user-attachments/assets/6f5a6bc0-57c7-4460-a9d0-e3f433f368db" />
 
-
 # daylight
+
 
 # duotone
 
-# flat
 
-#glassomorphic
+# flat
+<img width="1901" height="1137" alt="image" src="https://github.com/user-attachments/assets/a674e7cf-1cad-4602-a771-153a93481f59" />
+
+
+# glassomorphic
 <img width="1892" height="1101" alt="image" src="https://github.com/user-attachments/assets/eec61808-c2b8-4805-bc04-8660326aa1d7" />
 
 
 # isometric
 
+
 # japandi
+
 
 # kinetic
 <img width="1878" height="1159" alt="image" src="https://github.com/user-attachments/assets/0f282cfa-5e33-4b24-a3ce-5a9926fd2a49" />
