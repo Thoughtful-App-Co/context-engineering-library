@@ -1,0 +1,127 @@
+# [GESTURE AS MEANING, CHAOS AS EXPRESSION]
+
+# Abstract Expressionist Design Paradigm
+
+## 1. Prompt Architecture
+
+* **Intent Declaration**: Create interfaces channeling Abstract Expressionism—spontaneous gesture, emotional intensity, action and process as content, rejection of representation, all-over composition, and raw material expression
+* **Constraint Parameters**: Gesture must feel spontaneous (not calculated); marks express process of creation; no representational imagery; all-over composition (no single focal point); color as emotion not description; embrace accident and chance; scale matters (should feel immersive)
+* **Reference Context**: Jackson Pollock (drip paintings, all-over composition), Willem de Kooning (gestural brushwork), Franz Kline (bold black gestures), Mark Rothko (color field—different branch), Helen Frankenthaler (stain painting), Robert Motherwell (Elegies)
+* **Edge Case Handling**: For usability, content floats above gestural field; for accessibility, ensure gesture layer doesn't obscure function; for performance, balance complexity with load time; for responsiveness, gestures regenerate per viewport
+* **Evaluation Metrics**: Gestural authenticity, emotional intensity, spontaneity perception, immersive scale, process visibility
+
+## 2. Design Constants
+
+* **Brand Compliance**: 
+  - Palette: Limited but intense—black, white, one or two emotional colors
+  - Action colors: Urgent red (#C41E3A), Raw umber (#714B23), Cadmium yellow (#FFF600), Prussian blue (#003153)
+  - Mark-making: Drips, splatters, broad strokes, accumulated gestures
+  - Background: Raw canvas (#F5F0E1) or pure white/black field
+  - No gradients except natural paint blending
+  - Typography: Either stark utilitarian (the content) or hand-painted (becoming gesture)
+
+* **Technical Requirements**: 
+  - Canvas API for dynamic gesture generation
+  - SVG for scalable gestural marks
+  - Procedural generation with controlled randomness
+  - Large viewport utilization (gestures need scale)
+  - requestAnimationFrame for live gestural animation
+  - Touch/mouse input can generate user gestures
+
+* **Accessibility Standards**: 
+  - WCAG AA for content layer above gestural field
+  - Gesture layer is purely decorative (marked aria-hidden)
+  - Content survives without gesture (progressive enhancement)
+  - Motion preferences respected (static gesture snapshot)
+  - Screen readers receive clean content; ignore chaos
+
+* **Implementation Boundaries**: 
+  - Canvas for complex procedural gestures
+  - SVG for simple gestural elements
+  - CSS for basic splatter/drip effects where possible
+  - WebGL for immersive gestural environments
+  - Pre-rendered gesture options for performance
+
+## 3. Decision Framework
+
+* **Binary Decision Trees**:
+  - If mark needed → Generate with randomness; never place precisely
+  - If color choice → Emotional, not decorative; limited palette
+  - If composition → All-over; no single focal point hierarchy
+  - If user interacts → Can contribute gesture to field
+  - If loading → Process of generation can be visible (action painting)
+  - If content exists → Float above gestural field; distinct layer
+
+* **Priority Hierarchies**:
+  1. Gestural authenticity (marks must feel made, not placed)
+  2. Emotional intensity (design should provoke feeling)
+  3. Process visibility (creation as content)
+  4. Content legibility (function floats above expression)
+
+* **Progressive Enhancement**:
+  - Core: Content on neutral background (utilitarian)
+  - Basic: Static gestural background (pre-rendered)
+  - Full: Dynamic gesture generation, user participation, immersive scale
+
+* **Fallback Strategy**:
+  - Canvas falls back to static gesture image
+  - Dynamic falls back to pre-rendered set of gesture variations
+  - All-over composition falls back to simpler gestural accents
+  - Print: Single gesture capture (each print unique, like prints)
+
+## 4. Comprehensive Rubric
+
+### Functionality (1-5)
+* 1: Gesture overwhelms content; nothing findable
+* 3: Content accessible but gestural intensity distracts
+* 5: Gesture creates emotional environment; content clearly floats above; enhances rather than impedes
+
+### Accessibility (1-5)
+* 1: Gesture layer interferes with function; chaotic for AT
+* 3: Content accessible; gesture layer properly separated
+* 5: Full compliance; gesture purely decorative and labeled; content experience clean
+
+### Implementation Efficiency (1-5)
+* 1: Complex gesture generation kills performance
+* 3: Runs well on modern devices; some optimization needed
+* 5: Efficient procedural generation; pre-render options; smooth across devices
+
+### Scalability (1-5)
+* 1: Gestures don't scale; fixed composition breaks
+* 3: Adapts but loses immersive quality at some sizes
+* 5: Gestures regenerate per viewport; scale maintained; intensity adapts
+
+### Visual Coherence (1-5)
+* 1: Random marks without gestural logic; feels like filter
+* 3: Recognizable AbEx aesthetic but some marks feel calculated
+* 5: Authentic gestural language; spontaneity achieved; emotionally intense; process visible
+
+## 5. Validation Protocol
+
+* **Testable Assertions**:
+  - No two page loads produce identical gesture field (procedural)
+  - Gesture marks show variation (no copy-pasted identical elements)
+  - Content layer achieves WCAG AA independent of gesture layer
+  - Palette limited to maximum 5 colors in gesture field
+  - Marks extend to/beyond viewport edges (all-over composition)
+
+* **User Testing Requirements**:
+  - Verify emotional response: should feel "intense," "energetic," "raw"
+  - Test gesture recognition: users should perceive as artistic, not error
+  - Evaluate content findability despite gestural intensity
+  - Measure engagement: gestural environment should invite exploration
+
+* **Iteration Triggers**:
+  - Gestures feel calculated or placed rather than spontaneous
+  - Emotional intensity reads as mere visual noise
+  - Users describe as "messy" rather than "expressive"
+  - Content obscured by gestural layer
+  - Performance issues from gesture generation
+
+* **Documentation Standards**:
+  - Gesture generation algorithms with randomness parameters
+  - Palette with emotional associations
+  - Layer separation specification (content above gesture)
+  - Procedural seed management (reproducibility if needed)
+  - Artist reference mood board
+  - Process documentation (how gestures are made, not just what they look like)
