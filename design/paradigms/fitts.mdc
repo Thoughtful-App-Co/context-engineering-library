@@ -1,0 +1,128 @@
+# [MOVEMENT MINIMIZED, TARGETS MAXIMIZED]
+
+# Fitts' Law / Motor-Optimized Design Paradigm
+
+## 1. Prompt Architecture
+
+* **Intent Declaration**: Create interfaces scientifically optimized for human motor control—minimizing movement distance, maximizing target size, exploiting screen edges, and designing for natural hand/cursor motion patterns
+* **Constraint Parameters**: All layouts derived from motor efficiency mathematics; radial menus for equidistant access; edge targets for infinite depth; thumb zone optimization for mobile; asymmetric layouts based on handedness; speed over aesthetics when conflict arises
+* **Reference Context**: Blender pie menus, gaming radial wheels (GTA, Mass Effect), macOS dock magnification, Windows corner hot zones, Android's floating action button, marking menus (Maya), Apple Watch crown interaction
+* **Edge Case Handling**: For accessibility, maintain motor optimization while accommodating limited mobility; for left-handed users, mirror layouts; for touchscreens, account for finger occlusion; for stylus, allow smaller precision targets
+* **Evaluation Metrics**: Time-to-target, error rate, gesture completion speed, Fitts' index of difficulty, thumb reachability percentage
+
+## 2. Design Constants
+
+* **Brand Compliance**: 
+  - Touch targets: 48px minimum (mobile), 44px minimum (desktop)
+  - Radial menu radius: 80-120px optimal (full thumb arc without wrist movement)
+  - Pie segments: 8 maximum per radial (45° minimum arc per target)
+  - Screen edges: Primary actions within 50px of any edge
+  - Corners: Reserved for most frequent actions (infinite target size)
+  - Thumb zones: Primary (natural), Secondary (stretch), Tertiary (shift grip)
+
+* **Technical Requirements**: 
+  - CSS for target sizing and edge positioning
+  - JavaScript for radial menu generation and gesture tracking
+  - Pointer event handling for multi-input (mouse, touch, stylus)
+  - `touch-action` CSS for gesture control
+  - Screen edge detection API where available
+  - Haptic feedback integration for mobile
+
+* **Accessibility Standards**: 
+  - WCAG 2.5.5 Target Size (AAA): 44x44px minimum
+  - Support for switch control and dwelling
+  - Allow target size increase user preference
+  - Provide linear alternatives to radial menus for screen readers
+  - Motor impairment: increase target size, add sticky targets
+
+* **Implementation Boundaries**: 
+  - CSS for layout and target sizing
+  - JavaScript for radial menus and gesture recognition
+  - Web Animations API for smooth transitions
+  - Pointer Lock API for relative movement interfaces
+  - Gamepad API for controller-based navigation
+
+## 3. Decision Framework
+
+* **Binary Decision Trees**:
+  - If ≥4 equidistant options needed → Radial/pie menu
+  - If action is frequent → Place at edge or corner
+  - If mobile → Optimize for thumb zone (bottom 2/3 of screen)
+  - If destructive action → Require deliberate movement (not edge)
+  - If precision needed → Allow cursor/finger to rest, target comes to user
+  - If selection from range → Arc slider over linear slider
+
+* **Priority Hierarchies**:
+  1. Movement efficiency (Fitts' Law: Time = a + b × log₂(D/W + 1))
+  2. Error prevention (target size sufficient for motor noise)
+  3. Discoverability (motor optimization shouldn't hide features)
+  4. Aesthetics (design around motor constraints, not despite them)
+
+* **Progressive Enhancement**:
+  - Core: Large touch targets, logical grouping
+  - Basic: Edge-positioned primary actions, optimized spacing
+  - Full: Radial menus, gesture shortcuts, predictive target expansion
+
+* **Fallback Strategy**:
+  - Radial menus fall back to dropdown/context menus
+  - Gesture navigation falls back to button taps
+  - Edge targets maintained even without edge detection API
+  - Corner actions work without OS hot-corner conflict detection
+
+## 4. Comprehensive Rubric
+
+### Functionality (1-5)
+* 1: Targets too small; frequent misclicks; radial menus confusing
+* 3: Motor-optimized but some secondary actions hard to reach
+* 5: Every action reachable with minimal movement; near-zero error rate; feels effortless
+
+### Accessibility (1-5)
+* 1: Assumes full motor control; radial menus inaccessible; no alternatives
+* 3: Meets WCAG target size; basic alternatives exist
+* 5: Full motor accessibility; customizable target sizes; switch/dwell support; linear alternatives
+
+### Implementation Efficiency (1-5)
+* 1: Heavy gesture library; complex radial menu calculations; performance issues
+* 3: Reasonable implementation; some optimization possible
+* 5: Lightweight gesture detection; efficient radial rendering; smooth 60fps interactions
+
+### Scalability (1-5)
+* 1: Motor optimization breaks at different screen sizes; thumb zones ignored on tablets
+* 3: Adapts to common devices; some edge cases need attention
+* 5: Recalculates optimal zones per device; radial menus scale; edge targets always functional
+
+### Visual Coherence (1-5)
+* 1: Motor optimization creates ugly asymmetric layouts; radial feels alien
+* 3: Functional but aesthetics clearly secondary to motor concerns
+* 5: Motor optimization enhances visual design; radial menus feel natural; asymmetry feels intentional
+
+## 5. Validation Protocol
+
+* **Testable Assertions**:
+  - All primary actions reachable within single thumb arc (mobile) or 200px mouse movement (desktop)
+  - Touch targets ≥ 48px on mobile, ≥ 44px on desktop
+  - Radial menu items have ≥ 45° arc each
+  - Screen corners used for ≥ 1 frequent action
+  - Error rate < 5% for primary actions under time pressure
+
+* **User Testing Requirements**:
+  - Measure time-to-target for primary actions (should improve vs. traditional layout)
+  - Test with both hands (optimize for dominant hand, functional for non-dominant)
+  - Evaluate radial menu learnability (should be faster after 3 uses)
+  - Test with motor impairment simulation (tremor, limited range)
+
+* **Iteration Triggers**:
+  - Error rate exceeds 5% for any primary action
+  - Users report fatigue or strain
+  - Radial menus slower than linear alternatives after learning period
+  - Edge targets conflict with OS-level gestures
+  - Left-handed users report significantly worse experience
+
+* **Documentation Standards**:
+  - Thumb zone maps per device category
+  - Radial menu specifications (radius, segments, activation gesture)
+  - Edge/corner action assignments
+  - Fitts' Law calculations for layout decisions
+  - Gesture dictionary with motor cost analysis
+  - Handedness adaptation rules
+  - Target size scale for accessibility preferences
