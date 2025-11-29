@@ -1,0 +1,128 @@
+# [MASS CULTURE ELEVATED, REPETITION AS MEANING]
+
+# Pop Art Design Paradigm
+
+## 1. Prompt Architecture
+
+* **Intent Declaration**: Create interfaces channeling Pop Art—mass media imagery, bold flat colors, repetition with variation, celebrity/consumer culture references, Ben-Day dots, commercial art techniques elevated to fine art, irony and sincerity simultaneously
+* **Constraint Parameters**: Flat bold colors (CMYK print aesthetic); halftone/Ben-Day dots mandatory; repetition of elements with color/position variation; embrace commercial imagery; blur high/low culture; ironic distance but genuine engagement; silkscreen aesthetic
+* **Reference Context**: Andy Warhol (Marilyns, Soup Cans, silkscreen), Roy Lichtenstein (Ben-Day dots, comic style), James Rosenquist (billboard scale), Claes Oldenburg (scale shifts), Tom Wesselmann (Great American Nude), contemporary: KAWS, Takashi Murakami
+* **Edge Case Handling**: For brand safety, use original imagery in Warhol style not appropriated celebrities; for accessibility, ensure halftone doesn't reduce contrast below standards; for performance, optimize repeated elements
+* **Evaluation Metrics**: Commercial art elevation, repetition effectiveness, halftone quality, color boldness, irony/sincerity balance
+
+## 2. Design Constants
+
+* **Brand Compliance**: 
+  - CMYK Pop palette: Process Yellow (#FFEB00), Magenta (#FF0090), Cyan (#00AEEF), Black (#000000)
+  - Warhol neons: Electric pink (#FF6EC7), Lime (#32CD32), Orange (#FF6600), Turquoise (#40E0D0)
+  - Ben-Day dot densities: 10%, 30%, 50%, 70% (distinct steps, not gradient)
+  - Outlines: Bold black (3-5px), clean and hard-edged
+  - Typography: Bold sans-serif (Impact, Helvetica Bold), speech bubbles (Lichtenstein), price tags
+  - Repetition: 2x2, 3x3, 4x4 grids with color variations
+
+* **Technical Requirements**: 
+  - SVG patterns for Ben-Day dots (scalable)
+  - CSS `radial-gradient` for quick halftone approximation
+  - Canvas for complex halftone image processing
+  - Repeat elements via CSS Grid with color variations (CSS custom properties)
+  - Print-inspired color (no subtle gradients; hard separations)
+  - Image duotone/posterization filters
+
+* **Accessibility Standards**: 
+  - WCAG AA minimum; bold colors naturally high contrast
+  - Ben-Day dots at sufficient density to maintain contrast
+  - Text not placed directly on halftone fields
+  - Screen readers: repeated elements announced efficiently (not tediously)
+  - Motion: color shifts can animate, but not required
+
+* **Implementation Boundaries**: 
+  - CSS for halftone patterns and color blocks
+  - SVG for scalable dot patterns and illustrations
+  - Canvas for image posterization/color reduction
+  - CSS Grid for repetition layouts
+  - Custom properties for repetition color variations
+
+## 3. Decision Framework
+
+* **Binary Decision Trees**:
+  - If image present → Posterize to flat colors; apply halftone; consider repetition
+  - If single element → Can it be repeated in grid with color variation?
+  - If photography → Reduce to 3-5 flat colors; add Ben-Day dots to shadows
+  - If typography → Bold, black outline, speech bubble optional
+  - If product/commercial → Celebrate it; don't hide commercial nature
+  - If color choice → Bold, printing-press colors; no subtlety
+
+* **Priority Hierarchies**:
+  1. Commercial aesthetic (embrace mass production look)
+  2. Repetition logic (repeat with intentional variation)
+  3. Halftone presence (Ben-Day dots as signature)
+  4. Ironic distance (aware of what it's doing)
+
+* **Progressive Enhancement**:
+  - Core: Bold flat colors, strong outlines
+  - Basic: Add Ben-Day dot patterns, simple repetition
+  - Full: Image posterization, complex repetition grids, color-shift animation
+
+* **Fallback Strategy**:
+  - Halftone patterns fall back to flat colors
+  - Repetition grid falls back to single element
+  - Image processing falls back to pre-processed assets
+  - Print: Natural fit; Pop Art was print-native
+
+## 4. Comprehensive Rubric
+
+### Functionality (1-5)
+* 1: Pop aesthetic overwhelms navigation; repetition confuses
+* 3: Functional but Pop elements occasionally distract
+* 5: Pop style enhances engagement; repetition creates rhythm; bold colors aid hierarchy
+
+### Accessibility (1-5)
+* 1: Halftone reduces contrast; repetition creates screen reader tedium
+* 3: Meets standards; halftone managed appropriately
+* 5: Full compliance; bold colors enhance accessibility; repetition handled efficiently for AT
+
+### Implementation Efficiency (1-5)
+* 1: Complex halftone processing; heavy repeated assets
+* 3: Reasonable but repetition could be more efficient
+* 5: CSS patterns for halftone; efficient grid repetition; minimal asset weight
+
+### Scalability (1-5)
+* 1: Halftone dots don't scale; repetition grids break
+* 3: Adapts but dot density needs adjustment per breakpoint
+* 5: Vector dots scale perfectly; grids adapt columns; Pop intensity maintained
+
+### Visual Coherence (1-5)
+* 1: Random bold colors; halftone feels like filter; no Pop logic
+* 3: Recognizable Pop but some elements feel generic
+* 5: Authentic Pop Art aesthetic; repetition meaningful; commercial-art-as-art achieved
+
+## 5. Validation Protocol
+
+* **Testable Assertions**:
+  - Ben-Day dots present in at least one major element per view
+  - Color palette reducible to CMYK + 2-3 neons
+  - At least one element repeated with color variation
+  - Black outlines present on primary imagery (minimum 2px)
+  - No subtle gradients (all color transitions via halftone)
+
+* **User Testing Requirements**:
+  - Verify Pop Art recognition: users identify aesthetic correctly
+  - Test commercial perception: should feel "bold," "graphic," "printed"
+  - Evaluate irony/sincerity: should feel knowing but not cynical
+  - Measure engagement: Pop should invite interaction
+
+* **Iteration Triggers**:
+  - Halftone feels like Instagram filter rather than intentional aesthetic
+  - Repetition confuses rather than creates rhythm
+  - Colors feel garish rather than boldly intentional
+  - Pop style feels dated rather than timeless-iconic
+  - Commercial references feel cheap rather than elevated
+
+* **Documentation Standards**:
+  - Halftone pattern library (dot sizes, densities, colors)
+  - Color palette with CMYK values and neon extensions
+  - Repetition grid templates (2x2 through 4x4)
+  - Image posterization guidelines (how many colors, threshold values)
+  - Outline specifications (weights, colors)
+  - Pop Art reference library (approved source artists and techniques)
+  - Commercial imagery guidelines (what can be "Warholized")
