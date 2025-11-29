@@ -1,0 +1,127 @@
+# [DIMENSIONAL NAVIGATION, INFINITE CANVAS]
+
+# Spatial/Nested Design Paradigm
+
+## 1. Prompt Architecture
+
+* **Intent Declaration**: Create interfaces where navigation occurs through 3D space—zooming into nested content, panning across infinite canvases, and moving through dimensional layers rather than page-to-page transitions
+* **Constraint Parameters**: Depth must communicate hierarchy; zoom levels have clear stopping points; spatial relationships remain consistent; users must always understand their location; performance critical for smooth navigation
+* **Reference Context**: Prezi presentations, Figma's infinite canvas, macOS Mission Control, iOS app folders, Google Maps zoom, Miro/FigJam boards, Notion toggle hierarchies, old Starfield screensaver navigation
+* **Edge Case Handling**: For accessibility, provide linear navigation alternative; for mobile, simplify to 2D panning with depth indicators; for performance, level-of-detail (LOD) rendering at distance
+* **Evaluation Metrics**: Spatial comprehension, navigation fluidity, depth clarity, orientation maintenance
+
+## 2. Design Constants
+
+* **Brand Compliance**: 
+  - Depth cues: Scale reduction (80% per level), blur increase, opacity fade
+  - Z-space colors: Foreground vibrant; background desaturated toward gray/blue
+  - Active level: Full saturation, sharp edges, 100% opacity
+  - Inactive levels: 60-80% opacity, slight blur, reduced saturation
+  - Typography: Size scales with zoom; minimum readable threshold enforced
+  - Connectors: Lines or proximity indicating parent-child relationships
+
+* **Technical Requirements**: 
+  - CSS transforms for zoom (`scale()`) and pan (`translate()`)
+  - `will-change: transform` for smooth animation
+  - Level-of-detail rendering (hide detail at distance)
+  - Smooth easing (300-500ms transitions; ease-out for natural deceleration)
+  - Canvas/WebGL for complex infinite spaces
+  - Minimap for orientation in large spaces
+
+* **Accessibility Standards**: 
+  - WCAG AA compliance at every zoom level
+  - Keyboard navigation through spatial hierarchy (Tab = next item, Enter = zoom in, Escape = zoom out)
+  - Screen reader announces current depth level and available directions
+  - Reduced motion: instant transitions, breadcrumb navigation fallback
+  - Focus visible at all zoom levels
+
+* **Implementation Boundaries**: 
+  - CSS transforms for simple nested zoom
+  - Canvas for large/infinite spaces with many objects
+  - WebGL for 3D spatial navigation
+  - Virtualization for performance with many nested items
+  - Gesture support (pinch-zoom, two-finger pan)
+
+## 3. Decision Framework
+
+* **Binary Decision Trees**:
+  - If content is hierarchical → Enable zoom-to-child navigation
+  - If content is relational (non-hierarchical) → Enable pan across infinite canvas
+  - If > 3 levels deep → Provide minimap or breadcrumb
+  - If target item → Zoom smoothly to fill viewport
+  - If user is lost → Provide "home" zoom-out-to-root action
+
+* **Priority Hierarchies**:
+  1. Orientation (user always knows where they are)
+  2. Navigation fluidity (transitions feel natural, not jarring)
+  3. Depth comprehension (hierarchy visible through spatial cues)
+  4. Performance (60fps during navigation)
+
+* **Progressive Enhancement**:
+  - Core: Linear navigation with visual hierarchy indicators
+  - Basic: Simple zoom transitions between levels
+  - Full: Smooth infinite canvas with gesture support, minimap, spatial audio cues
+
+* **Fallback Strategy**:
+  - Complex 3D space falls back to 2D nested zoom
+  - Infinite canvas falls back to paginated grid
+  - Gesture navigation falls back to click-to-zoom
+  - For print: Flatten to hierarchical outline with indentation
+
+## 4. Comprehensive Rubric
+
+### Functionality (1-5)
+* 1: Users constantly lost; can't find way back; unclear what's clickable
+* 3: Navigation works but some depth transitions confusing
+* 5: Intuitive spatial movement; users explore naturally; never lost
+
+### Accessibility (1-5)
+* 1: No keyboard navigation; screen readers can't parse space; motion causes issues
+* 3: Basic keyboard support; breadcrumb available; reduced motion honored
+* 5: Full keyboard spatial navigation; screen reader announces depth/direction; multiple navigation modes
+
+### Implementation Efficiency (1-5)
+* 1: Janky zoom; massive memory usage; freezes on deep nesting
+* 3: Smooth on modern devices; some optimization needed for complex spaces
+* 5: 60fps always; virtualized rendering; efficient LOD; works on mid-tier mobile
+
+### Scalability (1-5)
+* 1: Breaks with > 10 items or > 2 levels
+* 3: Handles moderate complexity; performance degrades gracefully
+* 5: Infinite canvas truly infinite; deep nesting performant; scales to any content size
+
+### Visual Coherence (1-5)
+* 1: Depth cues inconsistent; some items don't scale; transitions jarring
+* 3: Mostly consistent but occasional visual glitches during navigation
+* 5: Seamless depth perception; smooth transitions; consistent visual language at all zoom levels
+
+## 5. Validation Protocol
+
+* **Testable Assertions**:
+  - User can return to root from any depth in ≤ 3 actions
+  - Zoom transitions complete in 300-500ms with easing
+  - Current depth level always visible (breadcrumb or minimap)
+  - Frame rate never drops below 30fps during navigation
+  - Keyboard can access any item accessible by mouse
+
+* **User Testing Requirements**:
+  - Verify users can find specific nested item without instruction
+  - Test orientation: pause mid-navigation and ask "where are you?"
+  - Evaluate motion comfort: no reports of nausea or disorientation
+  - Measure time-to-target vs. traditional navigation
+
+* **Iteration Triggers**:
+  - > 20% of users use "home" button to escape confusion
+  - Users describe as "disorienting" or "nauseating"
+  - Performance drops below 45fps on target devices
+  - Users can't describe the spatial structure after use
+  - Keyboard users can't navigate effectively
+
+* **Documentation Standards**:
+  - Zoom level specifications (scale, blur, opacity per level)
+  - Transition timing and easing curves
+  - Minimap design and update frequency
+  - Gesture mapping (pinch, pan, double-tap)
+  - Keyboard navigation map
+  - Accessibility announcement scripts for screen readers
+  - Performance budgets per zoom level
