@@ -1,0 +1,127 @@
+# [DREAMS MADE VISIBLE, LOGIC DEFIED]
+
+# Surrealist Design Paradigm
+
+## 1. Prompt Architecture
+
+* **Intent Declaration**: Create interfaces that channel the subconscious—impossible juxtapositions, dreamlike transformations, uncanny familiar-yet-wrong elements, and visual logic that follows dream rules rather than waking reality
+* **Constraint Parameters**: Objects must appear in wrong contexts/scales; physics optional; familiar UI elements behave unexpectedly; melting, floating, morphing encouraged; maintain enough reality anchor for usability; the uncanny over the random
+* **Reference Context**: Salvador Dalí (melting clocks, elephants on stilts), René Magritte (Treachery of Images, impossible rooms), Max Ernst (frottage, collage), de Chirico (empty plazas, long shadows), contemporary: Studio Feixen, Jonathan Zawada
+* **Edge Case Handling**: For usability, ground core interactions in reality while environment is surreal; for accessibility, ensure transformed elements maintain semantic meaning; for motion, dreamlike pace (slow, floating, inevitable)
+* **Evaluation Metrics**: Uncanny recognition, dream logic consistency, reality anchor maintenance, emotional unease/wonder balance
+
+## 2. Design Constants
+
+* **Brand Compliance**: 
+  - Color: Unnatural but specific—flesh tones on sky, metallic organic, impossible lighting
+  - Shadows: Wrong direction, multiple sources, shadows without objects
+  - Scale: Objects at wrong sizes relative to each other
+  - Texture: Hyper-real rendering of impossible things
+  - Typography: Can transform, melt, cast impossible shadows; but remains readable
+  - Space: Deep perspective, empty horizons, infinite planes
+
+* **Technical Requirements**: 
+  - SVG morphing for transformations
+  - CSS `clip-path` for impossible shapes and reveals
+  - 3D CSS transforms for spatial impossibilities
+  - Canvas/WebGL for complex surreal environments
+  - Slow, eased animations (2-5 second durations; dream pace)
+  - Parallax that defies expected depth relationships
+
+* **Accessibility Standards**: 
+  - WCAG AA minimum; surreal visuals don't excuse contrast failures
+  - Interactive elements must be identifiable despite surreal context
+  - Screen readers receive straightforward semantic content
+  - Motion is slow enough to not trigger vestibular issues
+  - Provide "reality mode" for users who need it
+
+* **Implementation Boundaries**: 
+  - CSS transforms and clip-path for 2D surrealism
+  - Three.js for 3D impossible spaces
+  - GSAP for complex morphing animations
+  - Intersection Observer for scroll-triggered transformations
+  - Keep surreal layer separate from content layer
+
+## 3. Decision Framework
+
+* **Binary Decision Trees**:
+  - If object familiar → Place in wrong context or scale
+  - If space exists → Give it impossible depth or conflicting perspectives
+  - If shadow present → Cast it wrong (multiple, missing, independent)
+  - If interaction expected → Fulfill it unexpectedly (button works, but melts after)
+  - If user scrolls → Environment transforms dreamlike, not snaps
+  - If loading state → Perfect opportunity for surreal transformation
+
+* **Priority Hierarchies**:
+  1. Uncanny recognition (familiar enough to unsettle, not random)
+  2. Dream logic consistency (internal rules, just not reality's rules)
+  3. Usability anchor (core functions grounded)
+  4. Wonder over confusion (surrealism should delight, not frustrate)
+
+* **Progressive Enhancement**:
+  - Core: Slightly "off" imagery and unexpected juxtapositions (static)
+  - Basic: Impossible shadows, wrong-scale elements, spatial oddities
+  - Full: Morphing elements, impossible physics, dreamlike transitions
+
+* **Fallback Strategy**:
+  - 3D spaces fall back to 2D surreal compositions
+  - Animations fall back to static surreal imagery
+  - Complex morphs fall back to fade transitions
+  - Print: Magritte/Dalí-style static compositions
+
+## 4. Comprehensive Rubric
+
+### Functionality (1-5)
+* 1: Surrealism destroys usability; users can't find anything
+* 3: Core functions work but surreal elements occasionally confuse
+* 5: Surreal environment enhances engagement; core actions grounded and clear
+
+### Accessibility (1-5)
+* 1: Surrealism used to excuse poor accessibility
+* 3: Meets minimums; surreal elements have appropriate alternatives
+* 5: Full compliance; AT users get content; surrealism is visual layer only
+
+### Implementation Efficiency (1-5)
+* 1: Complex 3D surrealism tanks performance
+* 3: Runs smoothly on modern devices; some optimization needed
+* 5: Efficient surrealism; impossible effects from simple techniques; smooth everywhere
+
+### Scalability (1-5)
+* 1: Surreal compositions break at different viewports
+* 3: Adapts but loses some impossible relationships at sizes
+* 5: Each viewport has its own surreal composition; dream logic maintained
+
+### Visual Coherence (1-5)
+* 1: Random weirdness without surrealist logic
+* 3: Recognizably surreal but some elements feel arbitrary
+* 5: Consistent dream logic; every impossibility serves the whole; genuine uncanny feeling
+
+## 5. Validation Protocol
+
+* **Testable Assertions**:
+  - At least one scale impossibility per major section
+  - Shadows present that defy single light source
+  - Familiar objects appear in minimum 1 wrong context
+  - Core navigation findable within 5 seconds despite surreal environment
+  - Animation durations average 2+ seconds (dream pace)
+
+* **User Testing Requirements**:
+  - Verify users recognize surrealist intent (not "broken")
+  - Test emotional response: should evoke wonder/unease, not frustration
+  - Evaluate usability beneath surreal layer
+  - Measure engagement: users should explore, not flee
+
+* **Iteration Triggers**:
+  - Users describe as "weird" without "interesting"
+  - Surrealism creates actual confusion about navigation
+  - Impossible elements feel random rather than dreamlike
+  - Motion causes discomfort
+  - Effect described as "trying too hard"
+
+* **Documentation Standards**:
+  - Surrealist technique inventory (which impossibilities are used)
+  - Dream logic rules (what internal consistency exists)
+  - Reality anchor points (where usability is grounded)
+  - Animation timing guidelines (dream pace specifications)
+  - Artist reference mood board
+  - Impossibility hierarchy (what breaks first, what stays real longest)
