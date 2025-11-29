@@ -2,6 +2,7 @@
 <img width="1889" height="1160" alt="image" src="https://github.com/user-attachments/assets/62e04db2-b3bb-4568-94a2-3adefe1550d4" />
 
 # atomic
+<img width="1905" height="1147" alt="image" src="https://github.com/user-attachments/assets/2d5b4606-8a11-4002-8bc2-660c19c55d2a" />
 
 
 # aurora
@@ -22,9 +23,11 @@
 <img width="1902" height="1149" alt="image" src="https://github.com/user-attachments/assets/6f5a6bc0-57c7-4460-a9d0-e3f433f368db" />
 
 # daylight
+<img width="1899" height="1142" alt="image" src="https://github.com/user-attachments/assets/1c751ea4-2d18-46bc-8fe4-6cc14a430173" />
 
 
 # duotone
+<img width="1907" height="1134" alt="image" src="https://github.com/user-attachments/assets/57687068-3575-45cd-93a2-610c338ab9a7" />
 
 
 # flat
@@ -39,6 +42,7 @@
 
 
 # japandi
+<img width="1903" height="1151" alt="image" src="https://github.com/user-attachments/assets/e443c852-2fea-4b1d-ad80-98c44f7d4f8e" />
 
 
 # kinetic
@@ -49,9 +53,11 @@
 <img width="1892" height="1144" alt="image" src="https://github.com/user-attachments/assets/a8362259-eafc-4732-bf49-c012c5fed103" />
 
 # material
+<img width="1905" height="1146" alt="image" src="https://github.com/user-attachments/assets/902da57e-5794-422a-b88e-f21c5948800d" />
 
 
 # maximalism
+<img width="1910" height="1149" alt="image" src="https://github.com/user-attachments/assets/a1c4de72-13f8-469d-bf91-8f00cb78652a" />
 
 
 # memphis
@@ -65,6 +71,7 @@
 
 
 # neo-geo
+
 
 # neomorphic
 <img width="1900" height="1141" alt="image" src="https://github.com/user-attachments/assets/0a554924-1184-49f0-92ec-d1fb67f389b9" />
