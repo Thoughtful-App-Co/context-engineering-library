@@ -1,0 +1,127 @@
+# [UNIVERSAL TRUTH, PURE FORM]
+
+# Modernist Design Paradigm
+
+## 1. Prompt Architecture
+
+* **Intent Declaration**: Create interfaces embodying early 20th century Modernist ideals—universal forms, rejection of ornament, truth to materials, functionalism, geometric abstraction, and belief in design as rational problem-solving
+* **Constraint Parameters**: Ornament is crime (Loos); form follows function (Sullivan); less is more (Mies); universal over particular; geometric purity; asymmetric balance; honest materiality; visible structure; reject historicism and decoration
+* **Reference Context**: Le Corbusier (Modulor, Villa Savoie), Mies van der Rohe (Barcelona Pavilion), Bauhaus (Gropius, Breuer), De Stijl (Mondrian, Rietveld), Constructivism, International Style, Herbert Matter, Max Bill
+* **Edge Case Handling**: For warmth, use material honesty not decoration; for brand expression, geometry and proportion not ornament; for accessibility, functionalism naturally supports clarity
+* **Evaluation Metrics**: Formal purity, ornament absence, functional justification, geometric rigor, material honesty
+
+## 2. Design Constants
+
+* **Brand Compliance**: 
+  - Color: Limited palette derived from materials and primaries; no decorative gradients
+  - Primaries: Red (#E53935), Yellow (#FDD835), Blue (#1E88E5) used sparingly
+  - Neutrals: White (#FFFFFF), Black (#000000), Concrete gray (#A0A0A0), Glass transparency
+  - Typography: Geometric sans-serif (Futura, Avant Garde, Helvetica, Univers); no serifs, no scripts
+  - Proportions: Golden ratio, Modulor, mathematical relationships
+  - Grid: Strict, visible as organizing principle, never decorative
+
+* **Technical Requirements**: 
+  - CSS Grid for rigorous layout structure
+  - Precise mathematical spacing (Fibonacci, golden ratio)
+  - No decorative CSS (no unnecessary shadows, gradients, borders)
+  - Typography as information, not expression
+  - Minimal DOM; structure visible in code
+  - Performance as functional virtue
+
+* **Accessibility Standards**: 
+  - WCAG AAA naturally achieved through clarity and contrast
+  - Functionalism serves accessibility
+  - Clear visual hierarchy from geometric organization
+  - No decoration to confuse; every element has purpose
+  - Screen reader experience as clean as visual
+
+* **Implementation Boundaries**: 
+  - Pure CSS for everything possible
+  - No JavaScript for decoration; only for function
+  - Code should be as clean as design
+  - Comments explain function, not apologize
+  - Reject frameworks that add unnecessary complexity
+
+## 3. Decision Framework
+
+* **Binary Decision Trees**:
+  - If element is decorative only → Remove it
+  - If complexity exists → Justify by function or simplify
+  - If choice between ornament and clarity → Always clarity
+  - If style vs. function conflict → Function wins
+  - If multiple solutions exist → Choose simplest that works
+  - If material effect possible → Prefer honest digital material (light, pixel, interaction)
+
+* **Priority Hierarchies**:
+  1. Function (every element serves purpose)
+  2. Clarity (communication without noise)
+  3. Formal purity (geometric, mathematical, universal)
+  4. Material honesty (digital materials, not skeuomorphic)
+
+* **Progressive Enhancement**:
+  - Core: Semantic HTML (pure structure is Modernist)
+  - Basic: Typographic hierarchy, strict grid, minimal color
+  - Full: Mathematical proportions, perfect rhythm, material behavior
+
+* **Fallback Strategy**:
+  - Modernism degrades beautifully (less is more)
+  - Without CSS: HTML structure still functions
+  - Print: Natural translation; Modernism prints perfectly
+  - Extreme constraints reveal essence (Modernist virtue)
+
+## 4. Comprehensive Rubric
+
+### Functionality (1-5)
+* 1: Formal purity sacrificed function; too austere to use
+* 3: Functional but some geometric rigidity impedes
+* 5: Form and function unified; clarity enhances usability; nothing unnecessary
+
+### Accessibility (1-5)
+* 1: Modernist purity ignored accessibility needs
+* 3: Meets standards through simplicity
+* 5: Functionalism naturally creates excellent accessibility; WCAG AAA
+
+### Implementation Efficiency (1-5)
+* 1: Bloated code despite minimal appearance
+* 3: Clean but some redundancy
+* 5: Code as minimal as design; tiny footprint; fast loading; pure
+
+### Scalability (1-5)
+* 1: Mathematical proportions break at extremes
+* 3: Scales with some ratio adjustments
+* 5: Universal proportions scale infinitely; grids adapt; purity maintained
+
+### Visual Coherence (1-5)
+* 1: Ornament crept in; inconsistent geometry; decoration disguised
+* 3: Mostly pure but occasional decorative elements
+* 5: Absolute purity; every element functionally justified; could be 1925 or 2025
+
+## 5. Validation Protocol
+
+* **Testable Assertions**:
+  - Zero decorative elements (every element has documented function)
+  - Spacing values follow mathematical relationship (not arbitrary)
+  - No more than 3-5 colors (derived from primaries or materials)
+  - Grid structure visible in layout (no elements break grid without function)
+  - Typography limited to single family (two maximum for hierarchy)
+
+* **User Testing Requirements**:
+  - Verify clarity: users find content faster than decorated alternatives
+  - Test perception: should register as "clear," "confident," "timeless"
+  - Evaluate coldness: should feel "calm" not "hostile"
+  - Measure function: task completion should be frictionless
+
+* **Iteration Triggers**:
+  - Any decorative element discovered
+  - Users describe as "cold" or "inhuman"
+  - Stakeholders request ornament (educate on Modernist principles)
+  - Mathematical proportions feel awkward (re-examine ratios)
+  - Simplicity tips into unusability
+
+* **Documentation Standards**:
+  - Functional justification for every element
+  - Mathematical basis for proportions and spacing
+  - Material vocabulary (what are our "honest digital materials")
+  - Grid specification with no decorative exceptions
+  - Typography as information system
+  - Modernist manifesto for team education
