@@ -93,10 +93,12 @@ Open Source 2.0
 
 ## Roadmap 
 
+I want to work on getting some mockups and tests, on most powerful models. Fuck OpenAI and Microsoft (respectfully). After 
+
 ### 2025 Q1 Focus Areas
 - Design Frameworks implementation
-- Framework compatibility standards
-- Cursor Rules optimization
+- Framework compatibility
+- Context and Agent Rules optimization
 
 ### Future Milestones
 - 2025 Q2: UI/UX Integration
