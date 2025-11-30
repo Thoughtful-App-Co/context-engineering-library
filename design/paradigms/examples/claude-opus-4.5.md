@@ -116,17 +116,23 @@
 
 
 # scandinavian
+<img width="1902" height="1146" alt="image" src="https://github.com/user-attachments/assets/76d055dd-39bf-4a5f-b457-97975fe67133" />
 
 
 # skeuomorphic
+<img width="1900" height="1143" alt="image" src="https://github.com/user-attachments/assets/4342ef5c-71a4-4865-8d81-edc987857048" />
+
 
 # spatial
 <img width="1891" height="1136" alt="image" src="https://github.com/user-attachments/assets/12194031-09f0-48d9-981f-fb91e808c26e" />
 
 
 # surrealism
+<img width="1894" height="1142" alt="image" src="https://github.com/user-attachments/assets/2c6f4781-b2d9-4d2d-a4a6-6519561ca919" />
+
 
 # swiss
 <img width="1893" height="1141" alt="image" src="https://github.com/user-attachments/assets/b6bfd734-ee2d-40d8-9613-b97db3a7f85f" />
 
 # vaporwave
+<img width="1899" height="1145" alt="image" src="https://github.com/user-attachments/assets/f9c15e6f-c216-4c79-ab1a-4f10afbf3ebd" />
