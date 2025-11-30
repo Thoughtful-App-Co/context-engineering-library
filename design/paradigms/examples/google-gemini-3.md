@@ -28,4 +28,14 @@
 # daylight
 <img width="2763" height="1158" alt="image" src="https://github.com/user-attachments/assets/6a60b070-2ef2-4c3d-92c6-b6d409de59e4" />
 
+# duotone
+<img width="2770" height="1158" alt="image" src="https://github.com/user-attachments/assets/4527cf8e-8e3e-4ea5-a747-48b8e65d8573" />
+
+# fitts
+<img width="2767" height="1163" alt="image" src="https://github.com/user-attachments/assets/c1964150-e0e7-40fd-9096-668fbe4506a3" />
+
+# flat
+<img width="2761" height="1172" alt="image" src="https://github.com/user-attachments/assets/91bb78e2-5b7b-402d-b837-a75d38fcf8dc" />
+
+
 
