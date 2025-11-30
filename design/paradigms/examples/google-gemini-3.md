@@ -37,5 +37,20 @@
 # flat
 <img width="2761" height="1172" alt="image" src="https://github.com/user-attachments/assets/91bb78e2-5b7b-402d-b837-a75d38fcf8dc" />
 
+# glassomorphic
+<img width="2765" height="1237" alt="image" src="https://github.com/user-attachments/assets/865b72e1-b7b2-45f0-a75b-c9616c2270a8" />
+
+# impressionist
+<img width="2772" height="1168" alt="image" src="https://github.com/user-attachments/assets/dbec94a3-dff5-4f41-bf8e-f6633d78f704" />
+
+# isometric
+<img width="2768" height="1250" alt="image" src="https://github.com/user-attachments/assets/e232ac4d-c059-46e8-be40-926dd33d18c7" />
+
+# japandi
+<img width="2765" height="1158" alt="image" src="https://github.com/user-attachments/assets/7c9e0866-177d-4fff-b2b7-0a39949151e0" />
+
+
+
+
 
 
