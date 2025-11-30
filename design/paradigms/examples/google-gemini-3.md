@@ -49,6 +49,23 @@
 # japandi
 <img width="2765" height="1158" alt="image" src="https://github.com/user-attachments/assets/7c9e0866-177d-4fff-b2b7-0a39949151e0" />
 
+# kinetic
+<img width="2769" height="1162" alt="image" src="https://github.com/user-attachments/assets/d9af7cbe-d8a3-4512-9906-0e9be8d27844" />
+
+# liquid
+<img width="2769" height="1180" alt="image" src="https://github.com/user-attachments/assets/a6c78380-95bf-4086-876f-8e03964d05b3" />
+
+# material
+<img width="2770" height="1165" alt="image" src="https://github.com/user-attachments/assets/9d000d24-1f1d-4193-81b5-58fc74cc579a" />
+
+# maximalist
+<img width="2774" height="1160" alt="image" src="https://github.com/user-attachments/assets/ff83a719-e4c6-4249-9ba8-7a92b37d22d6" />
+
+# memphis
+<img width="2778" height="1170" alt="image" src="https://github.com/user-attachments/assets/73d5180f-5f00-45c1-9e1e-a66f4082cb9d" />
+
+
+
 
 
 
