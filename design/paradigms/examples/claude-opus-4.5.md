@@ -23,6 +23,8 @@
 <img width="1905" height="1145" alt="image" src="https://github.com/user-attachments/assets/83a8f2dd-fb87-489d-9769-4622653ec33c" />
 
 # cartoon-grotesque
+<img width="1902" height="1155" alt="image" src="https://github.com/user-attachments/assets/e4874729-b088-4c21-aa6d-769a8f98a1e0" />
+
 
 # claymorphic
 <img width="1902" height="1149" alt="image" src="https://github.com/user-attachments/assets/6f5a6bc0-57c7-4460-a9d0-e3f433f368db" />
@@ -46,9 +48,11 @@
 <img width="1892" height="1101" alt="image" src="https://github.com/user-attachments/assets/eec61808-c2b8-4805-bc04-8660326aa1d7" />
 
 # impressionism
+<img width="1900" height="1153" alt="image" src="https://github.com/user-attachments/assets/3bc339db-c7d4-4056-b104-578271e8f7d8" />
 
 
 # isometric
+<img width="1896" height="1141" alt="image" src="https://github.com/user-attachments/assets/596c22e5-b6ed-44f7-866b-4b490d3ecd46" />
 
 
 # japandi
@@ -78,6 +82,8 @@
 <img width="1901" height="1138" alt="image" src="https://github.com/user-attachments/assets/6b1ce5c9-e722-474c-9b05-99c15261406d" />
 
 # modernism
+<img width="1897" height="1147" alt="image" src="https://github.com/user-attachments/assets/c6c35841-c44b-4975-b960-7ccff4ecf7de" />
+
 
 # monochromism
 <img width="1899" height="1127" alt="image" src="https://github.com/user-attachments/assets/e14de72e-8aa7-4446-86e7-225f13befe26" />
@@ -91,14 +97,19 @@
 <img width="1900" height="1141" alt="image" src="https://github.com/user-attachments/assets/0a554924-1184-49f0-92ec-d1fb67f389b9" />
 
 # organic
+<img width="1899" height="1151" alt="image" src="https://github.com/user-attachments/assets/1b8521ed-e21d-4bdc-8a64-943639753012" />
+
 
 # papermorphic
 <img width="1903" height="1136" alt="image" src="https://github.com/user-attachments/assets/bd1ed2ad-4f25-4cb4-ba71-5035445d19d4" />
 
 # pop-art
+<img width="1895" height="1147" alt="image" src="https://github.com/user-attachments/assets/4ea7d0ff-c20b-4d51-ae15-0d354ffaaeae" />
 
 
 # post-modernism
+<img width="1897" height="1143" alt="image" src="https://github.com/user-attachments/assets/e23da3cf-2421-4a22-9dec-89e51bc441e4" />
+
 
 # retro-futrism
 <img width="1875" height="1155" alt="image" src="https://github.com/user-attachments/assets/c102218d-dcdd-4b82-96fc-9c1009c76736" />
