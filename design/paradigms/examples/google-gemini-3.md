@@ -64,6 +64,26 @@
 # memphis
 <img width="2778" height="1170" alt="image" src="https://github.com/user-attachments/assets/73d5180f-5f00-45c1-9e1e-a66f4082cb9d" />
 
+# minimalist
+<img width="2775" height="1173" alt="image" src="https://github.com/user-attachments/assets/00d9ec35-5f9f-4bde-bf34-2d526d363231" />
+
+# modernist
+<img width="2764" height="1175" alt="image" src="https://github.com/user-attachments/assets/a29d9ccf-2d6f-4122-90db-0d9d5c1579cb" />
+
+# monochromism
+## light blue and green
+<img width="2770" height="1165" alt="image" src="https://github.com/user-attachments/assets/55858375-e8f2-4a02-bf0a-e2b5b7b6ae35" />
+## opal red
+<img width="2771" height="1171" alt="image" src="https://github.com/user-attachments/assets/1688f98e-c3b3-49be-a5de-2227de325399" />
+
+# neo-geo
+<img width="2783" height="1176" alt="image" src="https://github.com/user-attachments/assets/d1c8df2b-bfa4-4d19-89da-212828f3f6df" />
+
+# neomorphism
+<img width="2767" height="1165" alt="image" src="https://github.com/user-attachments/assets/afef13df-8146-477e-a6df-6cbf6186b300" />
+
+
+
 
 
 
