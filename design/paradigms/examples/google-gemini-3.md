@@ -82,6 +82,26 @@
 # neomorphism
 <img width="2767" height="1165" alt="image" src="https://github.com/user-attachments/assets/afef13df-8146-477e-a6df-6cbf6186b300" />
 
+# organic
+<img width="2763" height="1166" alt="image" src="https://github.com/user-attachments/assets/df0b6d34-c435-4869-8c21-9695f9e20134" />
+
+# papermorphic
+<img width="2772" height="1171" alt="image" src="https://github.com/user-attachments/assets/7ed76922-325c-49b0-a1c5-d466ce3bd3e1" />
+
+# pop-art
+<img width="2767" height="1168" alt="image" src="https://github.com/user-attachments/assets/eb7d0ee6-e059-4f96-90a7-22ed34d9fc27" />
+
+# post-modern
+<img width="2768" height="1159" alt="image" src="https://github.com/user-attachments/assets/4665414c-95de-46b6-aa27-ade18f25796f" />
+
+# retro-futurism
+<img width="2764" height="1156" alt="image" src="https://github.com/user-attachments/assets/54dac26f-573f-49b3-b6c9-6f565374b6cf" />
+
+# scandinavian
+<img width="2774" height="1171" alt="image" src="https://github.com/user-attachments/assets/ea406911-215a-4085-af87-6cedaf9226b7" />
+
+
+
 
 
 
