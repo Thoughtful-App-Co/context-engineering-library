@@ -1,106 +1,67 @@
 # Context Engineering Library
 
-Context engineering library and build book of resuable best practices and pre-built prompts to help you build ai-powered applications.
-
-### How to Use context engineering library
-I recommend using a bracket {} syntax or <xml> bracket when encapsulating prompts. For example, I like to build prompts by providing a pre-prompt. Ex: Use {design} when creating {concept}. <design> CONTENT HERE </design> <content> CONTENT HERE</content>. 
+A repository of reusable prompts and best practices for building applications (ai optional LOL).
 
 ## Overview
 
-Context libraries provide structured approaches to improve AI outputs through:
-- Defined guidelines for prompt engineering
-- RAG data and embeddings optimizations
-- structured rules and command patterns
-- System-level instructions and formatting conventions
+Context engineering optimizes AI outputs through structured prompt frameworks, RAG strategies, and system-level instructions. Rather than complex compute-heavy approaches, this library uses simple referencing (@ref syntax in most IDEs) to compose prompts dynamically.
 
-We want to understand:
+## Quick Start
+
+1. Reference framework files in your prompts using `{design}`, `<design>`, or similar delimiters
+2. Combine pre-prompts with referenced content: `Use {design} when creating {concept}. <design>@design_prompt_1</design>`
+3. Pull repo into `/docs` and start referencing
+
+## Prompt Categories
+
+**Design**: Template-driven prompts for initial creation or element enhancement
+
+**Build**: Technical scaffolding and project kickstarters aligned to designs
+
+**Judge**: Critical evaluation prompts that challenge and iterate on existing work
 
 ## Rule Vectors
 
-### Prompt/Context Engineering Rules 
-- Instruction clarity standards
-- Context provision frameworks
-- Output formatting requirements
-- Chain-of-thought triggers
-- Few-shot learning templates
+**Prompt/Context Engineering**: Instruction clarity, context frameworks, output formatting, chain-of-thought, few-shot templates
 
-### Cursor Rules 
-- Command completion formats
-- Response behavior modifiers
-- Tone and style directives
-- Error handling preferences
-- Memory utilization guidelines
+**Agent Rules**: Command completion, response modifiers, tone/style, error handling, memory usage
 
-### RAG Optimization
-- Embedding construction patterns
-- Retrieval strategy rules
-- Context window utilization
-- Document chunking standards
-- Relevance weighting protocols
+**RAG Optimization**: Embedding patterns, retrieval strategies, context window utilization, chunking standards, relevance weighting
 
-### System Instructions 
-- Agent behavior parameters
-- Tool utilization protocols
-- Safety guardrail frameworks
-- Multi-agent coordination rules
-- Response moderation guidelines
+**System Instructions**: Agent behavior, tool protocols, safety guardrails, multi-agent coordination, response moderation
 
-### Language Rigidity 
-- Strict semantic frameworks
-- Domain-specific terminologies
-- Context-sensitive language patterns
-- Precision vs generalization balances
-- Translation and interpretation rules
+**Language Rigidity**: Semantic frameworks, domain terminology, context-sensitive patterns, precision/generalization balance
 
-### UX/UI Integration 
-- Command center interaction designs
-- Mobile vs desktop optimization
-- Visual cue integration with language models
-- Error message standardization
-- Progressive disclosure frameworks
+**UX/UI Integration**: Command center design, mobile/desktop optimization, visual cue integration, error standardization
 
-### Design Paradigms 
-- provide templates to inject into any front end ui, app build or workflow (as a context pointer)
+**Design Paradigms & Frameworks**: Command interfaces, button mechanics, conversational UI, direct manipulation, form patterns, modal schemas
 
-### Design Frameworks 
-- Command interface heuristics
-- Functional push button mechanics
-- Conversational UI patterns
-- Direct manipulation standards
-- Form-based interaction rules
-- Modal vs. modeless interaction schemas
+## Implementation
 
-## Usage 
+- Embed in system prompts
+- Integrate with RAG systems
+- Implement in frontend interfaces
+- Fine-tune with rule-aware training
+- Enforce via middleware
 
-Apply these rules by:
-1. Including them in system prompts
-2. Embedding them in RAG systems
-3. Implementing them in frontend interfaces
-4. Training models with rule-aware fine-tuning
-5. Building middleware that enforces rule compliance
+## Contributing
 
-## Contribution 
+Submit PRs with:
+- Established format adherence
+- Compliance/violation examples
+- Expected outcomes
+- Related rule cross-references
 
-Add rules by creating a PR with your additions in the appropriate directory:
-- Follow the established format
-- Include examples of both rule compliance and violations
-- Document expected outcomes
-- Cross-reference related rules
+## Roadmap
 
-## License 
+**2026 Q1**: Design Frameworks, Framework Compatibility, Context/Agent Rules optimization
 
-Open Source 2.0
+**2026 Q2**: UI/UX Integration
 
-## Roadmap 
+**2026 Q3**: Language Rigidity, RAG Optimization
 
-I want to work on getting some mockups and tests, on most powerful models. Fuck OpenAI and Microsoft (respectfully). After 
+**2026 Q4**: System Prompts
 
-### 2025 Q1 Focus Areas
-- Design Frameworks implementation
-- Framework compatibility
-- Context and Agent Rules optimization
+---
 
-### Future Milestones
-- 2025 Q2: UI/UX Integration
-- 2025 Q3: Language Rigidity, RAG Optimization
-- 2025 Q4: System Instructions, Prompt Engineering Rules
+**Main changes**: Removed informal language, restructured for clarity, tightened descriptions, moved roadmap context into structured timeline, eliminated redundancy between sections.
