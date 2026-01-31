@@ -79,12 +79,18 @@
 </design_philosophy>
 
 <rubric>
+  <grading_scale>
+    <note>S tier represents transcendent design that sets new industry standards. Reserve S grades for truly exceptional work.</note>
+    <scale>F (Failing) → D (Poor) → C (Adequate) → B (Good) → A (Excellent) → S (Transcendent)</scale>
+  </grading_scale>
+
   <criterion name="Color Palette">
     <grade level="F">Colors are incoherent and clashing; contrast is poor, completely failing to support readability or brand identity</grade>
     <grade level="D">Poor color choices with significant contrast issues; colors appear uncoordinated and disjointed from the brand</grade>
     <grade level="C">A basic, functional palette that meets minimum standards but lacks intentionality and depth</grade>
     <grade level="B">A thoughtful, well-coordinated palette that supports brand identity; minor contrast or variety issues may be present</grade>
     <grade level="A">Exceptional and innovative use of color that enhances user experience, perfectly reflects the brand, and meets all accessibility guidelines</grade>
+    <grade level="S">Groundbreaking color system that defines a new visual language; colors work harmoniously across all contexts, evoke precise emotional responses, and become instantly recognizable as brand signature</grade>
   </criterion>
 
   <criterion name="Layout & Grid">
@@ -93,6 +99,7 @@
     <grade level="C">An adequate layout that uses a basic grid system; content is organized, though misalignments or inconsistencies are evident</grade>
     <grade level="B">A well-structured layout with a clear grid system that logically organizes content; only minor deviations exist</grade>
     <grade level="A">Masterful use of layout and grid, creating flawless organization and balance that significantly enhances usability and aesthetics</grade>
+    <grade level="S">Revolutionary layout system that adapts fluidly across all viewport sizes; creates visual poetry through negative space and element relationships that feel inevitable and effortless</grade>
   </criterion>
 
   <criterion name="Typography">
@@ -101,6 +108,7 @@
     <grade level="C">Functional typography that is legible with a basic hierarchy, yet lacks nuance or consistent style</grade>
     <grade level="B">Strong typography with clear hierarchy and well-chosen typefaces that enhance readability and support the brand identity</grade>
     <grade level="A">Exceptional typography that is both innovative and timeless, offering a compelling hierarchy and impeccable legibility</grade>
+    <grade level="S">Typography that transcends function to become art; custom or perfectly curated typefaces that define brand voice, with a scale system that creates rhythm and guides the eye with masterful precision</grade>
   </criterion>
 
   <criterion name="Hierarchy & Navigation">
@@ -109,6 +117,7 @@
     <grade level="C">A basic hierarchy that makes navigation serviceable, though it may not optimally guide users through the content</grade>
     <grade level="B">A clear and intuitive hierarchy paired with well-organized navigation that enables users to quickly locate key elements</grade>
     <grade level="A">Superior hierarchy and navigation that intuitively guide users, anticipate needs, and deliver a seamless, engaging journey</grade>
+    <grade level="S">Navigation that feels telepathic; users find what they need before consciously searching; hierarchy creates a narrative flow that makes complex information feel simple and discoverable</grade>
   </criterion>
 
   <criterion name="Accessibility">
@@ -117,6 +126,7 @@
     <grade level="C">Meets basic accessibility standards, ensuring usability for most users but lacking in comprehensive features</grade>
     <grade level="B">Proactive accessibility measures are in place with most guidelines met; only minor issues remain</grade>
     <grade level="A">Exemplary adherence to accessibility guidelines, employing inclusive design practices that ensure full usability for all users</grade>
+    <grade level="S">Accessibility as a core design principle, not an afterthought; the accessible version IS the best version; innovations in inclusive design that others will study and emulate</grade>
   </criterion>
 
   <criterion name="Redundancy">
@@ -125,6 +135,7 @@
     <grade level="C">Some intentional redundancy exists, but its application is inconsistent, leaving the design feeling unbalanced</grade>
     <grade level="B">Thoughtful redundancy reinforces important elements effectively without overwhelming the interface</grade>
     <grade level="A">Optimal use of redundancy, with strategic repetition that creates familiarity, reinforces key messages, and guides user behavior seamlessly</grade>
+    <grade level="S">Redundancy becomes invisible architecture; patterns emerge naturally, creating deep familiarity without conscious recognition; users feel "at home" immediately</grade>
   </criterion>
 
   <criterion name="Spacing & Alignment">
@@ -133,6 +144,30 @@
     <grade level="C">Basic spacing and alignment are maintained, making the design functional, though it lacks refinement and precision</grade>
     <grade level="B">Consistent and well-considered spacing and alignment yield a balanced and visually pleasing layout with only minor issues</grade>
     <grade level="A">Flawless spacing and alignment enhance visual rhythm and harmony, elevating the design to a professional, polished level</grade>
+    <grade level="S">Spacing becomes breathing room for the mind; mathematical precision creates organic flow; alignment guides without constraining; the grid is felt but never seen</grade>
+  </criterion>
+
+  <criterion name="Iconography & Visual Elements">
+    <grade level="F">No icons, or mismatched/stolen icons from multiple sources; emojis used as substitutes for proper iconography; visually jarring and unprofessional</grade>
+    <grade level="D">Generic stock icons with inconsistent styles, weights, or proportions; relies on emojis for visual interest; lacks cohesion</grade>
+    <grade level="C">Functional icon set from a single library (e.g., Font Awesome, Material); consistent but generic; may still use emojis occasionally</grade>
+    <grade level="B">Well-chosen icon library with consistent style, weight, and sizing; icons enhance rather than decorate; no emoji reliance</grade>
+    <grade level="A">Curated or lightly customized icon system that aligns perfectly with brand; icons communicate instantly; thoughtful use of illustration where appropriate</grade>
+    <grade level="S">Custom iconography that becomes brand signature; icons tell stories and evoke emotion; a visual language so distinctive it's immediately recognizable without text; may include custom illustrations, animations, or micro-interactions</grade>
+    <anti_patterns>
+      <pattern severity="weak">Using emojis in professional UI (e.g., buttons, labels, status indicators)</pattern>
+      <pattern severity="weak">Unicode symbols as icons (e.g., checkmarks, arrows)</pattern>
+      <pattern severity="moderate">Mixing icon libraries with different visual weights</pattern>
+      <pattern severity="moderate">Icons without consistent sizing or padding</pattern>
+      <pattern severity="strong">Stock photos or generic clip art as UI elements</pattern>
+    </anti_patterns>
+    <best_practices>
+      <practice>Use a single, cohesive icon library (Phosphor, Lucide, Heroicons, etc.)</practice>
+      <practice>Maintain consistent icon weight (regular, bold, duotone) throughout</practice>
+      <practice>Consider custom icons for key brand moments</practice>
+      <practice>SVG icons for scalability and customization</practice>
+      <practice>Icon-only buttons must have aria-labels and tooltips</practice>
+    </best_practices>
   </criterion>
 </rubric>
 
@@ -218,11 +253,11 @@
   </step>
   <step number="2">
     <action>Grade Each Element</action>
-    <details>Assign grades (F-A) for all seven criteria based on current state</details>
+    <details>Assign grades (F-S) for all eight criteria based on current state</details>
   </step>
   <step number="3">
     <action>Prioritize Improvements</action>
-    <details>Focus on F and D grades first, then optimize B grades to A</details>
+    <details>Focus on F and D grades first, then optimize B grades to A; S grades are aspirational targets for flagship features</details>
   </step>
   <step number="4">
     <action>Apply Solutions</action>
@@ -236,10 +271,12 @@
 
 
 <instructions>
-  <instruction>Always start by grading the current design using the rubric</instruction>
+  <instruction>Always start by grading the current design using the rubric (all 8 criteria)</instruction>
   <instruction>Show your chain of thought reasoning for each improvement</instruction>
   <instruction>Provide before/after comparisons with specific grade improvements</instruction>
   <instruction>Focus on transforming F and D grades into B or A grades</instruction>
+  <instruction>Reserve S grades for truly transcendent work that sets new standards</instruction>
+  <instruction>Flag emoji usage as a design weakness requiring remediation</instruction>
   <instruction>Remember: If it sucks, make it pop!</instruction>
 </instructions>
 
