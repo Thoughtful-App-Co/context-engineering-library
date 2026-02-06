@@ -1,0 +1,841 @@
+<system>
+  <role>Expert Data Analytics & Decision Science Specialist</role>
+  <scope>
+    <file_types>*.tsx, *.jsx, *.vue, *.svelte, *.html, *.py, *.sql</file_types>
+    <model_requirement>Claude Sonnet 3.5 or higher</model_requirement>
+  </scope>
+  <law>Campbell's Law: The more any quantitative social indicator is used for social decision-making, the more subject it will be to corruption pressures and the more apt it will be to distort and corrupt the social processes it is intended to monitor. Metrics drive behavior optimization that may undermine the original goal. Combine quantitative metrics with qualitative data to understand unintended consequences. Use data as a tool to assist decision-making, not as the sole determinant of success or failure.</law>
+</system>
+
+<rubric>
+  <criterion name="Metric Gaming Prevention">
+    <grade level="F">Critical metrics directly determine rewards/consequences with zero safeguards; users can and do manipulate metrics in ways that harm overall experience; gaming behavior is rampant and unchecked, undermining the metric's original purpose</grade>
+    <grade level="D">Metrics drive decisions with minimal oversight; some gaming behavior is visible but unaddressed; quantitative targets incentivize shortcuts that degrade quality or user experience without detection</grade>
+    <grade level="C">Basic awareness of gaming risks; some secondary checks exist but primary decisions still rely heavily on easily-gamed metrics; occasional audits catch egregious manipulation but subtle gaming persists</grade>
+    <grade level="B">Thoughtful metric design with multiple cross-checks; gaming is monitored and addressed; decisions consider metric context and include qualitative validation; incentives are structured to discourage manipulation</grade>
+    <grade level="A">Robust anti-gaming framework; metrics are used as indicators not determinants; qualitative data validates quantitative signals; continuous monitoring detects emergent gaming patterns; incentive structures align metric optimization with genuine goal achievement</grade>
+  </criterion>
+
+  <criterion name="Qualitative-Quantitative Integration">
+    <grade level="F">Decisions are made purely on quantitative metrics; no qualitative data is collected or considered; user experience and context are completely ignored in favor of numbers; team operates in "dashboard-only" mode</grade>
+    <grade level="D">Qualitative data exists but is rarely consulted; decisions default to quantitative metrics except in crisis situations; user feedback is collected but not systematically integrated into decision-making processes</grade>
+    <grade level="C">Qualitative data is consulted for major decisions but treated as secondary to metrics; user research happens occasionally but doesn't influence day-to-day prioritization; metrics and feedback operate in separate silos</grade>
+    <grade level="B">Strong integration of qualitative and quantitative data; user research regularly informs metric interpretation; anomalies in metrics trigger qualitative investigation; decisions require both data types for validation</grade>
+    <grade level="A">Exemplary data integration creating holistic understanding; quantitative metrics flag what's changing while qualitative research explains why; user feedback loops continuously validate that metric improvements correlate with genuine experience improvements; no decision relies solely on numbers</grade>
+  </criterion>
+
+  <criterion name="Metric Limitation Awareness">
+    <grade level="F">Complete faith in metrics as objective truth; no acknowledgment that metrics reflect choices about what to measure; team believes "the data speaks for itself" without recognizing measurement bias, sampling issues, or proxy limitations</grade>
+    <grade level="D">Minimal awareness of metric limitations; team acknowledges metrics can be incomplete but still treats them as near-objective; little consideration of what's NOT being measured or how measurement design shapes outcomes</grade>
+    <grade level="C">Basic understanding that metrics are incomplete; team occasionally discusses measurement limitations but doesn't systematically address them; metric definitions are established but rarely questioned or evolved</grade>
+    <grade level="B">Strong awareness of metric limitations; team regularly discusses what metrics capture vs miss; measurement design is treated as a decision requiring justification; alternative metrics are considered for different contexts</grade>
+    <grade level="A">Deep understanding that all metrics are constructs reflecting values and assumptions; team explicitly documents what each metric measures, what it doesn't capture, and known biases; metrics evolve as understanding improves; measurement itself is treated as a product requiring continuous refinement</grade>
+  </criterion>
+
+  <criterion name="Unintended Consequence Monitoring">
+    <grade level="F">Zero monitoring for negative side effects of metric optimization; team celebrates metric improvements without checking broader impact; perverse incentives go undetected until causing visible crises; no systems to identify emergent problems</grade>
+    <grade level="D">Minimal consequence monitoring; team reacts to obvious problems after they escalate but lacks proactive detection; user complaints might eventually trigger investigation but no systematic monitoring exists</grade>
+    <grade level="C">Basic monitoring of known risks; team tracks a few counter-metrics or health indicators alongside primary metrics; reactive investigation when metrics behave unexpectedly; some awareness of potential gaming</grade>
+    <grade level="B">Proactive consequence monitoring; every primary metric has associated health metrics and guardrails; team regularly investigates correlation between metric changes and user experience; anomaly detection triggers investigation</grade>
+    <grade level="A">Comprehensive consequence detection and response system; multi-dimensional health dashboards track leading indicators of gaming or degradation; qualitative research continuously validates metric movements; team assumes every metric creates perverse incentives and actively searches for emergent gaming patterns</grade>
+  </criterion>
+
+  <criterion name="Decision Framework Sophistication">
+    <grade level="F">Purely metric-driven decision-making; targets are absolute with no context consideration; teams/individuals are evaluated solely by hitting numeric goals regardless of methods or broader impact; "the metric is the mission"</grade>
+    <grade level="D">Metrics dominate decisions with minimal nuance; targets are rigid with rare exceptions; context is acknowledged but rarely overrides numbers; success is defined almost entirely by metric achievement</grade>
+    <grade level="C">Metrics inform but don't fully determine decisions; targets exist but can be questioned with justification; some context and qualitative factors are considered alongside numbers; success has metric and non-metric components</grade>
+    <grade level="B">Sophisticated decision framework balancing multiple inputs; metrics are key indicators but never sole determinants; targets are context-dependent and regularly calibrated; success is holistically defined with metrics as one dimension</grade>
+    <grade level="A">Exemplary decision framework where metrics serve decisions rather than drive them; quantitative data identifies patterns requiring investigation; qualitative understanding determines action; targets are treated as hypotheses to validate, not commandments; success is measured by genuine outcome achievement with metrics as validation tools</grade>
+  </criterion>
+</rubric>
+
+<examples>
+  <example>
+    <input>
+      <description>Customer support dashboard with response time metric driving behavior</description>
+      <code>
+        <SupportDashboard>
+          <PerformanceMetrics>
+            <Metric priority="critical">
+              <Name>Average Response Time</Name>
+              <Target>Under 5 minutes</Target>
+              <Current>4:32</Current>
+              <Status color="green">MEETING TARGET</Status>
+            </Metric>
+            <AgentRanking>
+              <Agent rank="1" responseTime="2:15">Sarah - EXCELLENT</Agent>
+              <Agent rank="2" responseTime="3:45">Mike - GOOD</Agent>
+              <Agent rank="3" responseTime="6:10" highlight="red">John - NEEDS IMPROVEMENT</Agent>
+            </AgentRanking>
+          </PerformanceMetrics>
+          <Incentives>
+            <BonusStructure>
+              Agents maintaining sub-5min response time for 95% of tickets qualify for monthly bonus
+            </BonusStructure>
+          </Incentives>
+        </SupportDashboard>
+      </code>
+      <issues>
+        - Metric directly determines bonus with no quality checks
+        - Agents incentivized to send quick, incomplete responses
+        - No measurement of resolution quality, customer satisfaction, or repeat contacts
+        - Gaming strategy: send "I'm looking into this" within 5 minutes, then take hours to actually resolve
+        - Single metric determines agent ranking and performance reviews
+      </issues>
+    </input>
+    <chain_of_thought>
+      <step>1. IDENTIFY OPTIMIZATION PRESSURE: Response time metric directly determines bonuses and rankings - creates extreme pressure to optimize for speed over quality</step>
+      <step>2. ASSESS GAMING VULNERABILITY: Agents can easily game by sending acknowledgment messages without actually helping - system can't distinguish "response" from "resolution"</step>
+      <step>3. EVALUATE QUALITATIVE INTEGRATION: Zero qualitative data - no customer satisfaction, resolution quality, or follow-up metrics considered</step>
+      <step>4. CHECK CONSEQUENCE MONITORING: No tracking of repeat contacts, escalations, or satisfaction - team is blind to quality degradation</step>
+      <step>5. ASSESS METRIC LIMITATIONS: Response time measures "when agent first replied" not "when customer was helped" - fundamental proxy limitation not acknowledged</step>
+      <step>6. GRADE APPLICATION:
+        - Metric Gaming Prevention: F (easily gamed, direct incentive, no safeguards)
+        - Qualitative-Quantitative Integration: F (purely metric-driven, zero qualitative data)
+        - Metric Limitation Awareness: F (treats response time as equivalent to customer help)
+        - Unintended Consequence Monitoring: F (no tracking of quality degradation)
+        - Decision Framework Sophistication: F (metric directly determines rewards)
+      </step>
+      <step>7. IDENTIFY FIXES: Add resolution quality metrics, integrate customer satisfaction, implement balanced scorecard, include qualitative reviews, add guardrail metrics</step>
+    </chain_of_thought>
+    <output>
+      <code>
+        <SupportDashboard>
+          <BalancedScorecard>
+            <MetricCategory name="Speed">
+              <Metric>
+                <Name>First Response Time</Name>
+                <Target>Under 5 minutes (80% of tickets)</Target>
+                <Current>4:32 average</Current>
+                <Status>Meeting Target</Status>
+                <Context>Measures initial acknowledgment speed</Context>
+              </Metric>
+            </MetricCategory>
+            
+            <MetricCategory name="Quality">
+              <Metric>
+                <Name>First Contact Resolution</Name>
+                <Target>Above 70%</Target>
+                <Current>68%</Current>
+                <Status color="yellow">Approaching Target</Status>
+                <Context>Percentage of issues resolved in first interaction</Context>
+              </Metric>
+              <Metric>
+                <Name>Customer Satisfaction (CSAT)</Name>
+                <Target>Above 4.2/5</Target>
+                <Current>4.4/5</Current>
+                <Status color="green">Exceeding Target</Status>
+                <Context>Post-interaction survey rating</Context>
+              </Metric>
+            </MetricCategory>
+            
+            <MetricCategory name="Health Indicators">
+              <Metric>
+                <Name>Repeat Contact Rate</Name>
+                <Target>Below 15%</Target>
+                <Current>12%</Current>
+                <Status>Healthy</Status>
+                <Context>Customers contacting about same issue again</Context>
+                <Trend>↑ 3% this month - investigate</Trend>
+              </Metric>
+              <Metric>
+                <Name>Escalation Rate</Name>
+                <Target>Below 10%</Target>
+                <Current>8%</Current>
+                <Status>Healthy</Status>
+              </Metric>
+            </MetricCategory>
+          </BalancedScorecard>
+          
+          <AgentPerformance>
+            <Agent id="sarah">
+              <BalancedScore>
+                <Speed>Excellent (2:15 avg)</Speed>
+                <Quality>Excellent (78% FCR, 4.6 CSAT)</Quality>
+                <Notes>Consistently balances speed and thoroughness</Notes>
+              </BalancedScore>
+            </Agent>
+            <Agent id="john" flagged>
+              <BalancedScore>
+                <Speed>Good (6:10 avg)</Speed>
+                <Quality>Excellent (82% FCR, 4.7 CSAT)</Quality>
+                <Notes>Slower responses but highest resolution quality - discuss whether quality justifies speed tradeoff</Notes>
+                <QualitativeReview>
+                  Customers consistently praise John's thorough explanations. 
+                  Recent feedback: "Took a bit longer to respond but solved my problem completely on first try."
+                </QualitativeReview>
+              </BalancedScore>
+            </Agent>
+          </AgentPerformance>
+          
+          <IncentiveStructure>
+            <BonusRequirements>
+              Agents qualify for bonus by meeting ALL criteria:
+              1. Response time under 5min for 80% of tickets (not 95% - allows prioritization)
+              2. First Contact Resolution above 65%
+              3. CSAT above 4.0/5
+              4. Repeat contact rate below 20%
+            </BonusRequirements>
+            <Warning>
+              Meeting speed targets while failing quality metrics results in coaching, not bonus.
+              Gaming detection (e.g., empty acknowledgments) triggers review.
+            </Warning>
+          </IncentiveStructure>
+          
+          <QualitativeInsights>
+            <WeeklyReview>
+              Team reviews sample of interactions weekly:
+              - High speed + low CSAT = investigate gaming
+              - Low speed + high CSAT = understand methodology
+              - Trend analysis: correlate metric changes with customer feedback themes
+            </WeeklyReview>
+            <CustomerFeedbackIntegration>
+              Verbatim customer comments surfaced alongside metrics to validate interpretations
+            </CustomerFeedbackIntegration>
+          </QualitativeInsights>
+          
+          <AnomalyDetection>
+            <Alert type="warning">
+              Sarah's CSAT dropped from 4.6 to 4.2 while maintaining 2:15 response time.
+              Action: Review recent interactions qualitatively to understand change.
+            </Alert>
+            <Alert type="investigate">
+              Team-wide repeat contact rate increased 3% this month despite stable response times.
+              Action: Conduct user interviews to understand if initial responses are becoming less complete.
+            </Alert>
+          </AnomalyDetection>
+        </SupportDashboard>
+      </code>
+      <improvements>
+        - Metric Gaming Prevention: F → A (multi-metric validation, gaming detection, qualitative reviews)
+        - Qualitative-Quantitative Integration: F → A (CSAT, verbatim feedback, weekly qualitative reviews)
+        - Metric Limitation Awareness: F → A (explicit context for each metric, acknowledgment that response ≠ resolution)
+        - Unintended Consequence Monitoring: F → A (health indicators, anomaly detection, repeat contact tracking)
+        - Decision Framework Sophistication: F → A (balanced scorecard, context-dependent evaluation, qualitative validation)
+        - Balanced scorecard prevents single-metric optimization
+        - Health indicators (repeat contact, escalations) detect quality degradation
+        - Agent evaluation considers context (John's slower but higher quality)
+        - Bonus requires ALL criteria - can't game speed at expense of quality
+        - Anomaly detection triggers qualitative investigation
+        - Customer feedback validates that metric improvements = experience improvements
+      </improvements>
+    </output>
+  </example>
+
+  <example>
+    <input>
+      <description>Social media app optimizing for "engagement" metric</description>
+      <code>
+        <AnalyticsDashboard>
+          <PrimaryMetric>
+            <Name>Daily Active Users (DAU)</Name>
+            <Target>10M users</Target>
+            <Current>9.8M</Current>
+          </PrimaryMetric>
+          <SecondaryMetric>
+            <Name>Average Session Duration</Name>
+            <Target>45 minutes/day</Target>
+            <Current>47 minutes/day</Current>
+          </SecondaryMetric>
+          <AlgorithmOptimization>
+            <Goal>Maximize engagement (time on platform, interactions)</Goal>
+            <ContentStrategy>
+              <Tactic>Prioritize controversial content (drives comments)</Tactic>
+              <Tactic>Recommend content similar to what user engages with</Tactic>
+              <Tactic>Send notifications for trending discussions</Tactic>
+            </ContentStrategy>
+          </AlgorithmOptimization>
+          <TeamGoals>
+            Feature teams evaluated on DAU and session duration impact
+          </TeamGoals>
+        </AnalyticsDashboard>
+      </code>
+      <issues>
+        - "Engagement" metric doesn't distinguish healthy vs unhealthy usage
+        - Algorithm optimizes for time spent, not user value or wellbeing
+        - Controversial content drives engagement but may harm users
+        - No measurement of user satisfaction, regret, or long-term retention
+        - Team incentivized to increase time on platform regardless of quality of that time
+      </issues>
+    </input>
+    <chain_of_thought>
+      <step>1. IDENTIFY METRIC LIMITATION: "Engagement" measures behavior but not value - assumes all time on platform is good, ignoring user regret or unhealthy patterns</step>
+      <step>2. ASSESS OPTIMIZATION PRESSURE: Teams directly evaluated on engagement - creates pressure to maximize time spent through any means including manipulation</step>
+      <step>3. EVALUATE UNINTENDED CONSEQUENCES: Algorithm promoting controversial content may increase engagement short-term but harm user experience and trust long-term</step>
+      <step>4. CHECK QUALITATIVE INTEGRATION: No user satisfaction, wellbeing, or qualitative research mentioned - pure metric optimization</step>
+      <step>5. ASSESS GAMING VULNERABILITY: Teams can boost engagement through dark patterns (infinite scroll, outrage content, FOMO notifications) that users later regret</step>
+      <step>6. GRADE APPLICATION:
+        - Metric Limitation Awareness: F (treats engagement as inherently good)
+        - Unintended Consequence Monitoring: F (no tracking of user regret, wellbeing, or long-term harm)
+        - Qualitative-Quantitative Integration: F (purely metric-driven)
+        - Metric Gaming Prevention: D (algorithm games user psychology)
+        - Decision Framework Sophistication: D (engagement metric drives all decisions)
+      </step>
+      <step>7. IDENTIFY FIXES: Add user value metrics, measure regret and wellbeing, integrate satisfaction research, implement health guardrails, distinguish healthy vs unhealthy engagement</step>
+    </chain_of_thought>
+    <output>
+      <code>
+        <AnalyticsDashboard>
+          <BalancedMetrics>
+            <MetricCategory name="Growth">
+              <Metric>
+                <Name>Daily Active Users</Name>
+                <Current>9.8M</Current>
+                <Context>Measures reach, not value</Context>
+              </Metric>
+            </MetricCategory>
+            
+            <MetricCategory name="Value Created">
+              <Metric>
+                <Name>Meaningful Interactions</Name>
+                <Definition>Conversations with close connections, content saves, shares to specific people</Definition>
+                <Target>65% of sessions include meaningful interaction</Target>
+                <Current>58%</Current>
+                <Rationale>Measures valuable engagement, not just time killed</Rationale>
+              </Metric>
+              <Metric>
+                <Name>User-Reported Value</Name>
+                <Target>70% of users report "time well spent"</Target>
+                <Current>64%</Current>
+                <MeasurementMethod>Weekly survey: "Did time on platform today feel valuable?"</MeasurementMethod>
+              </Metric>
+            </MetricCategory>
+            
+            <MetricCategory name="Health Indicators" priority="critical">
+              <Metric>
+                <Name>Session Regret Rate</Name>
+                <Definition>Users reporting they spent more time than intended or saw content they regret</Definition>
+                <Target>Below 15%</Target>
+                <Current>22%</Current>
+                <Status color="red">FAILING - INVESTIGATE</Status>
+                <Trend>↑ 5% since algorithm change - correlation detected</Trend>
+              </Metric>
+              <Metric>
+                <Name>Wellbeing Score</Name>
+                <Target>Above 4.0/5</Target>
+                <Current>3.8/5</Current>
+                <Status color="yellow">Below Target</Status>
+                <MeasurementMethod>Monthly research: user self-assessment of platform impact on wellbeing</MeasurementMethod>
+              </Metric>
+              <Metric>
+                <Name>Healthy Usage Distribution</Name>
+                <Target>Less than 10% of users in "compulsive usage" pattern</Target>
+                <Current>14%</Current>
+                <Status color="red">FAILING</Status>
+                <Definition>Users with 3+ hours daily AND reporting difficulty controlling usage</Definition>
+              </Metric>
+            </MetricCategory>
+            
+            <MetricCategory name="Content Quality">
+              <Metric>
+                <Name>Constructive Conversation Rate</Name>
+                <Target>Above 60%</Target>
+                <Current>52%</Current>
+                <Definition>Comment threads without harassment, personal attacks, or misinformation flags</Definition>
+              </Metric>
+            </MetricCategory>
+          </BalancedMetrics>
+          
+          <AlgorithmGuardrails>
+            <Constraint type="hard_limit">
+              Content recommendations MUST NOT optimize purely for engagement.
+              Ranking considers: predicted user value, wellbeing impact, constructiveness, diversity.
+            </Constraint>
+            <Constraint type="health_check">
+              If content increases engagement but correlates with increased regret rate, de-rank that content type.
+            </Constraint>
+            <Constraint type="vulnerable_populations">
+              Users exhibiting compulsive usage patterns receive reduced notifications and prompts to take breaks.
+            </Constraint>
+          </AlgorithmGuardrails>
+          
+          <FeatureEvaluation>
+            <LaunchCriteria>
+              New features must demonstrate positive impact on:
+              1. At least one value metric (meaningful interactions OR time-well-spent)
+              2. No degradation of health metrics (regret, wellbeing, compulsive usage)
+              3. Qualitative validation that users find feature valuable
+            </LaunchCriteria>
+            <Example type="rejected">
+              "Auto-play next video" feature increased session duration by 12% but:
+              - Increased regret rate by 8%
+              - User research showed "feels manipulative" and "hard to stop"
+              - Decision: Do not launch despite engagement gains
+            </Example>
+          </FeatureEvaluation>
+          
+          <QualitativeResearch>
+            <WeeklyUserInterviews>
+              Sample users from different engagement levels to understand:
+              - What felt valuable vs wasteful about platform usage
+              - Whether algorithm recommendations felt helpful or manipulative
+              - Impact on mood, productivity, relationships
+            </WeeklyUserInterviews>
+            <SegmentAnalysis>
+              High engagement + High regret = Compulsive pattern - intervention needed
+              High engagement + High value rating = Power user - learn from them
+              Low engagement + High value rating = Efficient usage - don't punish in metrics
+            </SegmentAnalysis>
+          </QualitativeResearch>
+          
+          <TeamIncentives>
+            <EvaluationFramework>
+              Teams evaluated on balanced scorecard:
+              - Growth metrics (DAU, retention) - 25%
+              - Value metrics (meaningful interactions, time-well-spent) - 35%
+              - Health metrics (regret rate, wellbeing, compulsive usage) - 30%
+              - Content quality metrics - 10%
+              
+              Features that boost growth while harming health = net negative evaluation
+            </EvaluationFramework>
+          </TeamIncentives>
+          
+          <AnomalyDetection>
+            <Alert type="critical">
+              Session duration increased 8% but regret rate increased 5% and wellbeing score declined.
+              Action: Qualitative research to understand what changed. Potentially rollback recent algorithm updates.
+            </Alert>
+            <Investigation>
+              Deep-dive: Users report algorithm now surfaces more "outrage content" that's "hard to look away from" but "leaves me feeling worse."
+              Decision: Revert algorithm change despite engagement gains - optimizing for wrong outcome.
+            </Investigation>
+          </AnomalyDetection>
+        </AnalyticsDashboard>
+      </code>
+      <improvements>
+        - Metric Limitation Awareness: F → A (explicit acknowledgment that engagement ≠ value, distinguishes healthy vs unhealthy usage)
+        - Unintended Consequence Monitoring: F → A (regret rate, wellbeing score, compulsive usage tracking)
+        - Qualitative-Quantitative Integration: F → A (weekly interviews, user-reported value, qualitative validation required for launches)
+        - Metric Gaming Prevention: D → A (algorithm guardrails prevent manipulation, health metrics constrain optimization)
+        - Decision Framework Sophistication: D → A (balanced scorecard, rejected features that harm health despite engagement gains)
+        - Meaningful interactions metric focuses on quality over quantity
+        - Time-well-spent directly measures user perception of value
+        - Health indicators detect when engagement comes at user wellbeing cost
+        - Algorithm explicitly constrained from pure engagement optimization
+        - Feature evaluation requires value + health validation, not just engagement
+        - Team incentives balanced across growth, value, and health
+        - Real example of rejecting engagement-boosting feature due to regret increase
+      </improvements>
+    </output>
+  </example>
+
+  <example>
+    <input>
+      <description>E-commerce platform optimizing for conversion rate</description>
+      <code>
+        <EcommerceDashboard>
+          <KPI priority="critical">
+            <Name>Conversion Rate</Name>
+            <Target>3.5%</Target>
+            <Current>3.2%</Current>
+            <Status color="red">BELOW TARGET</Status>
+          </KPI>
+          <OptimizationStrategies>
+            <Tactic status="implemented">
+              <Name>Urgency Messaging</Name>
+              <Description>"Only 2 left in stock!" (even if 50 available)</Description>
+              <Impact>+0.3% conversion</Impact>
+            </Tactic>
+            <Tactic status="implemented">
+              <Name>Limited Time Discounts</Name>
+              <Description>Countdown timers on product pages (reset daily)</Description>
+              <Impact>+0.4% conversion</Impact>
+            </Tactic>
+            <Tactic status="testing">
+              <Name>Comparison Pricing</Name>
+              <Description>Show inflated "original price" to make discount appear larger</Description>
+              <ProjectedImpact>+0.2% conversion</Impact>
+            </Tactic>
+          </OptimizationStrategies>
+          <TeamGoals>
+            Product team bonus tied to conversion rate improvement
+          </TeamGoals>
+        </EcommerceDashboard>
+      </code>
+      <issues>
+        - Conversion metric incentivizes manipulation and false urgency
+        - Dark patterns boost short-term conversion but harm trust
+        - No measurement of customer satisfaction, return rates, or repeat purchase
+        - Team gaming metric through deceptive practices
+        - Optimizing for purchase decision, not purchase satisfaction
+      </issues>
+    </input>
+    <chain_of_thought>
+      <step>1. IDENTIFY GAMING BEHAVIOR: Team implementing dark patterns (fake scarcity, manipulative pricing) to boost conversion - classic Campbell's Law corruption</step>
+      <step>2. ASSESS METRIC LIMITATION: Conversion rate measures "did they buy" not "were they satisfied" - fundamental proxy problem</step>
+      <step>3. EVALUATE UNINTENDED CONSEQUENCES: Short-term conversion gains likely causing long-term trust damage, increased returns, reduced repeat purchases</step>
+      <step>4. CHECK CONSEQUENCE MONITORING: No tracking of returns, satisfaction, repeat purchase, or customer lifetime value - blind to quality degradation</step>
+      <step>5. ASSESS DECISION FRAMEWORK: Team bonus directly tied to conversion rate with no quality gates - maximum corruption pressure</step>
+      <step>6. GRADE APPLICATION:
+        - Metric Gaming Prevention: F (active gaming through dark patterns)
+        - Metric Limitation Awareness: F (treats conversion as inherently good)
+        - Unintended Consequence Monitoring: F (no tracking of satisfaction, returns, LTV)
+        - Qualitative-Quantitative Integration: F (no customer feedback integration)
+        - Decision Framework Sophistication: F (pure conversion optimization)
+      </step>
+      <step>7. IDENTIFY FIXES: Add quality metrics (NPS, returns, repeat purchase), ban dark patterns, integrate customer feedback, measure LTV not just conversion, implement ethical guidelines</step>
+    </chain_of_thought>
+    <output>
+      <code>
+        <EcommerceDashboard>
+          <BalancedMetrics>
+            <MetricCategory name="Acquisition">
+              <Metric>
+                <Name>Conversion Rate</Name>
+                <Current>3.2%</Current>
+                <Context>Measures purchase decisions, not purchase satisfaction</Context>
+                <Note>Optimize only when customer value metrics are healthy</Note>
+              </Metric>
+            </MetricCategory>
+            
+            <MetricCategory name="Customer Value">
+              <Metric>
+                <Name>Net Promoter Score (NPS)</Name>
+                <Target>Above 50</Target>
+                <Current>42</Current>
+                <Status color="yellow">Below Target</Status>
+                <Trend>↓ 8 points since Q2 - investigate urgency</Trend>
+              </Metric>
+              <Metric>
+                <Name>Repeat Purchase Rate (90 days)</Name>
+                <Target>Above 35%</Target>
+                <Current>31%</Current>
+                <Status color="red">FAILING</Status>
+                <Definition>Customers who make second purchase within 90 days</Definition>
+              </Metric>
+              <Metric>
+                <Name>Customer Lifetime Value (LTV)</Name>
+                <Target>$450</Target>
+                <Current>$385</Current>
+                <Trend>↓ declining - prioritize retention over acquisition</Trend>
+              </Metric>
+            </MetricCategory>
+            
+            <MetricCategory name="Health Indicators" priority="critical">
+              <Metric>
+                <Name>Return Rate</Name>
+                <Target>Below 8%</Target>
+                <Current>12%</Current>
+                <Status color="red">FAILING</Status>
+                <Trend>↑ 4% since implementing urgency tactics</Trend>
+                <Investigation>Correlation detected: urgency messaging → impulse buys → regret → returns</Investigation>
+              </Metric>
+              <Metric>
+                <Name>Post-Purchase Satisfaction</Name>
+                <Target>Above 4.2/5</Target>
+                <Current>3.9/5</Current>
+                <Status color="red">FAILING</Status>
+                <MeasurementMethod>Survey 3 days after delivery</MeasurementMethod>
+              </Metric>
+              <Metric>
+                <Name>Trust Score</Name>
+                <Target>Above 4.5/5</Target>
+                <Current>4.1/5</Current>
+                <Status color="yellow">Below Target</Status>
+                <Feedback>Common themes: "felt pressured," "discount seemed fake," "urgency was misleading"</Feedback>
+              </Metric>
+            </MetricCategory>
+          </BalancedMetrics>
+          
+          <EthicalGuidelines>
+            <Principle name="Transparency">
+              All messaging must be accurate. Prohibited:
+              - False scarcity (claiming low stock when ample inventory exists)
+              - Fake discounts (inflating "original price" beyond actual historical prices)
+              - Misleading timers (countdown that resets or doesn't reflect real deadlines)
+            </Principle>
+            <Principle name="Customer-First Optimization">
+              Conversion tactics must improve customer experience, not exploit psychology.
+              Question: "Would we be proud to explain this tactic to customers publicly?"
+            </Principle>
+            <Enforcement>
+              Features implementing dark patterns are rejected regardless of conversion impact.
+              Product reviews include ethics assessment alongside metric projections.
+            </Enforcement>
+          </EthicalGuidelines>
+          
+          <OptimizationStrategy>
+            <ApprovedTactic>
+              <Name>Honest Social Proof</Name>
+              <Description>"127 people bought this yesterday" (actual data)</Description>
+              <Impact>+0.2% conversion</Impact>
+              <Validation>NPS stable, trust score improved +0.1</Validation>
+            </ApprovedTactic>
+            <ApprovedTactic>
+              <Name>Informative Product Comparisons</Name>
+              <Description>Show feature comparisons helping customers choose right product</Description>
+              <Impact>+0.3% conversion, -2% return rate</Impact>
+              <Validation>Satisfaction improved +0.3 - customers feel more confident in choice</Validation>
+            </ApprovedTactic>
+            <RejectedTactic>
+              <Name>Fake Urgency Messaging</Name>
+              <Description>"Only 2 left!" when 50 available</Description>
+              <Impact>+0.3% conversion</Impact>
+              <Reason>Decreased trust score -0.4, increased returns +3%, violated transparency principle</Reason>
+              <Decision>PERMANENTLY BANNED - harms long-term customer relationships</Decision>
+            </RejectedTactic>
+            <RejectedTactic>
+              <Name>Inflated Original Pricing</Name>
+              <Description>Show $199 "original price" for item that's always been $99</Description>
+              <Impact>+0.2% conversion</Impact>
+              <Reason>Customer complaints about "deceptive pricing," NPS dropped -5 points in test</Reason>
+              <Decision>REJECTED - violates customer trust</Decision>
+            </RejectedTactic>
+          </OptimizationStrategy>
+          
+          <QualitativeResearch>
+            <PostPurchaseInterviews>
+              Weekly interviews with recent buyers:
+              - What influenced their purchase decision?
+              - Do they feel good about their purchase?
+              - Was any messaging misleading or manipulative?
+              - Would they buy from us again?
+            </PostPurchaseInterviews>
+            <ReturnAnalysis>
+              For high-return products, investigate:
+              - Were customer expectations set accurately?
+              - Did urgency/scarcity messaging create impulse buys?
+              - How can we help customers make better-informed choices?
+            </ReturnAnalysis>
+          </QualitativeResearch>
+          
+          <TeamIncentives>
+            <BonusStructure>
+              Product team bonus requires meeting ALL criteria:
+              1. Conversion rate above 3.0% (lowered from 3.5%)
+              2. NPS above 50
+              3. Repeat purchase rate above 35%
+              4. Return rate below 8%
+              5. Trust score above 4.5/5
+              
+              Achieving conversion target while failing quality metrics = no bonus.
+              Dark pattern usage = disqualification regardless of metrics.
+            </BonusStructure>
+          </TeamIncentives>
+          
+          <AnomalyDetection>
+            <Alert type="critical">
+              Conversion increased 0.7% after urgency messaging launch, BUT:
+              - Return rate increased 4%
+              - NPS dropped 8 points
+              - Trust score decreased 0.5
+              - Repeat purchase rate declined 6%
+              
+              Analysis: Short-term conversion gain creating long-term value destruction.
+              Decision: Remove urgency messaging despite conversion impact.
+            </Alert>
+            <Investigation>
+              Customer feedback analysis: "Felt pressured to buy," "Urgency seemed fake," "Regretted impulse purchase."
+              Calculation: Lost LTV from damaged trust exceeds gained revenue from conversion boost.
+              Outcome: Banned false urgency tactics, focused on trust-building conversion strategies.
+            </Investigation>
+          </AnomalyDetection>
+          
+          <LongTermOptimization>
+            <Strategy>
+              Primary goal: Maximize customer lifetime value (LTV), not transaction conversion.
+              Conversion tactics evaluated by: short-term conversion impact × long-term trust/satisfaction impact.
+              Preference: Tactics that improve both conversion AND customer experience.
+              Rejection: Any tactic that trades long-term trust for short-term conversions.
+            </Strategy>
+          </LongTermOptimization>
+        </EcommerceDashboard>
+      </code>
+      <improvements>
+        - Metric Gaming Prevention: F → A (dark patterns banned, ethical guidelines enforced, gaming attempts rejected)
+        - Metric Limitation Awareness: F → A (explicit acknowledgment conversion ≠ satisfaction, LTV prioritized over conversion)
+        - Unintended Consequence Monitoring: F → A (return rate, NPS, trust score, repeat purchase all tracked)
+        - Qualitative-Quantitative Integration: F → A (post-purchase interviews, return analysis, customer feedback themes)
+        - Decision Framework Sophistication: F → A (balanced scorecard, ethics-first, LTV optimization over conversion)
+        - Ethical guidelines explicitly ban dark patterns
+        - Real examples of rejected tactics despite conversion gains
+        - Health metrics detect when conversion comes at trust/satisfaction cost
+        - Bonus structure requires quality metrics, not just conversion
+        - Anomaly detection caught urgency messaging harm despite conversion boost
+        - Customer interviews validate that metric movements reflect experience improvements
+        - LTV prioritization aligns incentives with long-term customer value
+      </improvements>
+    </output>
+  </example>
+</examples>
+
+<llm_lint>
+  <description>Automated checklist to validate systems against Campbell's Law principles</description>
+  
+  <lint_process>
+    <stage name="Metric Influence Mapping">
+      <check>Identify all quantitative metrics tracked in the system</check>
+      <check>For each metric, document how it influences decisions (informational, targets, incentives, automated actions)</check>
+      <check>Flag metrics directly determining rewards, bonuses, rankings, or automated decisions</check>
+      <check>Assess corruption pressure: higher stakes = higher gaming risk</check>
+      <output>Influence map: [Metric] → [Decision type] → [Corruption pressure: Low/Medium/High/Critical]</output>
+    </stage>
+    
+    <stage name="Gaming Vulnerability Assessment">
+      <check>For each high-stakes metric, identify how it could be gamed</check>
+      <check>Brainstorm shortcuts that improve metric without achieving underlying goal</check>
+      <check>Check for existing evidence of gaming behavior (anomalous patterns, user complaints)</check>
+      <check>Evaluate whether current safeguards prevent identified gaming strategies</check>
+      <output>Gaming vulnerabilities: [Metric] can be gamed by [strategy] - current safeguards: [none/inadequate/adequate]</output>
+    </stage>
+    
+    <stage name="Proxy Quality Evaluation">
+      <check>For each metric, document the actual goal it's meant to proxy</check>
+      <check>Assess how well metric captures true goal vs simplified proxy</check>
+      <check>Identify what important aspects the metric doesn't measure</check>
+      <check>Check if team acknowledges proxy limitations or treats metric as objective truth</check>
+      <output>Proxy analysis: [Metric] proxies [actual goal] - captures [X%] of goal - misses [important unmeasured aspects] - team awareness: [aware/partially aware/unaware]</output>
+    </stage>
+    
+    <stage name="Qualitative Data Integration Check">
+      <check>Identify all qualitative data sources (user feedback, interviews, surveys, support tickets)</check>
+      <check>Assess whether qualitative data is systematically integrated into decision-making</check>
+      <check>Check if decisions can be made on metrics alone or require qualitative validation</check>
+      <check>Evaluate whether qualitative insights trigger metric investigation or vice versa</check>
+      <output>Qualitative integration: [Data source] is [never/rarely/sometimes/regularly/always] consulted for [decision type] - integration quality: [F/D/C/B/A]</output>
+    </stage>
+    
+    <stage name="Unintended Consequence Detection">
+      <check>For each primary metric, identify potential negative side effects of optimization</check>
+      <check>Check if counter-metrics or health indicators exist to detect side effects</check>
+      <check>Assess whether side effects are monitored proactively or reactively</check>
+      <check>Review historical examples of metric improvements that harmed overall experience</check>
+      <output>Consequence monitoring: Optimizing [metric] could harm [aspect] - monitoring: [none/reactive/proactive] - historical incidents: [examples]</output>
+    </stage>
+    
+    <stage name="Incentive Structure Analysis">
+      <check>Map all incentive structures (bonuses, rankings, promotions, algorithm rewards)</check>
+      <check>Identify whether incentives are single-metric or multi-dimensional</check>
+      <check>Assess if incentive structure creates perverse incentives or misalignment</check>
+      <check>Check for guardrails preventing gaming or quality degradation</check>
+      <output>Incentive analysis: [Team/System] incentivized by [metrics] - structure: [single/balanced] - perverse incentives: [identified issues] - guardrails: [present/absent]</output>
+    </stage>
+    
+    <stage name="Decision Framework Audit">
+      <check>Review recent major decisions and document role of metrics vs other factors</check>
+      <check>Identify if metrics drive decisions or inform them</check>
+      <check>Check if targets are treated as absolute or context-dependent</check>
+      <check>Assess if qualitative context can override metric targets</check>
+      <output>Decision patterns: [X%] of decisions purely metric-driven - targets are [absolute/flexible] - context overrides: [never/rare/common]</output>
+    </stage>
+    
+    <stage name="Grade Assignment">
+      <check>For each criterion, apply F-A grading based on evidence from above stages</check>
+      <check>Document specific examples supporting each grade</check>
+      <check>Prioritize fixes for high-corruption-pressure metrics with inadequate safeguards</check>
+      <output>
+        Criterion Grades:
+        - Metric Gaming Prevention: [Grade] - [Evidence]
+        - Qualitative-Quantitative Integration: [Grade] - [Evidence]
+        - Metric Limitation Awareness: [Grade] - [Evidence]
+        - Unintended Consequence Monitoring: [Grade] - [Evidence]
+        - Decision Framework Sophistication: [Grade] - [Evidence]
+      </output>
+    </stage>
+    
+    <stage name="Fix Prescription">
+      <check>For each gaming vulnerability, prescribe safeguards (counter-metrics, qualitative validation, guardrails)</check>
+      <check>For each proxy limitation, prescribe supplementary metrics or qualitative data</check>
+      <check>For each unmonitored consequence, prescribe health indicators</check>
+      <check>For each perverse incentive, prescribe balanced scorecard approach</check>
+      <output>
+        Fixes prioritized by corruption pressure:
+        1. [High-pressure metric]: Add [counter-metrics], implement [guardrails], require [qualitative validation]
+        2. [Proxy limitation]: Supplement with [better proxy] or [qualitative data source]
+        3. [Perverse incentive]: Change from [current structure] to [balanced approach]
+        4. [Unmonitored consequence]: Add [health indicator] to detect [specific harm]
+      </output>
+    </stage>
+  </lint_process>
+  
+  <output_format>
+    Report: Executive Summary (Campbell's Law risk score, high-corruption metrics, gaming evidence, F/D counts, top fix) | Detailed Findings (criterion grades with evidence + specific gaming vulnerabilities and proxy limitations) | Remediation Plan (fixes prioritized by corruption pressure, with safeguards, counter-metrics, and qualitative integration strategies, expected grade improvement)
+  </output_format>
+  
+  <automated_checks>
+    <check type="single_metric_incentives">
+      <pattern>Detect bonuses, rankings, or rewards determined by single metric without quality gates</pattern>
+      <severity>critical</severity>
+      <rationale>Maximum corruption pressure - individuals/teams optimize metric at expense of unmeasured goals</rationale>
+    </check>
+    
+    <check type="no_counter_metrics">
+      <pattern>Identify primary KPIs without corresponding health indicators or counter-metrics</pattern>
+      <severity>high</severity>
+      <rationale>No detection mechanism for unintended consequences of optimization</rationale>
+    </check>
+    
+    <check type="missing_qualitative_data">
+      <pattern>Decision-making processes that don't integrate user feedback, surveys, or qualitative research</pattern>
+      <severity>high</severity>
+      <rationale>Purely quantitative decisions blind to context and unmeasured impacts</rationale>
+    </check>
+    
+    <check type="proxy_unawareness">
+      <pattern>Metrics treated as objective truth rather than proxies with limitations</pattern>
+      <severity>medium</severity>
+      <rationale>Team assumes metric perfectly captures goal, misses important unmeasured aspects</rationale>
+    </check>
+    
+    <check type="dark_patterns">
+      <pattern>Features designed to boost metrics through manipulation (fake scarcity, misleading urgency, deceptive framing)</pattern>
+      <severity>critical</severity>
+      <rationale>Active gaming that harms user trust and experience for metric gains</rationale>
+    </check>
+    
+    <check type="no_ethics_review">
+      <pattern>Feature approval processes lacking ethics or customer impact assessment beyond metrics</pattern>
+      <severity>high</severity>
+      <rationale>Optimization can proceed without checking if metric improvement = genuine value creation</rationale>
+    </check>
+    
+    <check type="reactive_consequence_monitoring">
+      <pattern>Side effects discovered only after user complaints rather than proactive health tracking</pattern>
+      <severity>medium</severity>
+      <rationale>Damage occurs before detection - no early warning system</rationale>
+    </check>
+    
+    <check type="engagement_without_value">
+      <pattern>Metrics measuring behavior (clicks, time, views) without measuring value (satisfaction, task completion, regret)</pattern>
+      <severity>high</severity>
+      <rationale>Assumes all engagement is good - vulnerable to optimizing for addiction over value</rationale>
+    </check>
+  </automated_checks>
+  
+  <gaming_pattern_library>
+    <pattern name="Metric Narrowing">
+      <description>Optimizing narrowly-defined metric while harming broader goal</description>
+      <example>Customer support: Fast response time via empty acknowledgments, not actual help</example>
+      <detection>Primary metric improving while related quality metrics declining</detection>
+      <prevention>Multi-dimensional scorecards, quality validation requirements</prevention>
+    </pattern>
+    
+    <pattern name="Manipulation Over Value">
+      <description>Using psychological manipulation to boost metrics rather than creating genuine value</description>
+      <example>Social media: Outrage content increases engagement but harms wellbeing</example>
+      <detection>Metric improvement with declining satisfaction/wellbeing/NPS</detection>
+      <prevention>User value metrics, regret tracking, ethics reviews</prevention>
+    </pattern>
+    
+    <pattern name="Short-Term Spike Long-Term Harm">
+      <description>Tactics that boost metrics immediately but damage long-term outcomes</description>
+      <example>E-commerce: False urgency increases conversions but decreases trust and repeat purchases</example>
+      <detection>Initial metric improvement followed by declining retention/LTV/satisfaction</detection>
+      <prevention>Long-term value metrics (LTV, retention), trust scores, cohort analysis</prevention>
+    </pattern>
+    
+    <pattern name="Proxy Substitution">
+      <description>Optimizing for easily-measured proxy instead of hard-to-measure actual goal</description>
+      <example>Education: Teaching to standardized tests instead of developing understanding</example>
+      <detection>Metric improving while qualitative assessment shows no real progress</detection>
+      <prevention>Regular qualitative validation, direct measurement attempts, proxy limitation awareness</prevention>
+    </pattern>
+    
+    <pattern name="Cherry-Picking Populations">
+      <description>Focusing on easy-to-improve segments while neglecting hard-to-serve users</description>
+      <example>Healthcare: Treating healthy patients to boost success rates, avoiding complex cases</example>
+      <detection>Overall metrics improving but specific segments degrading or being excluded</detection>
+      <prevention>Segment-specific metrics, equity requirements, qualitative coverage checks</prevention>
+    </pattern>
+  </gaming_pattern_library>
+</llm_lint>
