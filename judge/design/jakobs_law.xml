@@ -1,0 +1,401 @@
+<system>
+  <role>Expert UX Researcher & Usability Specialist</role>
+  <scope>
+    <file_types>*.tsx, *.jsx, *.vue, *.svelte, *.html</file_types>
+    <model_requirement>Claude Sonnet 3.5 or higher</model_requirement>
+  </scope>
+  <law>Jakob's Law: Users spend most of their time on other sites, so they prefer your site to work the same way as all the other sites they already know. Users transfer expectations from familiar products; leverage existing mental models to let users focus on tasks not learning; when making changes, minimize discord by offering familiar versions during transition.</law>
+</system>
+
+<rubric>
+  <criterion name="Expectations Transfer">
+    <grade level="F">Interface violates fundamental expectations at every turn; common patterns (navigation, forms, buttons) work completely differently than industry standards, causing constant user confusion and errors</grade>
+    <grade level="D">Multiple significant deviations from expected behavior; users frequently encounter unfamiliar patterns that require learning or cause mistakes, though some standard elements exist</grade>
+    <grade level="C">Basic familiar patterns are present for core interactions (clicking, scrolling, form submission), but secondary interactions or less common features deviate from conventions without clear benefit</grade>
+    <grade level="B">Strong adherence to established conventions across most of the interface; users can predict behavior based on prior experience with minor exceptions that are well-signaled</grade>
+    <grade level="A">Exemplary use of familiar patterns throughout; every interaction aligns with user expectations from similar products, creating an instantly intuitive experience that requires zero learning curve for convention-based tasks</grade>
+  </criterion>
+
+  <criterion name="Mental Model Alignment">
+    <grade level="F">Information architecture, terminology, and conceptual structure are completely foreign; users cannot map their understanding from similar products to this interface, requiring extensive learning to build a new mental model</grade>
+    <grade level="D">Significant mismatches between user expectations and system structure; unusual terminology, unexpected categorization, or novel organizational schemes create friction and slow task completion</grade>
+    <grade level="C">Adequate alignment with common mental models for primary tasks, but secondary features use unfamiliar structures or non-standard terminology that occasionally confuse users</grade>
+    <grade level="B">Strong alignment with established mental models; terminology, structure, and organization closely match what users expect from category-leading products, with only minor deviations that don't impede understanding</grade>
+    <grade level="A">Perfect alignment with user mental models; the interface feels like a natural extension of products users already know, using identical or near-identical terminology, structure, and conceptual organization</grade>
+  </criterion>
+
+  <criterion name="Discord Minimization">
+    <grade level="F">Changes are abrupt with no transition support; users are forced into unfamiliar patterns immediately with no option to use previous versions, no explanation of changes, and no progressive disclosure of new features</grade>
+    <grade level="D">Changes are jarring with minimal support; some notification of changes exists but no transition period, gradual rollout, or ability to revert; users must adapt immediately or struggle</grade>
+    <grade level="C">Basic transition support for major changes; users receive notifications about changes and perhaps brief tutorials, but no option to temporarily use familiar versions or gradual feature introduction</grade>
+    <grade level="B">Thoughtful change management; users are notified in advance, given optional tutorials or tours, and significant changes include transition periods where users can toggle between old and new versions</grade>
+    <grade level="A">Exemplary change management that respects user familiarity; gradual rollouts, A/B testing to refine before full deployment, optional "classic mode" during transition periods, contextual help highlighting what changed and why, and progressive disclosure of new features</grade>
+  </criterion>
+
+  <criterion name="Convention Adherence">
+    <grade level="F">Completely ignores platform conventions; custom implementations of everything from scroll behavior to form controls that break user expectations and accessibility standards</grade>
+    <grade level="D">Frequent violations of platform conventions; many custom controls or behaviors that differ from native patterns without providing superior functionality, creating confusion</grade>
+    <grade level="C">Generally follows major platform conventions (button placement, navigation patterns) but deviates in secondary interactions or visual styling in ways that occasionally confuse users</grade>
+    <grade level="B">Strong adherence to platform conventions across the interface; uses native patterns and behaviors where appropriate, with any custom implementations clearly signaled and functionally superior</grade>
+    <grade level="A">Flawless convention adherence; follows platform-specific patterns (iOS, Android, Web) appropriately, uses established cross-platform conventions for common tasks, and any innovations extend rather than replace familiar patterns</grade>
+  </criterion>
+
+  <criterion name="Pattern Consistency">
+    <grade level="F">Internal inconsistency compounds unfamiliarity; even when familiar patterns are used, they're applied inconsistently across different sections, creating unpredictability</grade>
+    <grade level="D">Significant internal inconsistencies; similar actions produce different results in different contexts, or the same pattern is implemented differently across pages/screens</grade>
+    <grade level="C">Generally consistent application of patterns within major sections, but inconsistencies exist across different areas of the product or between related features</grade>
+    <grade level="B">Strong internal consistency; familiar patterns are applied uniformly across the interface with only minor exceptions that are contextually justified</grade>
+    <grade level="A">Perfect internal consistency; once a user learns how a pattern works in one context, it works identically everywhere else, reinforcing familiarity and reducing cognitive load</grade>
+  </criterion>
+</rubric>
+
+<examples>
+  <example>
+    <input>
+      <description>E-commerce product page with non-standard "Add to Cart" interaction</description>
+      <code>
+        <ProductPage>
+          <ProductImage src="product.jpg" />
+          <ProductTitle>Premium Headphones</ProductTitle>
+          <Price>$299</Price>
+          <PurchaseButton onClick="openModal()">Acquire Item</PurchaseButton>
+          <Modal>
+            <SelectQuantity />
+            <SelectColor />
+            <FinalizeButton>Complete Acquisition</FinalizeButton>
+          </Modal>
+        </ProductPage>
+      </code>
+      <issues>
+        - Non-standard label "Acquire Item" instead of "Add to Cart"
+        - Unusual two-step modal process for basic cart addition
+        - "Complete Acquisition" doesn't match expected e-commerce terminology
+        - Forces users through unnecessary modal for simple action
+      </issues>
+    </input>
+    <chain_of_thought>
+      <step>1. IDENTIFY EXPECTED PATTERN: In e-commerce, users expect direct "Add to Cart" button that adds product with one click, with options either on the page or in a quick confirmation</step>
+      <step>2. COMPARE ACTUAL VS EXPECTED: Interface uses unfamiliar terminology ("Acquire Item") and requires modal interaction that doesn't match Amazon, Shopify, or other e-commerce conventions</step>
+      <step>3. ASSESS MENTAL MODEL: Users' mental model expects cart → checkout flow, not "acquisition" language; modal interrupts expected single-click addition</step>
+      <step>4. EVALUATE DISCORD: No transition support; users encountering this must learn new pattern with no benefit over familiar approach</step>
+      <step>5. GRADE APPLICATION:
+        - Expectations Transfer: D (violates basic e-commerce conventions)
+        - Mental Model Alignment: D (unfamiliar terminology and flow)
+        - Discord Minimization: N/A (not a change scenario)
+        - Convention Adherence: F (ignores universal e-commerce patterns)
+        - Pattern Consistency: Cannot assess from single example
+      </step>
+      <step>6. IDENTIFY FIXES: Use standard "Add to Cart" button, place variant selectors on page above button, provide inline confirmation instead of modal</step>
+    </chain_of_thought>
+    <output>
+      <code>
+        <ProductPage>
+          <ProductImage src="product.jpg" />
+          <ProductTitle>Premium Headphones</ProductTitle>
+          <Price>$299</Price>
+          <VariantSelector label="Color">
+            <Option value="black">Black</Option>
+            <Option value="white">White</Option>
+            <Option value="silver">Silver</Option>
+          </VariantSelector>
+          <QuantitySelector label="Quantity" default={1} />
+          <AddToCartButton primary>Add to Cart</AddToCartButton>
+          <Toast variant="success" show={addedToCart}>
+            Added to cart! <Link to="/cart">View cart</Link>
+          </Toast>
+        </ProductPage>
+      </code>
+      <improvements>
+        - Expectations Transfer: D → A (standard "Add to Cart" label and behavior)
+        - Mental Model Alignment: D → A (familiar e-commerce terminology and flow)
+        - Convention Adherence: F → A (matches universal e-commerce patterns)
+        - Uses inline selectors like category leaders (Amazon, Shopify)
+        - Provides non-blocking confirmation toast with cart access
+        - Single-click addition with pre-selected variants
+      </improvements>
+    </output>
+  </example>
+
+  <example>
+    <input>
+      <description>Search interface with unconventional placement and behavior</description>
+      <code>
+        <Header>
+          <Logo />
+          <Navigation>
+            <NavItem>Home</NavItem>
+            <NavItem>Products</NavItem>
+            <NavItem>About</NavItem>
+          </Navigation>
+        </Header>
+        <Sidebar>
+          <SearchBox 
+            placeholder="Find something..." 
+            onSubmit="redirectToSearchPage()"
+            position="bottom"
+          />
+        </Sidebar>
+      </code>
+      <issues>
+        - Search placed in sidebar bottom instead of expected header/top position
+        - Non-standard placeholder text lacks clarity
+        - Search requires page redirect instead of showing results inline/overlay
+      </issues>
+    </input>
+    <chain_of_thought>
+      <step>1. IDENTIFY EXPECTED PATTERN: Search boxes appear in header (top right or center), use clear placeholder ("Search products..." or "Search"), show results in dropdown or overlay</step>
+      <step>2. COMPARE ACTUAL VS EXPECTED: Search hidden in sidebar bottom - users expect header placement per Google, Amazon, GitHub, etc.</step>
+      <step>3. ASSESS MENTAL MODEL: Users' mental model = "search is always at the top" - F-pattern eye tracking shows top-right is primary search location</step>
+      <step>4. EVALUATE CONVENTION: Violates cross-platform convention; every major site places search prominently in header</step>
+      <step>5. GRADE APPLICATION:
+        - Expectations Transfer: F (violates fundamental search placement convention)
+        - Mental Model Alignment: D (users won't look in sidebar bottom for search)
+        - Convention Adherence: F (ignores universal search placement pattern)
+        - Pattern Consistency: Cannot assess from single example
+      </step>
+      <step>6. IDENTIFY FIXES: Move search to header top-right, use standard placeholder, implement dropdown/overlay results</step>
+    </chain_of_thought>
+    <output>
+      <code>
+        <Header>
+          <Logo />
+          <SearchBox 
+            placeholder="Search products and content..."
+            position="header-right"
+            showResults="dropdown"
+            aria-label="Search"
+          >
+            <SearchIcon />
+            <SearchInput />
+            <SearchDropdown>
+              <RecentSearches />
+              <SearchSuggestions />
+              <SearchResults />
+            </SearchDropdown>
+          </SearchBox>
+          <Navigation>
+            <NavItem>Home</NavItem>
+            <NavItem>Products</NavItem>
+            <NavItem>About</NavItem>
+          </Navigation>
+        </Header>
+      </code>
+      <improvements>
+        - Expectations Transfer: F → A (search in expected header location)
+        - Mental Model Alignment: D → A (matches "search at top" mental model)
+        - Convention Adherence: F → A (follows Google, Amazon, GitHub pattern)
+        - Added search icon for visual recognition
+        - Dropdown results prevent jarring page redirect
+        - Recent searches and suggestions match modern search expectations
+        - Proper ARIA labeling for accessibility
+      </improvements>
+    </output>
+  </example>
+
+  <example>
+    <input>
+      <description>Navigation redesign rolled out without transition support</description>
+      <code>
+        <UpdateNotification>
+          <Title>We've Updated Our Navigation!</Title>
+          <Message>Check out our new menu system.</Message>
+          <CloseButton>Got it</CloseButton>
+        </UpdateNotification>
+        <NewNavigation>
+          <!-- Completely different structure from previous version -->
+          <HamburgerMenu>
+            <CollapsibleSection>Products</CollapsibleSection>
+            <CollapsibleSection>Services</CollapsibleSection>
+            <CollapsibleSection>Resources</CollapsibleSection>
+          </HamburgerMenu>
+        </NewNavigation>
+      </code>
+      <issues>
+        - Major navigation change with only brief notification
+        - No option to use old navigation during transition
+        - No guided tour or explanation of where things moved
+        - Forces users to relearn navigation immediately
+      </issues>
+    </input>
+    <chain_of_thought>
+      <step>1. IDENTIFY CHANGE CONTEXT: Major structural change that affects core user workflows - navigation is used on every page</step>
+      <step>2. ASSESS DISRUPTION LEVEL: High - users must relearn primary wayfinding system with no fallback</step>
+      <step>3. EVALUATE TRANSITION SUPPORT: Minimal - brief notification only, no progressive disclosure or temporary classic mode</step>
+      <step>4. CHECK FOR RESPECT OF FAMILIARITY: Low - forces immediate adoption without considering users' established patterns</step>
+      <step>5. GRADE APPLICATION:
+        - Discord Minimization: D (change is abrupt with minimal support)
+        - Mental Model Alignment: D (breaks existing mental model of where things are)
+        - Expectations Transfer: C (hamburger menu is familiar, but sudden change is not)
+      </step>
+      <step>6. IDENTIFY FIXES: Add transition period with classic mode toggle, provide interactive tour, implement gradual rollout</step>
+    </chain_of_thought>
+    <output>
+      <code>
+        <UpdateAnnouncement>
+          <Title>New Navigation Available</Title>
+          <Message>
+            We've redesigned our navigation to help you find what you need faster.
+            <TourButton>Take a 30-second tour</TourButton>
+          </Message>
+          <PreferenceToggle>
+            <Label>Use new navigation</Label>
+            <Toggle defaultChecked onChange="setNavigationPreference()" />
+            <HelpText>You can switch back to the classic navigation anytime in the next 60 days</HelpText>
+          </PreferenceToggle>
+        </UpdateAnnouncement>
+        
+        <Navigation version={userPreference}>
+          {userPreference === 'new' ? (
+            <NewNavigation>
+              <HamburgerMenu aria-label="Main navigation">
+                <CollapsibleSection>
+                  <SectionTitle>Products</SectionTitle>
+                  <Tooltip position="right">
+                    Previously under "Shop" menu
+                  </Tooltip>
+                </CollapsibleSection>
+                <!-- More sections with migration hints -->
+              </HamburgerMenu>
+            </NewNavigation>
+          ) : (
+            <ClassicNavigation>
+              <!-- Previous navigation structure -->
+              <Banner>
+                Try our <Link>new navigation</Link>. Switch back anytime.
+              </Banner>
+            </ClassicNavigation>
+          )}
+        </Navigation>
+        
+        <InteractiveTour steps={navigationTourSteps} />
+      </code>
+      <improvements>
+        - Discord Minimization: D → A (respectful transition with choice)
+        - Mental Model Alignment: D → B (tooltips show where things moved)
+        - Expectations Transfer: C → B (maintains familiarity during transition)
+        - Users can toggle between old and new for 60 days
+        - Interactive tour shows new structure without forcing it
+        - Contextual tooltips help map old locations to new
+        - Classic version promotes new nav without forcing switch
+        - Respects user agency and existing workflows
+      </improvements>
+    </output>
+  </example>
+</examples>
+
+
+
+<llm_lint>
+  <description>Automated checklist to validate interfaces against Jakob's Law principles</description>
+  
+  <lint_process>
+    <stage name="Pattern Recognition Audit">
+      <check>Identify all interactive elements (buttons, forms, navigation, search, etc.)</check>
+      <check>For each element, list the established convention from category-leading products</check>
+      <check>Document any deviations from these conventions with specific examples</check>
+      <output>Deviation report: [Element] uses [actual pattern] but users expect [standard pattern] from [reference product]</output>
+    </stage>
+    
+    <stage name="Terminology Mapping">
+      <check>Extract all UI labels, button text, section headers, and terminology</check>
+      <check>Compare against standard terminology from similar products in the category</check>
+      <check>Flag any custom or unfamiliar terms that don't match industry standards</check>
+      <output>Terminology gaps: [Custom term] should be [Standard term] (used by [reference products])</output>
+    </stage>
+    
+    <stage name="Behavior Consistency Check">
+      <check>For each interactive element, document expected behavior based on conventions</check>
+      <check>Test actual behavior against expected behavior</check>
+      <check>Flag any interactions that produce unexpected results or require novel mental models</check>
+      <output>Behavior violations: [Element] does [actual behavior] but users expect [standard behavior]</output>
+    </stage>
+    
+    <stage name="Structure & Organization Audit">
+      <check>Map the information architecture and navigation structure</check>
+      <check>Compare against category-standard IA patterns (e.g., e-commerce, SaaS, content sites)</check>
+      <check>Identify any unusual categorizations or navigation schemes</check>
+      <output>IA deviations: [Section/Category] organized as [actual] but convention is [standard]</output>
+    </stage>
+    
+    <stage name="Platform Convention Compliance">
+      <check>Identify target platform(s) (Web, iOS, Android, Desktop)</check>
+      <check>Verify adherence to platform-specific conventions (native controls, gestures, patterns)</check>
+      <check>Flag any custom implementations that replace standard platform behaviors</check>
+      <output>Platform violations: [Element] uses custom [implementation] instead of native [platform pattern]</output>
+    </stage>
+    
+    <stage name="Change Management Assessment">
+      <check>Identify any recent changes or redesigns in the interface</check>
+      <check>Evaluate whether transition support is provided (toggles, tours, gradual rollout)</check>
+      <check>Assess whether users can continue using familiar versions during transition</check>
+      <output>Change support status: [Change description] provides [actual support] - recommendation: [ideal support]</output>
+    </stage>
+    
+    <stage name="Grade Assignment">
+      <check>For each criterion, apply F-A grading based on evidence from above stages</check>
+      <check>Document specific examples supporting each grade</check>
+      <check>Prioritize fixes: F and D grades first, then optimize B to A</check>
+      <output>
+        Criterion Grades:
+        - Expectations Transfer: [Grade] - [Evidence]
+        - Mental Model Alignment: [Grade] - [Evidence]
+        - Discord Minimization: [Grade] - [Evidence]
+        - Convention Adherence: [Grade] - [Evidence]
+        - Pattern Consistency: [Grade] - [Evidence]
+      </output>
+    </stage>
+    
+    <stage name="Fix Prescription">
+      <check>For each deviation, identify the specific conventional pattern to adopt</check>
+      <check>Provide code examples or specific implementation guidance</check>
+      <check>Reference category-leading products that implement the pattern correctly</check>
+      <output>
+        Fixes:
+        1. [Element]: Change from [current] to [conventional pattern] (see: [reference product])
+        2. [Terminology]: Replace "[custom term]" with "[standard term]"
+        3. [Behavior]: Implement [expected behavior] instead of [current behavior]
+      </output>
+    </stage>
+  </lint_process>
+  
+  <output_format>
+    Report: Executive Summary (compliance score, F/D counts, top fix) | Detailed Findings (criterion grades with evidence + reference patterns) | Remediation Plan (fixes with current→expected state, product examples, code changes, grade improvement)
+  </output_format>
+  
+  <automated_checks>
+    <check type="terminology">
+      <pattern>Scan for non-standard button labels (not: "Submit", "Add to Cart", "Sign In", "Search", "Save", "Cancel", etc.)</pattern>
+      <severity>high</severity>
+    </check>
+    
+    <check type="navigation">
+      <pattern>Verify navigation is in expected location (header/top for primary nav, left sidebar for secondary)</pattern>
+      <severity>critical</severity>
+    </check>
+    
+    <check type="search">
+      <pattern>Confirm search box is in header (top-right or center) with standard magnifying glass icon</pattern>
+      <severity>high</severity>
+    </check>
+    
+    <check type="forms">
+      <pattern>Verify form labels above/beside inputs, required fields marked with asterisk, submit button at bottom-right or full-width</pattern>
+      <severity>medium</severity>
+    </check>
+    
+    <check type="feedback">
+      <pattern>Check for standard success/error messaging (toasts, inline validation, confirmation modals)</pattern>
+      <severity>medium</severity>
+    </check>
+    
+    <check type="iconography">
+      <pattern>Verify standard icons (hamburger=menu, magnifying glass=search, cart=shopping cart, gear=settings, bell=notifications)</pattern>
+      <severity>high</severity>
+    </check>
+    
+    <check type="gestures">
+      <pattern>Confirm standard gestures work as expected (swipe, pinch-zoom, pull-to-refresh on mobile)</pattern>
+      <severity>high</severity>
+    </check>
+  </automated_checks>
+</llm_lint>
