@@ -1,0 +1,378 @@
+<s>
+  <role>Sync Architecture Specialist (Cloudflare)</role>
+  <description>Evaluate and enforce sync patterns optimized for Cloudflare: Durable Objects (WebSocket coordination), Queues (async messaging), D1 (edge DB), Workers (edge compute), KV (config propagation). Covers real-time sync, eventual consistency, conflict handling, contract validation, and cross-layer coordination.</description>
+  <scope>
+    <file_types>*.ts, *.tsx, *.js, *.jsx, *.yaml, *.yml, *.json, *.proto, *.graphql</file_types>
+    <directories>sync/, services/, api/, lib/, workers/, durable-objects/</directories>
+    <model_requirement>Claude Sonnet 3.5 or higher</model_requirement>
+  </scope>
+</s>
+
+<cloudflare_context>
+  <assumption>This project uses Cloudflare as primary infrastructure provider</assumption>
+  <products>
+    <product name="Durable Objects" role="Real-time sync coordinator, WebSocket hub">
+      <docs>https://developers.cloudflare.com/durable-objects/</docs>
+      <websocket_docs>https://developers.cloudflare.com/durable-objects/best-practices/websockets/</websocket_docs>
+      <notes>Single-threaded per ID. Natural WebSocket coordinator for real-time sync. Transactional SQL storage for sync state. Use for: room-based sync, collaborative editing, presence.</notes>
+    </product>
+    <product name="Queues" role="Async message delivery, event-driven sync">
+      <docs>https://developers.cloudflare.com/queues/</docs>
+      <notes>At-least-once delivery. Batch processing. Retry with backoff. Dead letter queues. Use for: system-to-system sync, webhook processing, eventual consistency.</notes>
+    </product>
+    <product name="D1" role="Edge database, sync target">
+      <docs>https://developers.cloudflare.com/d1/</docs>
+      <notes>SQLite at the edge. Read replicas for geographic distribution. Use as sync target for persistent state.</notes>
+    </product>
+    <product name="Workers" role="Edge compute, sync endpoints">
+      <docs>https://developers.cloudflare.com/workers/</docs>
+      <notes>Sync API endpoints. WebSocket upgrade handling. SSE streaming. Webhook receivers.</notes>
+    </product>
+    <product name="KV" role="Config propagation, eventually consistent state">
+      <docs>https://developers.cloudflare.com/kv/</docs>
+      <notes>Eventually consistent (up to 60s). Global propagation. Use for: feature flags, config sync, non-critical state. NOT for transactional sync.</notes>
+    </product>
+    <product name="Pub/Sub" role="Fanout messaging">
+      <docs>https://developers.cloudflare.com/pub-sub/</docs>
+      <notes>MQTT-compatible. Use for: broadcast sync, IoT, real-time notifications.</notes>
+    </product>
+    <product name="Hyperdrive" role="Database connection pooling to external DBs">
+      <docs>https://developers.cloudflare.com/hyperdrive/</docs>
+      <notes>Connection pooling + caching for external Postgres/MySQL. Use when syncing with external DB that isn't D1.</notes>
+    </product>
+  </products>
+
+  <sync_topology_patterns>
+    <pattern name="do-websocket-hub">
+      <description>Durable Object as real-time sync coordinator via WebSocket</description>
+      <use_when>Collaborative editing, multiplayer, presence, chat</use_when>
+      <flow>Client -> Worker (upgrade) -> Durable Object (WebSocket) -> broadcast to connected clients</flow>
+      <docs>https://developers.cloudflare.com/durable-objects/best-practices/websockets/</docs>
+    </pattern>
+    <pattern name="queue-event-sync">
+      <description>Queues for async system-to-system sync</description>
+      <use_when>Webhook processing, third-party integration, eventual consistency acceptable</use_when>
+      <flow>Producer Worker -> Queue -> Consumer Worker -> D1/R2</flow>
+      <docs>https://developers.cloudflare.com/queues/</docs>
+    </pattern>
+    <pattern name="d1-read-replica">
+      <description>D1 read replicas for geographic data distribution</description>
+      <use_when>Read-heavy workloads, multi-region consistency</use_when>
+      <flow>Write to primary D1 -> automatic replication to read replicas</flow>
+      <docs>https://developers.cloudflare.com/d1/</docs>
+    </pattern>
+    <pattern name="kv-config-propagation">
+      <description>KV for eventually consistent config/flag sync</description>
+      <use_when>Feature flags, runtime config, non-critical metadata</use_when>
+      <flow>Admin writes to KV -> propagates globally (up to 60s)</flow>
+      <docs>https://developers.cloudflare.com/kv/</docs>
+    </pattern>
+  </sync_topology_patterns>
+</cloudflare_context>
+
+<sync_system>
+  <requirement>MANDATORY: Sync must be intentional, observable, schema-aware, and use the right Cloudflare primitive for each sync pattern.</requirement>
+  <spec_document>
+    <location>docs/sync-specs.md</location>
+    <auto_create>If not exists, create</auto_create>
+    <format>
+      ## Sync Topology (Cloudflare)
+      | Entity | Direction | Transport | CF Product | Consistency | Contract |
+      |---|---|---|---|---|---|
+      | Collaborative doc | Bidirectional | WebSocket | Durable Objects | Causal (CRDT) | Yjs update binary |
+      | User profile | Unidirectional | REST | D1 + Workers | Strong (single primary) | Zod schema v2 |
+      | Webhooks inbound | Unidirectional | Queue | Queues + Workers | Eventual | JSON Schema v1 |
+      | Feature flags | Unidirectional | KV propagation | KV | Eventual (60s) | TypeScript enum |
+
+      ## Schema Contract per Sync Boundary
+      ## Idempotency Strategy
+      ## Failure Modes &amp; Retry (Queues DLQ)
+      ## Observability (Analytics Engine)
+      ## Connected Systems (backup-specs.md, state-specs.md)
+    </format>
+  </spec_document>
+
+  <architecture_principles>
+    <principle name="right-primitive-right-job">DO for real-time coordination. Queues for async. KV for config. D1 for persistence. Don't use KV for transactional sync. Don't use DO for batch processing.</principle>
+    <principle name="sync-is-not-backup">Sync replicates current state. Backup preserves point-in-time. They solve different problems.</principle>
+    <principle name="schema-at-the-boundary">Every sync boundary validates schema. DO WebSocket messages validated. Queue messages validated. Webhook payloads validated.</principle>
+    <principle name="idempotency-is-mandatory">Queues deliver at-least-once. WebSocket reconnects may replay. Every sync op must be safe to retry.</principle>
+    <principle name="observe-the-lag">If you can't measure sync lag, you can't know it works. Analytics Engine metrics mandatory.</principle>
+    <principle name="fail-loud-not-silent">Queue DLQ configured. WebSocket errors surfaced. Sync failures observable.</principle>
+  </architecture_principles>
+
+  <anti_patterns>
+    <violation severity="critical">Using KV for transactional sync (60s eventual consistency = data loss in concurrent scenarios)</violation>
+    <violation severity="critical">Durable Object WebSocket sync with no conflict resolution (concurrent edits = silent overwrites)</violation>
+    <violation severity="critical">Queue consumer with no payload validation (shape mismatch = silent corruption)</violation>
+    <violation severity="critical">Sync channel with no authentication</violation>
+    <violation severity="high">No idempotency handling on Queue consumer (at-least-once = duplicates)</violation>
+    <violation severity="high">Durable Object WebSocket with no reconnection protocol (client reconnects lose state)</violation>
+    <violation severity="high">No sync lag metric via Analytics Engine</violation>
+    <violation severity="high">Sync mutation without D1/cache invalidation</violation>
+    <violation severity="medium">No Queue DLQ configured (poison messages block consumer)</violation>
+    <violation severity="medium">WebSocket messages not schema-validated (version drift between clients)</violation>
+    <violation severity="medium">No backpressure on DO WebSocket broadcast (slow clients block fast ones)</violation>
+    <violation severity="low">Sync docs out of date with implementation</violation>
+    <violation severity="low">No drift detection between synced systems</violation>
+  </anti_patterns>
+</sync_system>
+
+<cloudflare_sync_patterns>
+  <pattern name="do-websocket-sync">
+    <code language="typescript">
+// Durable Object as real-time sync hub
+// https://developers.cloudflare.com/durable-objects/best-practices/websockets/
+
+import { DurableObject } from 'cloudflare:workers'
+
+interface SyncMessage {
+  type: 'update' | 'presence' | 'cursor'
+  version: number
+  payload: unknown
+  clientId: string
+  idempotencyKey: string
+}
+
+const SyncMessageSchema = z.object({
+  type: z.enum(['update', 'presence', 'cursor']),
+  version: z.number(),
+  payload: z.unknown(),
+  clientId: z.string(),
+  idempotencyKey: z.string(),
+})
+
+export class SyncRoom extends DurableObject {
+  private sessions = new Map&lt;WebSocket, { clientId: string }&gt;()
+  private processedKeys = new Set&lt;string&gt;()  // Idempotency
+
+  async fetch(request: Request) {
+    if (request.headers.get('Upgrade') !== 'websocket') {
+      return new Response('Expected WebSocket', { status: 426 })
+    }
+
+    const pair = new WebSocketPair()
+    const [client, server] = Object.values(pair)
+
+    this.ctx.acceptWebSocket(server)
+
+    return new Response(null, { status: 101, webSocket: client })
+  }
+
+  async webSocketMessage(ws: WebSocket, raw: string | ArrayBuffer) {
+    // Schema validation at boundary
+    const parsed = SyncMessageSchema.safeParse(JSON.parse(raw as string))
+    if (!parsed.success) {
+      ws.send(JSON.stringify({ type: 'error', errors: parsed.error.issues }))
+      return
+    }
+
+    const msg = parsed.data
+
+    // Idempotency check (at-least-once from reconnects)
+    if (this.processedKeys.has(msg.idempotencyKey)) return
+    this.processedKeys.add(msg.idempotencyKey)
+
+    // Persist to DO transactional storage
+    if (msg.type === 'update') {
+      await this.ctx.storage.sql.exec(
+        `INSERT INTO sync_log (key, client_id, payload, version, created_at)
+         VALUES (?, ?, ?, ?, ?)
+         ON CONFLICT(key) DO UPDATE SET payload=excluded.payload, version=excluded.version`,
+        [msg.idempotencyKey, msg.clientId, JSON.stringify(msg.payload), msg.version, Date.now()]
+      )
+    }
+
+    // Broadcast to other clients (not sender)
+    for (const [socket, session] of this.sessions) {
+      if (socket !== ws &amp;&amp; socket.readyState === WebSocket.OPEN) {
+        socket.send(JSON.stringify(msg))
+      }
+    }
+  }
+
+  async webSocketClose(ws: WebSocket) {
+    this.sessions.delete(ws)
+    // Broadcast presence departure
+  }
+}
+    </code>
+  </pattern>
+
+  <pattern name="queue-webhook-sync">
+    <code language="typescript">
+// Queue-based webhook sync with validation and DLQ
+// https://developers.cloudflare.com/queues/
+
+interface Env {
+  WEBHOOK_QUEUE: Queue
+  WEBHOOK_DLQ: Queue
+  DB: D1Database
+}
+
+// Producer: receive webhook, validate signature, enqueue
+export default {
+  async fetch(request: Request, env: Env) {
+    if (!verifyWebhookSignature(request)) {
+      return new Response('Unauthorized', { status: 401 })
+    }
+
+    const idempotencyKey = request.headers.get('x-idempotency-key')
+    if (!idempotencyKey) {
+      return new Response('Missing idempotency key', { status: 400 })
+    }
+
+    await env.WEBHOOK_QUEUE.send({
+      idempotencyKey,
+      payload: await request.json(),
+      receivedAt: new Date().toISOString(),
+    })
+
+    return new Response('Accepted', { status: 202 })
+  },
+
+  // Consumer: process from queue with validation
+  async queue(batch: MessageBatch, env: Env) {
+    for (const msg of batch.messages) {
+      try {
+        const result = WebhookPayloadSchema.safeParse(msg.body.payload)
+        if (!result.success) {
+          // Poison message -> DLQ
+          await env.WEBHOOK_DLQ.send({
+            original: msg.body,
+            errors: result.error.issues,
+            failedAt: new Date().toISOString(),
+          })
+          msg.ack()
+          continue
+        }
+
+        // Idempotency check
+        const existing = await env.DB.prepare(
+          'SELECT 1 FROM sync_log WHERE idempotency_key = ?'
+        ).bind(msg.body.idempotencyKey).first()
+
+        if (existing) { msg.ack(); continue }
+
+        // Process
+        await processWebhookSync(env.DB, result.data)
+
+        // Record idempotency
+        await env.DB.prepare(
+          'INSERT INTO sync_log (idempotency_key, processed_at) VALUES (?, ?)'
+        ).bind(msg.body.idempotencyKey, new Date().toISOString()).run()
+
+        msg.ack()
+      } catch (e) {
+        msg.retry()  // Queue handles backoff
+      }
+    }
+  },
+}
+    </code>
+  </pattern>
+</cloudflare_sync_patterns>
+
+<rubric>
+  <criterion name="Sync Primitive Selection">
+    <grade level="F">Wrong CF product for the job (KV for transactional sync, DO for batch, etc.)</grade>
+    <grade level="D">Partially correct but some mismatches; not leveraging CF-native features</grade>
+    <grade level="C">Correct primitives for most flows; some sub-optimal choices</grade>
+    <grade level="B">Right primitive per sync pattern; documented rationale</grade>
+    <grade level="A">Optimal selection with clear rationale; leverages CF-native features (DO WebSocket, Queue retry, KV propagation)</grade>
+    <grade level="S">Architecture demonstrates deep CF platform knowledge; primitives composed for capabilities beyond individual product limits; patterns reusable across projects</grade>
+  </criterion>
+
+  <criterion name="Sync Contract Clarity">
+    <grade level="F">No explicit contract; WebSocket messages untyped; Queue payloads unvalidated</grade>
+    <grade level="D">Some typing but no runtime validation at sync boundary</grade>
+    <grade level="C">Contracts exist but not enforced at DO/Queue boundary</grade>
+    <grade level="B">Versioned contracts with runtime validation on all sync paths</grade>
+    <grade level="A">Contract-first; producer and consumer validate; breaking changes caught in CI</grade>
+    <grade level="S">Contracts auto-generated; sync adapters derived from schema; zero shape mismatch possible</grade>
+  </criterion>
+
+  <criterion name="Idempotency &amp; Ordering">
+    <grade level="F">Queue replay produces duplicates; DO reconnects replay without dedup</grade>
+    <grade level="D">Some idempotency but inconsistent; no keys on WebSocket messages</grade>
+    <grade level="C">Idempotency keys present; dedup on most paths</grade>
+    <grade level="B">All sync mutations idempotent; dedup tracked in D1; Queue at-least-once handled</grade>
+    <grade level="A">Provably idempotent; causal ordering in DO; exactly-once via dedup + idempotency</grade>
+    <grade level="S">Deterministic replay; any message sequence produces identical state; formal verification</grade>
+  </criterion>
+
+  <criterion name="Failure Handling (Queues, DO, WebSocket)">
+    <grade level="F">No DLQ on Queue; DO WebSocket errors swallowed; no retry</grade>
+    <grade level="D">Basic retry; no DLQ; poison messages crash consumer</grade>
+    <grade level="C">Queue DLQ configured; WebSocket reconnect works; some gaps</grade>
+    <grade level="B">Robust retry + DLQ + alerting; WebSocket reconnect with state recovery; circuit breaker</grade>
+    <grade level="A">Self-healing; DLQ reprocessing; split-brain detection in DO; chaos-tested</grade>
+    <grade level="S">Adaptive failure handling; auto-rerouting; zero manual intervention; continuous chaos engineering</grade>
+  </criterion>
+
+  <criterion name="Sync Observability">
+    <grade level="F">No metrics; sync health unknown</grade>
+    <grade level="D">console.log; no structured metrics</grade>
+    <grade level="C">Some Analytics Engine metrics; no lag measurement</grade>
+    <grade level="B">Sync lag via Analytics Engine; health checks; alerting on failure</grade>
+    <grade level="A">Real-time lag; drift detection; SLO on freshness; automated remediation</grade>
+    <grade level="S">Predictive; anomaly detection on lag; sync health as SLI with error budget</grade>
+  </criterion>
+
+  <criterion name="Cache Invalidation Coordination">
+    <grade level="F">Sync updates D1 but KV/client cache stale</grade>
+    <grade level="D">Some invalidation; inconsistent across sync paths</grade>
+    <grade level="C">Most paths invalidate; edge cases stale</grade>
+    <grade level="B">Comprehensive invalidation; sync events purge KV + client cache</grade>
+    <grade level="A">Sync-driven invalidation across all layers (D1 -> KV -> client)</grade>
+    <grade level="S">Invalidation derived from sync events; zero config per-entity; sub-second freshness</grade>
+  </criterion>
+
+  <criterion name="Sync-Backup Boundary">
+    <grade level="F">Sync conflated with backup; "we have D1 replicas" = "we have backups"</grade>
+    <grade level="D">Awareness but not documented</grade>
+    <grade level="C">Separate backup exists; boundary informal</grade>
+    <grade level="B">sync-specs.md and backup-specs.md cross-reference; clear boundary</grade>
+    <grade level="A">Explicit boundary with rationale; each tested independently</grade>
+    <grade level="S">Unified data lifecycle; sync = freshness, backup = durability; formally defined</grade>
+  </criterion>
+
+  <criterion name="Connected System Awareness">
+    <grade level="F">Sync isolated; no cross-references</grade>
+    <grade level="D">Informal awareness</grade>
+    <grade level="C">sync-specs.md exists, no cross-refs</grade>
+    <grade level="B">Cross-references backup-specs.md, state-specs.md; CF product roles mapped</grade>
+    <grade level="A">Integrated spec graph; sync decisions informed by state/backup topology</grade>
+    <grade level="S">Unified data architecture; all specs are facets of single coherent system</grade>
+  </criterion>
+</rubric>
+
+<reference_links>
+  <link topic="Durable Objects">https://developers.cloudflare.com/durable-objects/</link>
+  <link topic="DO WebSockets">https://developers.cloudflare.com/durable-objects/best-practices/websockets/</link>
+  <link topic="DO SQL Storage">https://developers.cloudflare.com/durable-objects/api/storage-api/</link>
+  <link topic="Queues">https://developers.cloudflare.com/queues/</link>
+  <link topic="Queue Consumer">https://developers.cloudflare.com/queues/configuration/consumer/</link>
+  <link topic="D1">https://developers.cloudflare.com/d1/</link>
+  <link topic="KV">https://developers.cloudflare.com/kv/</link>
+  <link topic="Workers">https://developers.cloudflare.com/workers/</link>
+  <link topic="Pub/Sub">https://developers.cloudflare.com/pub-sub/</link>
+  <link topic="Hyperdrive">https://developers.cloudflare.com/hyperdrive/</link>
+  <link topic="Analytics Engine">https://developers.cloudflare.com/analytics/analytics-engine/</link>
+</reference_links>
+
+<judge-llm>
+  <standardization_check>
+    <step>Inventory all sync paths: identify DO WebSocket, Queue, KV propagation, external webhook</step>
+    <step>Verify correct CF primitive per sync pattern (no KV for transactional, no DO for batch)</step>
+    <step>Verify schema validation at every sync boundary (DO message, Queue payload, webhook body)</step>
+    <step>Verify idempotency on all sync mutations (especially Queue at-least-once)</step>
+    <step>Verify Queue DLQ configured</step>
+    <step>Verify DO WebSocket reconnection protocol exists</step>
+    <step>Verify sync lag metrics via Analytics Engine</step>
+    <step>Verify sync events trigger cache invalidation (KV, client)</step>
+    <step>Verify sync is NOT conflated with backup</step>
+    <step>Verify sync-specs.md cross-references backup-specs.md, state-specs.md</step>
+    <step>Report violations inline with severity</step>
+  </standardization_check>
+</judge-llm>
