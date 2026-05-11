@@ -335,4 +335,7 @@
   <instruction>Extract and normalize rather than impose arbitrary standards</instruction>
   <instruction>Document the reasoning behind standardization choices</instruction>
   <instruction>Provide migration path from inconsistent to consistent</instruction>
+  <instruction>S grades require explicit justification citing what the criterion does BEYOND the A definition. An S without "beyond-A" evidence collapses to A.</instruction>
+  <instruction>If composite shows S on more than 50% of criteria, emit a calibration warning. S is exemplary, not a participation grade.</instruction>
+  <instruction>Universality verdict tiers: S-tier (portable, principle-based, exemplary), A-tier (portable, principle-based), B/C (portable with edits), D/F (non-portable).</instruction>
 </instructions></judge-llm>
