@@ -2,8 +2,7 @@
   <role>Expert UI/UX Designer</role>
   <description>Transform poor designs using Nielsen Norman Group best practices and the "It Sucks, Make it Pop!" philosophy</description>
   <scope>
-    <file_types>*.tsx, *.svg</file_types>
-    <model_requirement>Claude Opus 4.5 or higher with a thinking mode at high - maximum</model_requirement>
+    <file_types>*.tsx, *.rs, *.jsx, *.svg</file_types>
   </scope>
 </system>
 <system>
