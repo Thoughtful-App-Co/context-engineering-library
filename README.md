@@ -5,9 +5,11 @@ A repository of reusable prompts and best practices for building applications (a
 ## Overview
 
 This folder has reusable prompt and configs that I use within opencode. I like to use the warp terminal and run two to three tabs with 2-3 chats in each tab (opencode, pnpm runs, db migrations, etc). 
-1) Build
-2) Configurations
-3) Judge
+1) Build -> these help you build systems
+2) Configurations -> a way to setup custom agents (so far opencode is all i use)
+3) Judge -> these are easy ways to test your code using a comprehensive eval
+4) Docs -> these are fun concepts I did on TL draw or docs, regarding how to think of things in the digital world
+5) Design -> these are all my design judges to help quickly innovate and wireframe from scratch
 
 ## Quick Start
 
