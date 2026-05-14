@@ -1,0 +1,238 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "provider": {
+    "llamacpp": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "LlamaCPP Local",
+      "options": {
+        "baseURL": "http:/{YOURIPADDRESS}/v1"
+      },
+      "models": {
+        "Qwen2.5-Coder-32B-Instruct-Q4_K_M.gguf": {
+          "name": "Qwen2.5 Coder 32B"
+        }
+      }
+    },
+    "ollama": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "Ollama Desktop",
+      "options": {
+        "baseURL": "{YOURIPADDRESS}/v1"
+      },
+      "models": {
+        "qwen3-coder:30b": {
+          "name": "TacoLoco"
+        }
+      }
+    },
+    "fireworks-ai": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "Fireworks AI",
+      "options": {
+        "baseURL": "https://api.fireworks.ai/inference/v1"
+      },
+      "models": {
+        "accounts/fireworks/models/kimi-k2p6": {
+          "name": "Kimi K2.6"
+        }
+      }
+    }
+  },
+  "model": "llamacpp/Qwen2.5-Coder-32B-Instruct-Q4_K_M.gguf",
+  "agent": {
+    "pro-plan": {
+      "description": "Production-grade planning agent for comprehensive task breakdown and execution blueprints",
+      "mode": "primary",
+      "prompt": "{file:~/.config/opencode/prompts/pro-plan.txt}",
+      "model": "fireworks-ai/accounts/fireworks/models/kimi-k2p6",
+      "temperature": 1.0,
+      "color": "#00D4FF",
+      "maxSteps": 30,
+      "tools": {
+        "bash": false,
+        "read": true,
+        "write": false,
+        "edit": false,
+        "grep": true,
+        "glob": true,
+        "list": true,
+        "task": true,
+        "todowrite": true,
+        "todoread": true,
+        "webfetch": true
+      },
+      "permission": {
+        "edit": "deny",
+        "bash": "deny",
+        "webfetch": "allow",
+        "doom_loop": "deny",
+        "external_directory": "allow"
+      }
+    },
+    "pro-build": {
+      "description": "Production-grade build agent with enhanced quality standards and competitive engineering mindset. Use @pro-plan for comprehensive planning.",
+      "mode": "primary",
+      "prompt": "{file:~/.config/opencode/prompts/pro-build.txt}",
+      "model": "fireworks-ai/accounts/fireworks/models/kimi-k2p5",
+      "temperature": 1.0,
+      "color": "#FF5733",
+      "maxSteps": 50,
+      "tools": {
+        "bash": true,
+        "read": true,
+        "write": true,
+        "edit": true,
+        "grep": true,
+        "glob": true,
+        "list": true,
+        "task": true,
+        "todowrite": true,
+        "todoread": true,
+        "webfetch": true
+      },
+      "permission": {
+        "edit": "allow",
+        "bash": {
+          "npm install*": "ask",
+          "yarn add*": "ask",
+          "pnpm add*": "ask",
+          "bun add*": "ask",
+          "rm -rf*": "ask",
+          "git push*": "ask",
+          "git commit*": "allow",
+          "*": "allow"
+        },
+        "webfetch": "allow",
+        "doom_loop": "deny",
+        "external_directory": "ask"
+      }
+    },
+    "query": {
+  "description": "Quick, succinct Q&A. Ask a simple question, get a simple answer. Feynman-style explanations — anything technical is rendered so a sharp 10th grader could follow. No code edits, no long-form essays.",
+  "mode": "primary",
+  "prompt": "{file:~/.config/opencode/prompts/query.txt}",
+  "model": "fireworks-ai/accounts/fireworks/models/gpt-oss-120b",
+  "temperature": 0.3,
+  "color": "#10B981",
+  "maxSteps": 4,
+  "tools": {
+    "bash": false,
+    "read": true,
+    "write": false,
+    "edit": false,
+    "grep": true,
+    "glob": true,
+    "list": true,
+    "task": false,
+    "todowrite": false,
+    "todoread": false,
+    "webfetch": true
+  },
+  "permission": {
+    "edit": "deny",
+    "bash": "deny",
+    "webfetch": "allow",
+    "doom_loop": "deny",
+    "external_directory": "deny"
+  }
+},
+"learn": {
+  "description": "Teaching agent for code and concepts. Walks through what code does and why, using Feynman's test — if it can't be explained simply, the explanation hasn't been earned. Reads code, never edits. Use when you want to understand, not when you want to ship.",
+  "mode": "primary",
+  "prompt": "{file:~/.config/opencode/prompts/learn.txt}",
+  "model": "fireworks-ai/accounts/fireworks/models/deepseek-v3",
+  "temperature": 0.4,
+  "color": "#F59E0B",
+  "maxSteps": 12,
+  "tools": {
+    "bash": false,
+    "read": true,
+    "write": false,
+    "edit": false,
+    "grep": true,
+    "glob": true,
+    "list": true,
+    "task": false,
+    "todowrite": false,
+    "todoread": false,
+    "webfetch": true
+  },
+  "permission": {
+    "edit": "deny",
+    "bash": "deny",
+    "webfetch": "allow",
+    "doom_loop": "deny",
+    "external_directory": "deny"
+  }
+},
+
+"research": {
+  "description": "Research subagent. Looks for live web context with citations and produces structured Markdown research docs saved to ./research/. Invokes from pro-plan via `task` for any non-trivial external-context question (libraries, APIs, vendor comparisons, regulatory framings, prior art). Returns executive summary + path to artifact.",
+  "mode": "subagent",
+  "prompt": "{file:~/.config/opencode/prompts/pro-research.txt}",
+  "model": "perplexity/sonar-pro",
+  "temperature": 0.2,
+  "color": "#A855F7",
+  "maxSteps": 12,
+  "tools": {
+    "bash": false,
+    "read": true,
+    "write": true,
+    "edit": false,
+    "grep": true,
+    "glob": true,
+    "list": true,
+    "task": false,
+    "todowrite": false,
+    "todoread": false,
+    "webfetch": true
+  },
+  "permission": {
+    "edit": "deny",
+    "bash": "deny",
+    "webfetch": "allow",
+    "doom_loop": "deny",
+    "external_directory": "deny"
+  }
+},
+    "local-model": {
+      "description": "Test agent using local llama.cpp QWEN model with tool-calling instructions",
+      "mode": "primary",
+      "prompt": "{file:~/.config/opencode/prompts/pro-plan.txt}",
+      "model": "llamacpp/Qwen2.5-Coder-32B-Instruct-Q4_K_M.gguf",
+      "temperature": 0.7,
+      "color": "#9B59B6",
+      "maxSteps": 30,
+      "tools": {
+        "bash": true,
+        "read": true,
+        "write": true,
+        "edit": true,
+        "grep": true,
+        "glob": true,
+        "list": true,
+        "task": false,
+        "todowrite": false,
+        "todoread": false,
+        "webfetch": false
+      },
+      "permission": {
+        "edit": "allow",
+        "bash": "allow",
+        "webfetch": "deny",
+        "doom_loop": "deny",
+        "external_directory": "allow"
+      }
+    }
+  },
+  "mcp": {
+    "context7": {
+       "type": "local",
+       "url": "https://mcp.context7.com/mcp",
+       "command": ["npx", "-y", "@upstash/context7-mcp@latest"],
+       "env": {
+           "CTX7_API_KEY": "{YOURAPIKEY}"
+       }
+     }
+   }
+}
